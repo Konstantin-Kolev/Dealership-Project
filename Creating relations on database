@@ -1,0 +1,22 @@
+alter table Car_Dealership
+add constraint fk_town_id foreign key (town_id) references Towns(id);
+
+
+alter table Customers
+add constraint fk_customers_town_id foreign key (town_id) references Towns(id);
+
+
+alter table Workers
+add constraint fk_workers_dealership_id foreign key (car_dealership_id) references Car_Dealership(id);
+
+
+alter table Cars
+add constraint fk_cars_dealership_id foreign key (car_dealership_id) references Car_Dealership(id);
+
+
+alter table Cars
+add constraint fk_cars_engine_id foreign key (engine_id) references Engines(id);
+
+
+alter table Cars
+add constraint fk_cars_transmission_id foreign key (transmission_id) references Transmissions(id);
