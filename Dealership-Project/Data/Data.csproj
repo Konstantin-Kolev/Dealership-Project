@@ -218,7 +218,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Conection.cs" />
     <Compile Include="Models\CarDealership.cs" />
     <Compile Include="CarDealershipContext.cs" />
