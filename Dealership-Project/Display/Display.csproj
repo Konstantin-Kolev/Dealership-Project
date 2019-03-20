@@ -231,6 +231,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -255,9 +258,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Buisness\Buisness.csproj">
+    <ProjectReference Include="..\Buisness\Business.csproj">
       <Project>{6026156c-7548-4a1d-b6c9-526a0b0a8e4f}</Project>
-      <Name>Buisness</Name>
+      <Name>Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{883c7f54-a5b1-41ce-879f-5498fb9ddf7f}</Project>

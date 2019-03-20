@@ -218,7 +218,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarBusiness.cs" />
+    <Compile Include="CarDealershipBusiness.cs" />
+    <Compile Include="CustomerBusiness.cs" />
+    <Compile Include="EngineBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TownBusiness.cs" />
+    <Compile Include="WorkerBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
