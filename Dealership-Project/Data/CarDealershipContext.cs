@@ -15,7 +15,7 @@ namespace Data.Models
         {
         }
 
-        public virtual DbSet<CarDealership> CarDealership { get; set; }
+        public virtual DbSet<CarDealership> CarDealerships { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Engine> Engines { get; set; }

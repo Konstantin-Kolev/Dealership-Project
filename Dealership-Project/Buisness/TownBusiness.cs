@@ -41,7 +41,7 @@ namespace Buisness
         {
             using (townContext = new CarDealershipContext())
             {
-                var item = townContext.Towns.find(town.Id);
+                var item = townContext.Towns.Find(town.Id);
                 if (item != null)
                 {
                     townContext.Entry(item).CurrentValues.SetValues(town);
