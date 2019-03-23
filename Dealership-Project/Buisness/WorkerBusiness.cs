@@ -27,6 +27,46 @@ namespace Buisness
             }
         }
 
+        public List<Worker> GetWorkersByFirstName(string firstName)
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.Where(x => x.FirstName == firstName).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByLastName(string lastName)
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.Where(x => x.LastName == lastName).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByPosition(string position)
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.Where(x => x.Position == position).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersBySalary(decimal salary)
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.Where(x => x.Salary == salary).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByDealershipId(int dealershipId)
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.Where(x => x.CarDealershipId == dealershipId).ToList();
+            }
+        }
+
         public void Add(Worker worker)
         {
             using (workerContext = new CarDealershipContext())
