@@ -19,13 +19,70 @@ namespace Buisness
             }
         }
 
-        public Car GetCar(int id)
+        public Car GetCarById(int id)
         {
             using (carContext = new CarDealershipContext())
             {
                 return carContext.Cars.Find(id);
             }
         }
+
+        public List<Car> GetCarsByManufacturer(string manufacturer)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Manufacturer == manufacturer).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByModel(string model)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Model == model).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByCarDealership(int dealershipId)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.CarDealershipId == dealershipId).ToList(); 
+            }
+        }
+
+        public List<Car> GetCarsByColor(string color)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Color == color).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByTransmissionType(string transmissionType)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.TransmissionType == transmissionType).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByPrice(decimal price)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Price == price).ToList();
+            }
+        }
+
+        public List<Car> GetCarsTransmissionGears(int transmissionGears)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.TransmissionGears == transmissionGears).ToList();
+            }
+        }
+
 
         public void Add(Car car)
         {
