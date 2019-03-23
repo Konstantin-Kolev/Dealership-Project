@@ -27,6 +27,14 @@ namespace Business
             }
         }
 
+        public List<Town> GetTownsByName(string name)
+        {
+            using (townContext = new CarDealershipContext())
+            {
+                return townContext.Towns.Where(x => x.Name == name).ToList();
+            }
+        }
+
         public void Add(Town town)
         {
             using (townContext = new CarDealershipContext())
