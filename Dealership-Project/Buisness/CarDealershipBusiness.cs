@@ -7,7 +7,7 @@ using Data.Models;
 
 namespace Buisness
 {
-    class CarDealershipBusiness
+    public class CarDealershipBusiness
     {
         private CarDealershipContext carDealershipContext;
 

@@ -7,7 +7,7 @@ using Data.Models;
 
 namespace Buisness
 {
-    class WorkerBusiness
+    public class WorkerBusiness
     {
         private CarDealershipContext workerContext;
 
