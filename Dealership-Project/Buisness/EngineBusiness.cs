@@ -19,11 +19,51 @@ namespace Buisness
             }
         }
 
-        public Engine GetEngine(int id)
+        public Engine GetEngineBy(int id)
         {
             using (engineContext = new CarDealershipContext())
             {
                 return engineContext.Engines.Find(id);
+            }
+        }
+
+        public List<Engine> GetEnginesByFuelType(string fuelType)
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.Where(x => x.FuelType == fuelType).ToList();
+            }
+        }
+
+        public List<Engine> GetEnginesByDisplacement(int displacement)
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.Where(x => x.Displacement == displacement).ToList();
+            }
+        }
+
+        public List<Engine> GetEnginesByPower(int power)
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.Where(x => x.Power == power).ToList();
+            }
+        }
+
+        public List<Engine> GetEnginesByDisplacement(decimal economyPerHundredKm)
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.Where(x => x.EconomyPerHundredKm == economyPerHundredKm).ToList();
+            }
+        }
+
+        public List<Engine> GetEnginesByName(string name)
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.Where(x => x.Name == name).ToList();
             }
         }
 
