@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Models;
 
-namespace Buisness
+namespace Business
 {
     public class CarDealershipBusiness
     {

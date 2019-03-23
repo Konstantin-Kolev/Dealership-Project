@@ -35,6 +35,7 @@
             this.lblManufacturer = new System.Windows.Forms.Label();
             this.lblModel = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
+            this.TEST = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,11 +99,22 @@
             this.lbl.TabIndex = 6;
             this.lbl.Text = "label3";
             // 
+            // TEST
+            // 
+            this.TEST.Location = new System.Drawing.Point(168, 352);
+            this.TEST.Name = "TEST";
+            this.TEST.Size = new System.Drawing.Size(75, 23);
+            this.TEST.TabIndex = 7;
+            this.TEST.Text = "TEST";
+            this.TEST.UseVisualStyleBackColor = true;
+            this.TEST.Click += new System.EventHandler(this.TEST_Click);
+            // 
             // CarEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TEST);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblManufacturer);
@@ -112,6 +124,7 @@
             this.Controls.Add(this.dataGridCars);
             this.Name = "CarEditView";
             this.Text = "CarEditView";
+            this.Load += new System.EventHandler(this.CarEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +140,6 @@
         private System.Windows.Forms.Label lblManufacturer;
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Button TEST;
     }
 }

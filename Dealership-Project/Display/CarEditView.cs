@@ -13,6 +13,8 @@ namespace Display
 {
     public partial class CarEditView : Form
     {
+        private CarBusiness carBusiness = new CarBusiness();
+
         public CarEditView()
         {
             InitializeComponent();
@@ -25,10 +27,25 @@ namespace Display
 
         private void UpdateGrid()
         {
-            CarBusiness carBusiness = new CarBusiness();
             dataGridCars.DataSource = carBusiness.GetAllCars();
             dataGridCars.ReadOnly = true;
             dataGridCars.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void TEST_Click(object sender, EventArgs e)
+        {
+            UpdateGrid();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+
+            UpdateGrid();
+        }
+
+        private void CarEditView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
