@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Models;
 
-namespace Buisness
+namespace Business
 {
-    class CarBusiness
+    public class CarBusiness
     {
         private CarDealershipContext carContext;
 

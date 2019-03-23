@@ -17,9 +17,30 @@ namespace Display
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
         
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCars_Click(object sender, EventArgs e)
+        {
+            CarEditView carEditView = new CarEditView();
+            carEditView.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
