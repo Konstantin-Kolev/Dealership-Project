@@ -19,11 +19,35 @@ namespace Buisness
             }
         }
 
-        public Customer GetCustomer(int id)
+        public Customer GetCustomerById(int id)
         {
             using (customerContext = new CarDealershipContext())
             {
                 return customerContext.Customers.Find(id);
+            }
+        }
+
+        public List<Customer> GetCustomersByFirstName(string firstName)
+        {
+            using (customerContext = new CarDealershipContext())
+            {
+                return customerContext.Customers.Where(x => x.FirstName == firstName).ToList();
+            }
+        }
+
+        public List<Customer> GetCustomersByLastName(string lastName)
+        {
+            using (customerContext = new CarDealershipContext())
+            {
+                return customerContext.Customers.Where(x => x.LastName == lastName).ToList();
+            }
+        }
+
+        public List<Customer> GetCustomersByTownId(int townId)
+        {
+            using (customerContext = new CarDealershipContext())
+            {
+                return customerContext.Customers.Where(x => x.TownId == townId).ToList();
             }
         }
 
