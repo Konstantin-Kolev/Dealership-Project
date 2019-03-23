@@ -19,11 +19,19 @@ namespace Buisness
             }
         }
 
-        public CarDealership GetCarDealership(int id)
+        public CarDealership GetCarDealershipById(int id)
         {
             using (carDealershipContext = new CarDealershipContext())
             {
                 return carDealershipContext.CarDealerships.Find(id);
+            }
+        }
+
+        public CarDealership GetCarDealershipByName(string name)
+        {
+            using (carDealershipContext = new CarDealershipContext())
+            {
+                return carDealershipContext.CarDealerships.Find(name);
             }
         }
 
