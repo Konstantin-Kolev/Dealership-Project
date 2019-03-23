@@ -1,6 +1,6 @@
 ﻿namespace Display
 {
-    partial class Form1
+    partial class EngineEditView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCars = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // btnCars
-            // 
-            this.btnCars.Location = new System.Drawing.Point(97, 334);
-            this.btnCars.Name = "btnCars";
-            this.btnCars.Size = new System.Drawing.Size(151, 36);
-            this.btnCars.TabIndex = 0;
-            this.btnCars.Text = "Коли";
-            this.btnCars.UseVisualStyleBackColor = true;
-            this.btnCars.Click += new System.EventHandler(this.btnCars_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCars);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
+            this.Text = "EngineEditView";
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCars;
     }
 }
-

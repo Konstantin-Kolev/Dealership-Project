@@ -36,7 +36,11 @@
             this.lblModel = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.TEST = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gdfgfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dealerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridCars
@@ -47,6 +51,7 @@
             this.dataGridCars.Location = new System.Drawing.Point(397, 72);
             this.dataGridCars.Name = "dataGridCars";
             this.dataGridCars.ReadOnly = true;
+            this.dataGridCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridCars.Size = new System.Drawing.Size(361, 303);
             this.dataGridCars.TabIndex = 0;
             this.dataGridCars.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCars_CellContentClick);
@@ -109,6 +114,31 @@
             this.TEST.UseVisualStyleBackColor = true;
             this.TEST.Click += new System.EventHandler(this.TEST_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gdfgfToolStripMenuItem,
+            this.dealerToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // gdfgfToolStripMenuItem
+            // 
+            this.gdfgfToolStripMenuItem.Name = "gdfgfToolStripMenuItem";
+            this.gdfgfToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.gdfgfToolStripMenuItem.Text = "car";
+            this.gdfgfToolStripMenuItem.Click += new System.EventHandler(this.gdfgfToolStripMenuItem_Click);
+            // 
+            // dealerToolStripMenuItem
+            // 
+            this.dealerToolStripMenuItem.Name = "dealerToolStripMenuItem";
+            this.dealerToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.dealerToolStripMenuItem.Text = "dealer";
+            this.dealerToolStripMenuItem.Click += new System.EventHandler(this.dealerToolStripMenuItem_Click);
+            // 
             // CarEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,10 +152,14 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridCars);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "CarEditView";
             this.Text = "CarEditView";
             this.Load += new System.EventHandler(this.CarEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +175,8 @@
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Button TEST;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gdfgfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dealerToolStripMenuItem;
     }
 }

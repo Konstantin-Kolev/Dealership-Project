@@ -223,17 +223,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarDealershipEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarDealershipEditView.Designer.cs">
+      <DependentUpon>CarDealershipEditView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarEditView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarEditView.Designer.cs">
       <DependentUpon>CarEditView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="CustomerEditView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CustomerEditView.Designer.cs">
+      <DependentUpon>CustomerEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineEditView.Designer.cs">
+      <DependentUpon>EngineEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainController.Designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,11 +261,17 @@
     <Compile Include="TownEditView.Designer.cs">
       <DependentUpon>TownEditView.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerEditView.Designer.cs">
+      <DependentUpon>WorkerEditView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CarEditView.resx">
       <DependentUpon>CarEditView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainController.resx">
+      <DependentUpon>MainController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

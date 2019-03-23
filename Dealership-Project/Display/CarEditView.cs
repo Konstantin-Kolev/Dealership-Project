@@ -30,6 +30,8 @@ namespace Display
             dataGridCars.DataSource = carBusiness.GetAllCars();
             dataGridCars.ReadOnly = true;
             dataGridCars.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridCars.Columns[3].HeaderText = "Dealership";
+            dataGridCars.Columns[4].HeaderText = "Engine";
         }
 
         private void TEST_Click(object sender, EventArgs e)
@@ -46,6 +48,18 @@ namespace Display
         private void CarEditView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gdfgfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarEditView carEditView = new CarEditView();
+            carEditView.ShowDialog();
+        }
+
+        private void dealerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TownEditView townEditView = new TownEditView();
+            townEditView.ShowDialog();
         }
     }
 }
