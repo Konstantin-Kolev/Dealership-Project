@@ -126,5 +126,61 @@ namespace Business
                 return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
             }
         }
+
+        public List<Car> SortCarsByFuelEconomy()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.EconomyPerHundredKm).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByFuelType()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.FuelType).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByFuelType(string fuelType)
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Engine.FuelType == fuelType).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByDisplacement(int displacement)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Engine.Displacement == displacement).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByDisplacemnet()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.Displacement).ToList();
+            }
+        }
+
+        public List<Car> GetCarsForSale()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.OwnerId == null).ToList();
+            }
+        }
+
+        public List<Car> GetOwnedCars()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.OwnerId != null).ToList();
+            }
+        }
     }
 }
