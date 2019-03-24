@@ -66,5 +66,29 @@ namespace Business
                 }
             }
         }
+
+        public List<CarDealership> GetDealershipsByTown(string townName)
+        {
+            using (carDealershipContext=new CarDealershipContext())
+            {
+                return carDealershipContext.CarDealerships.Where(x => x.Town.Name == townName).ToList();
+            }
+        }
+
+        public List<CarDealership> SortDealershipsByName()
+        {
+            using (carDealershipContext=new CarDealershipContext())
+            {
+                return carDealershipContext.CarDealerships.OrderBy(x => x.Name).ToList();
+            }
+        }
+
+        public List<CarDealership> SortDealershipsByTownName()
+        {
+            using (carDealershipContext=new CarDealershipContext())
+            {
+                return carDealershipContext.CarDealerships.OrderBy(x => x.Town.Name).ToList();
+            }
+        }
     }
 }
