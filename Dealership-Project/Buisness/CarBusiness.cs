@@ -182,5 +182,21 @@ namespace Business
                 return carContext.Cars.Where(x => x.OwnerId != null).ToList();
             }
         }
+
+        public List<Car> SortByTransmitionType()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.TransmissionType).ToList();
+            }
+        }
+
+        public List<Car> SortByTransmitionGears()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.TransmissionGears).ToList();
+            }
+        }
     }
 }
