@@ -101,5 +101,45 @@ namespace Business
                 }
             }
         }
+
+        public List<Worker> SortWorkersByFirstName()
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.OrderBy(x => x.FirstName).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByLastName()
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.OrderBy(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByPosition()
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.OrderBy(x => x.Position).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersBySalary()
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.OrderByDescending(x => x.Salary).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByCarDealership()
+        {
+            using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.OrderBy(x => x.CarDealership.Name).ToList();
+            }
+        }
     }
 }
