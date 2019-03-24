@@ -118,5 +118,13 @@ namespace Business
                 }
             }
         }
+
+        public List<Car> SortCarsByPower()
+        {
+            using (carContext=new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
+            }
+        }
     }
 }
