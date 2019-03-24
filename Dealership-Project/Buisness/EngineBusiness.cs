@@ -35,11 +35,27 @@ namespace Business
             }
         }
 
+        public List<Engine> SortEnginesByFuelType()
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.OrderBy(x => x.FuelType).ToList();
+            }
+        }
+
         public List<Engine> GetEnginesByDisplacement(int displacement)
         {
             using (engineContext = new CarDealershipContext())
             {
                 return engineContext.Engines.Where(x => x.Displacement == displacement).ToList();
+            }
+        }
+
+        public List<Engine> SortEnginesByDisplacement()
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.OrderByDescending(x => x.Displacement).ToList();
             }
         }
 
@@ -51,11 +67,27 @@ namespace Business
             }
         }
 
-        public List<Engine> GetEnginesByDisplacement(decimal economyPerHundredKm)
+        public List<Engine> SortEnginesByPower()
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.OrderByDescending(x => x.Power).ToList();
+            }
+        }
+
+        public List<Engine> GetEnginesByEconomyPerHundredKm(decimal economyPerHundredKm)
         {
             using (engineContext = new CarDealershipContext())
             {
                 return engineContext.Engines.Where(x => x.EconomyPerHundredKm == economyPerHundredKm).ToList();
+            }
+        }
+
+        public List<Engine> SortEnginesByEconomyPerHundredKm()
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.OrderBy(x => x.EconomyPerHundredKm).ToList();
             }
         }
 
@@ -64,6 +96,14 @@ namespace Business
             using (engineContext = new CarDealershipContext())
             {
                 return engineContext.Engines.Where(x => x.Name == name).ToList();
+            }
+        }
+
+        public List<Engine> SortEnginesByName()
+        {
+            using (engineContext = new CarDealershipContext())
+            {
+                return engineContext.Engines.OrderBy(x => x.Name).ToList();
             }
         }
 
