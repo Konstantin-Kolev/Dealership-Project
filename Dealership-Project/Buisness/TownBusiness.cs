@@ -69,5 +69,13 @@ namespace Business
                 }
             }
         }
+
+        public List<Town> SortTownsByName()
+        {
+            using (townContext = new CarDealershipContext())
+            {
+                return townContext.Towns.OrderBy(x => x.Name).ToList();
+            }
+        }
     }
 }
