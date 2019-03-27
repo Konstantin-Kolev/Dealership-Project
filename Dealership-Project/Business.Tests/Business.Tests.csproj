@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarBusinessTest.cs" />
+    <Compile Include="CarDealershipBuisnessTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Buisness\Business.csproj">
