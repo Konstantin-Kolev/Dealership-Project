@@ -26,7 +26,7 @@ namespace Data.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Conection.ConnectionString);
+                optionsBuilder.UseSqlServer(Conection.ConnectionString).UseLazyLoadingProxies();
             }
         }
 
@@ -96,7 +96,7 @@ namespace Data.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.CarDealership)
+                entity.HasOne(d => d.CarDealershipNavigation)
                     .WithMany(p => p.Cars)
                     .HasForeignKey(d => d.CarDealershipId)
                     .OnDelete(DeleteBehavior.ClientSetNull)

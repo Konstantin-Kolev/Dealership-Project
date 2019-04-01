@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
+using Data;
 
 namespace Display
 {
@@ -18,48 +19,70 @@ namespace Display
         public CarEditView()
         {
             InitializeComponent();
-        }
-
-        private void dataGridCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void UpdateGrid()
-        {
-            dataGridCars.DataSource = carBusiness.GetAllCars();
-            dataGridCars.ReadOnly = true;
-            dataGridCars.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridCars.Columns[3].HeaderText = "Dealership";
-            dataGridCars.Columns[4].HeaderText = "Engine";
-        }
-
-        private void TEST_Click(object sender, EventArgs e)
-        {
-            UpdateGrid();
-        }
-
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-
-            UpdateGrid();
+            this.Load += new EventHandler(CarEditView_Load);
         }
 
         private void CarEditView_Load(object sender, EventArgs e)
         {
-
+            //SetupLayout();
+            SetupDataGridView();
+            PopulateDataGridView();
         }
 
-        private void gdfgfToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PopulateDataGridView()
         {
-            CarEditView carEditView = new CarEditView();
-            carEditView.ShowDialog();
+            dataGridView1.Rows.Clear();
+            var carBusinessList = carBusiness.GetAllCars();
+            foreach(var car in carBusinessList)
+            {
+                
+                string[] row =
+                {
+                    car.Manufacturer, car.Model/*, car.CarDealershipNavigation.Name   , car.Engine.Name*/, car.TransmissionType, car.TransmissionGears.ToString(),
+                    car.Color, car.Price.ToString(),""
+                };
+                dataGridView1.Rows.Add(row);
+            }
+
+            //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
-        private void dealerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SetupDataGridView()
         {
-            TownEditView townEditView = new TownEditView();
-            townEditView.ShowDialog();
+          //  this.Controls.Add(dataGridView1);
+
+            dataGridView1.ColumnCount = 9;
+
+            //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            //dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                //new Font(dataGridView1.Font, FontStyle.Bold);
+
+            //dataGridView1.Name = "dataGridView1";
+            //dataGridView1.Location = new Point(8, 8);
+            //dataGridView1.Size = new Size(500, 250);
+            //dataGridView1.AutoSizeRowsMode =
+                //DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            //dataGridView1.ColumnHeadersBorderStyle =
+                //DataGridViewHeaderBorderStyle.Single;
+            //dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            //dataGridView1.GridColor = Color.Black;
+            //dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.Columns[0].Name = "Manufacturer";
+            dataGridView1.Columns[1].Name = "Model";
+            dataGridView1.Columns[2].Name = "Dealership";
+            dataGridView1.Columns[3].Name = "Engine";
+            dataGridView1.Columns[4].Name = "Transmission";
+            dataGridView1.Columns[5].Name = "Gears";
+            dataGridView1.Columns[6].Name = "Color";
+            dataGridView1.Columns[7].Name = "Price";
+            dataGridView1.Columns[8].Name = "Owner";
+
+            dataGridView1.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+           // dataGridView1.Dock = DockStyle.Fill;
         }
     }
 }

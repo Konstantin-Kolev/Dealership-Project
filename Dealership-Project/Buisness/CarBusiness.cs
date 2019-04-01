@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Business
 {
@@ -15,7 +16,15 @@ namespace Business
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.ToList();
+                return carContext.Cars.Include("CarDealershipNavigation").ToList();
+            }
+        }
+
+        public List<Car> GetCarsByPower()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
             }
         }
 
