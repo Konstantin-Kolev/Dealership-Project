@@ -20,7 +20,7 @@ namespace Business
             }
         }
 
-        public List<Car> GetCarsByPowerDescending()
+        public List<Car> SortCarsByPowerDescending()
         {
             using (carContext = new CarDealershipContext())
             {
@@ -28,7 +28,7 @@ namespace Business
             }
         }
 
-        public List<Car> GetCarsByPowerAscending()
+        public List<Car> SortCarsByPowerAscending()
         {
             using (carContext = new CarDealershipContext())
             {
@@ -136,11 +136,11 @@ namespace Business
             }
         }
 
-        public List<Car> SortCarsByPower()
+        public List<Car> GetCarsByPower(int power)
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
+                return carContext.Cars.Where(x => x.Engine.Power == power).ToList();
             }
         }
 
