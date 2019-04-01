@@ -23,7 +23,7 @@ namespace Data.Models
         public int? OwnerId { get; set; }
 
         //[ForeignKey("CarDealership")]
-        public virtual CarDealership CarDealership{ get; set; }
+        public virtual CarDealership CarDealership  { get; set; }
         public virtual Engine Engine { get; set; }
         public virtual Customer Owner { get; set; }
     }

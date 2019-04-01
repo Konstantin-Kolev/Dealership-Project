@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
-using Data;
+using Data.Models;
 
 namespace Display
 {
@@ -35,12 +35,81 @@ namespace Display
             var carBusinessList = carBusiness.GetAllCars();
             foreach(var car in carBusinessList)
             {
-                
+
                 string[] row =
                 {
-                    car.Manufacturer, car.Model/*, car.CarDealershipNavigation.Name   , car.Engine.Name*/, car.TransmissionType, car.TransmissionGears.ToString(),
-                    car.Color, car.Price.ToString(),""
+                    car.Manufacturer,
+                    car.Model,
+                    car.CarDealershipId.ToString(),
+                    car.EngineId.ToString(),
+                    car.TransmissionType,
+                    car.TransmissionGears.ToString(),
+                    car.Color,
+                    car.Price.ToString() + " лв.",
+                    car.OwnerId.ToString()
                 };
+                if(row[8] == "")
+                {
+                    row[8] = "For Sale !";
+                }
+                dataGridView1.Rows.Add(row);
+            }
+
+            //dataGridView1.Columns[0].DisplayIndex = 3;
+        }
+
+        private void PopulateDataGridView2()
+        {
+            dataGridView1.Rows.Clear();
+            var carBusinessList = carBusiness.SortCarsByDisplacemnet();
+            foreach (var car in carBusinessList)
+            {
+
+                string[] row =
+                {
+                    car.Manufacturer,
+                    car.Model,
+                    car.CarDealershipId.ToString(),
+                    car.EngineId.ToString(),
+                    car.TransmissionType,
+                    car.TransmissionGears.ToString(),
+                    car.Color,
+                    car.Price.ToString() + " лв.",
+                    car.OwnerId.ToString()
+                };
+                if (row[8] == "")
+                {
+                    row[8] = "For Sale !";
+                }
+                dataGridView1.Rows.Add(row);
+            }
+
+            //dataGridView1.Columns[0].DisplayIndex = 3;
+        }
+
+        private void PopulateDataGridView3()
+        {
+            dataGridView1.Rows.Clear();
+            var carBusinessList = carBusiness.SortCarsByPower();
+            foreach (var car in carBusinessList)
+            {
+
+                string[] row =
+                {
+                    car.Manufacturer,
+                    car.Model,
+                    car.CarDealershipId.ToString(),
+                    car.EngineId.ToString(),
+                    car.TransmissionType,
+                    car.TransmissionGears.ToString(),
+                    car.Color,
+                    car.Price.ToString() + " лв.",
+                    car.OwnerId.ToString()
+                };
+                if (row[8] == "")
+                {
+                    row[8] = "For Sale !";
+                }
                 dataGridView1.Rows.Add(row);
             }
 
@@ -53,22 +122,6 @@ namespace Display
 
             dataGridView1.ColumnCount = 9;
 
-            //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            //dataGridView1.ColumnHeadersDefaultCellStyle.Font =
-                //new Font(dataGridView1.Font, FontStyle.Bold);
-
-            //dataGridView1.Name = "dataGridView1";
-            //dataGridView1.Location = new Point(8, 8);
-            //dataGridView1.Size = new Size(500, 250);
-            //dataGridView1.AutoSizeRowsMode =
-                //DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            //dataGridView1.ColumnHeadersBorderStyle =
-                //DataGridViewHeaderBorderStyle.Single;
-            //dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            //dataGridView1.GridColor = Color.Black;
-            //dataGridView1.RowHeadersVisible = false;
-
             dataGridView1.Columns[0].Name = "Manufacturer";
             dataGridView1.Columns[1].Name = "Model";
             dataGridView1.Columns[2].Name = "Dealership";
@@ -79,10 +132,81 @@ namespace Display
             dataGridView1.Columns[7].Name = "Price";
             dataGridView1.Columns[8].Name = "Owner";
 
+            //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            //dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+            //new Font(dataGridView1.Font, FontStyle.Bold);
+
+            //dataGridView1.Name = "dataGridView1";
+            //dataGridView1.Location = new Point(8, 8);
+            //dataGridView1.Size = new Size(500, 250);
+            //dataGridView1.AutoSizeRowsMode =
+            //DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            //dataGridView1.ColumnHeadersBorderStyle =
+            //DataGridViewHeaderBorderStyle.Single;
+            //dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            //dataGridView1.GridColor = Color.Black;
+            //dataGridView1.RowHeadersVisible = false;
+
+
+
             dataGridView1.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
            // dataGridView1.Dock = DockStyle.Fill;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //ba4ka ama iska izdokusorqvane//
+            var manufacturer = textBox1.Text;
+            var model = textBox2.Text;
+            var engine = 2;
+            var carDealershipId = 3;
+
+
+
+            var transmissionType = "Automatic";
+            var transmissionGears = 5;
+            var color = "Green";
+            decimal price = 4000;
+
+            Car car = new Car();
+            car.CarDealershipId = carDealershipId;
+            car.Color = color;
+            car.EngineId = engine;
+            car.Manufacturer = manufacturer;
+            car.Model = model;
+            car.Price = price;
+            car.TransmissionGears = transmissionGears;
+            car.TransmissionType = transmissionType;
+            carBusiness.Add(car);
+            PopulateDataGridView();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = comboBox1.SelectedIndex;
+            switch(index)
+            {
+                case 0:SetupDataGridView(); PopulateDataGridView2(); break;
+                case 1:SetupDataGridView(); PopulateDataGridView3(); break;
+            }
         }
     }
 }

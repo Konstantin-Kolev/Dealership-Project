@@ -16,15 +16,23 @@ namespace Business
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.Include("CarDealershipNavigation").ToList();
+                return carContext.Cars.Include("CarDealership").ToList();
             }
         }
 
-        public List<Car> GetCarsByPower()
+        public List<Car> GetCarsByPowerDescending()
         {
             using (carContext = new CarDealershipContext())
             {
                 return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByPowerAscending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.Power).ToList();
             }
         }
 
