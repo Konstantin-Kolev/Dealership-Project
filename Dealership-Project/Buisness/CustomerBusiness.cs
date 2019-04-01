@@ -85,5 +85,37 @@ namespace Business
                 }
             }
         }
+
+        public List<Customer> GetCustomersByTownName(string townName)
+        {
+            using (customerContext=new CarDealershipContext())
+            {
+                return customerContext.Customers.Where(x => x.Town.Name == townName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersByFirstName()
+        {
+            using (customerContext=new CarDealershipContext())
+            {
+                return customerContext.Customers.OrderBy(x => x.FirstName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersBylastName()
+        {
+            using (customerContext=new CarDealershipContext())
+            {
+                return customerContext.Customers.OrderBy(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersByTownName()
+        {
+            using (customerContext = new CarDealershipContext())
+            {
+                return customerContext.Customers.OrderBy(x => x.Town.Name).ToList();
+            }
+        }
     }
 }
