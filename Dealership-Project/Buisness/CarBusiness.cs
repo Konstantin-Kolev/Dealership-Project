@@ -12,27 +12,49 @@ namespace Business
     {
         private CarDealershipContext carContext;
 
+        //Basic operations//
+        public void Add(Car car)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                carContext.Cars.Add(car);
+                carContext.SaveChanges();
+            }
+        }
+
+        public void Update(Car car)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                var item = carContext.Cars.Find(car.Id);
+                if (item != null)
+                {
+                    carContext.Entry(item).CurrentValues.SetValues(car);
+                    carContext.SaveChanges();
+                }
+            }
+        }
+
+        public void Delete(int id)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                var car = carContext.Cars.Find(id);
+                if (car != null)
+                {
+                    carContext.Cars.Remove(car);
+                    carContext.SaveChanges();
+                }
+            }
+        }
+        //Basic operations//
+
+        //Get operations//
         public List<Car> GetAllCars()
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.Include("CarDealership").ToList();
-            }
-        }
-
-        public List<Car> SortCarsByPowerDescending()
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
-            }
-        }
-
-        public List<Car> SortCarsByPowerAscending()
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                return carContext.Cars.OrderBy(x => x.Engine.Power).ToList();
+                return carContext.Cars.ToList();
             }
         }
 
@@ -100,71 +122,11 @@ namespace Business
             }
         }
 
-
-        public void Add(Car car)
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                carContext.Cars.Add(car);
-                carContext.SaveChanges();
-            }
-        }
-
-        public void Update(Car car)
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                var item = carContext.Cars.Find(car.Id);
-                if (item != null)
-                {
-                    carContext.Entry(item).CurrentValues.SetValues(car);
-                    carContext.SaveChanges();
-                }
-            }
-        }
-
-        public void Delete(int id)
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                var car = carContext.Cars.Find(id);
-                if (car != null)
-                {
-                    carContext.Cars.Remove(car);
-                    carContext.SaveChanges();
-                }
-            }
-        }
-
         public List<Car> GetCarsByPower(int power)
         {
             using (carContext = new CarDealershipContext())
             {
                 return carContext.Cars.Where(x => x.Engine.Power == power).ToList();
-            }
-        }
-
-        public List<Car> SortCarsByFuelEconomy()
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                return carContext.Cars.OrderBy(x => x.Engine.EconomyPerHundredKm).ToList();
-            }
-        }
-
-        public List<Car> SortCarsByFuelType()
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                return carContext.Cars.OrderBy(x => x.Engine.FuelType).ToList();
-            }
-        }
-
-        public List<Car> GetCarsByFuelType(string fuelType)
-        {
-            using (carContext = new CarDealershipContext())
-            {
-                return carContext.Cars.Where(x => x.Engine.FuelType == fuelType).ToList();
             }
         }
 
@@ -176,11 +138,19 @@ namespace Business
             }
         }
 
-        public List<Car> SortCarsByDisplacemnet()
+        public List<Car> GetOwnedCars()
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.OrderByDescending(x => x.Engine.Displacement).ToList();
+                return carContext.Cars.Where(x => x.OwnerId != null).ToList();
+            }
+        }
+
+        public List<Car> GetCarsByFuelType(string fuelType)
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.Where(x => x.Engine.FuelType == fuelType).ToList();
             }
         }
 
@@ -191,12 +161,62 @@ namespace Business
                 return carContext.Cars.Where(x => x.OwnerId == null).ToList();
             }
         }
+        //Get operations//
 
-        public List<Car> GetOwnedCars()
+        //Sort operations//
+        public List<Car> SortCarsByPowerAscending()
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.Where(x => x.OwnerId != null).ToList();
+                return carContext.Cars.OrderBy(x => x.Engine.Power).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByPowerDescending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.Power).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByFuelEconomyAscending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.EconomyPerHundredKm).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByFuelEconomyDescending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.EconomyPerHundredKm).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByFuelType()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.FuelType).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByDisplacemnetAscending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.Engine.Displacement).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByDisplacemnetDescending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Engine.Displacement).ToList();
             }
         }
 
@@ -208,7 +228,15 @@ namespace Business
             }
         }
 
-        public List<Car> SortCarsByTransmitionGears()
+        public List<Car> SortCarsByTransmitionGearsAscending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderBy(x => x.TransmissionGears).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByTransmitionGearsDescending()
         {
             using (carContext = new CarDealershipContext())
             {
@@ -240,7 +268,7 @@ namespace Business
             }
         }
 
-        public List<Car> SortCarsByManufacturerAndModel()
+        public List<Car> SortCarsByManufacturerAndModelAscending()
         {
             using (carContext=new CarDealershipContext())
             {
@@ -248,12 +276,29 @@ namespace Business
             }
         }
 
-        public List<Car> SortCarsByDealershipName()
+        public List<Car> SortCarsByManufacturerAndModelDescending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending(x => x.Manufacturer).ThenBy(x => x.Model).ToList();
+            }
+        }
+
+        public List<Car> SortCarsByDealershipNameAscending()
         {
             using (carContext=new CarDealershipContext())
             {
                 return carContext.Cars.OrderBy(x => x.CarDealership.Name).ToList();
             }
         }
+
+        public List<Car> SortCarsByDealershipNameDescending()
+        {
+            using (carContext = new CarDealershipContext())
+            {
+                return carContext.Cars.OrderByDescending.(x => x.CarDealership.Name).ToList();
+            }
+        }
+        //Sort operations//
     }
 }
