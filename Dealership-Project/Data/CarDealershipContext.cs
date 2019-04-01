@@ -96,7 +96,7 @@ namespace Data.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.CarDealershipNavigation)
+                entity.HasOne(d => d.CarDealership)
                     .WithMany(p => p.Cars)
                     .HasForeignKey(d => d.CarDealershipId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
