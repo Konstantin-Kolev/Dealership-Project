@@ -15,6 +15,8 @@ namespace Display
     public partial class CarEditView : Form
     {
         private CarBusiness carBusiness = new CarBusiness();
+        private CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+        private EngineBusiness engineBusiness = new EngineBusiness();
 
         public CarEditView()
         {
@@ -33,7 +35,9 @@ namespace Display
         {
             dataGridView1.Rows.Clear();
             var carBusinessList = carBusiness.GetAllCars();
-            foreach(var car in carBusinessList)
+            var carDealershipList = carDealershipBusiness.GetAllCarDealerships();
+            var engineList = engineBusiness.GetAllEngines();
+            foreach (var car in carBusinessList)
             {
 
                 string[] row =
@@ -48,7 +52,21 @@ namespace Display
                     car.Price.ToString() + " лв.",
                     car.OwnerId.ToString()
                 };
-                if(row[8] == "")
+                foreach (var engine in engineList)
+                {
+                    if (engine.Id.ToString() == row[3])
+                    {
+                        row[3] = engine.Name;
+                    }
+                }
+                foreach (var dealership in carDealershipList)
+                {
+                    if (dealership.Id.ToString() == row[2])
+                    {
+                        row[2] = dealership.Name;
+                    }
+                }
+                if (row[8] == "")
                 {
                     row[8] = "For Sale !";
                 }
@@ -61,7 +79,7 @@ namespace Display
         private void PopulateDataGridView2()
         {
             dataGridView1.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByDisplacemnet();
+            var carBusinessList = carBusiness.SortCarsByDisplacemnetAscending();
             foreach (var car in carBusinessList)
             {
 
@@ -90,7 +108,7 @@ namespace Display
         private void PopulateDataGridView3()
         {
             dataGridView1.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByPower();
+            var carBusinessList = carBusiness.SortCarsByPowerAscending();
             foreach (var car in carBusinessList)
             {
 

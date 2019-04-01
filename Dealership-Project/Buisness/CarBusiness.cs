@@ -12,6 +12,16 @@ namespace Business
     {
         private CarDealershipContext carContext;
 
+        public CarBusiness()
+        {
+            this.carContext = new CarDealershipContext();
+        }
+
+        public CarBusiness(CarDealershipContext carDealershipContext)
+        {
+            this.carContext = carDealershipContext;
+        }
+
         //Basic operations//
         public void Add(Car car)
         {
@@ -296,7 +306,7 @@ namespace Business
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.OrderByDescending.(x => x.CarDealership.Name).ToList();
+                return carContext.Cars.OrderByDescending(x => x.CarDealership.Name).ToList();
             }
         }
         //Sort operations//

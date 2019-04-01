@@ -11,6 +11,11 @@ namespace Business
     {
         private CarDealershipContext carDealershipContext;
 
+        public CarDealershipBusiness()
+        {
+            this.carDealershipContext = new CarDealershipContext();
+        }
+
         public CarDealershipBusiness(CarDealershipContext carDealershipContext)
         {
             this.carDealershipContext = carDealershipContext;
@@ -26,7 +31,7 @@ namespace Business
 
         public CarDealership GetCarDealershipById(int id)
         {
-            using (carDealershipContext = new CarDealershipContext())
+            using (carDealershipContext )
             {
                 return carDealershipContext.CarDealerships.Find(id);
             }
@@ -34,7 +39,7 @@ namespace Business
 
         public CarDealership GetCarDealershipByName(string name)
         {
-            using (carDealershipContext = new CarDealershipContext())
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.Find(name);
             }
@@ -42,7 +47,7 @@ namespace Business
 
         public void Add(CarDealership carDealership)
         {
-            using (carDealershipContext = new CarDealershipContext())
+            using (carDealershipContext)
             {
                 carDealershipContext.CarDealerships.Add(carDealership);
                 carDealershipContext.SaveChanges();
