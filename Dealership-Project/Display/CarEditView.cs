@@ -15,9 +15,9 @@ namespace Display
 {
     public partial class CarEditView : Form
     {
-        private CarBusiness carBusiness = new CarBusiness();
 
-        private EngineBusiness engineBusiness = new EngineBusiness();
+
+
 
         public CarEditView()
         {
@@ -34,6 +34,8 @@ namespace Display
 
         private void PopulateDataGridView()
         {
+            CarBusiness carBusiness = new CarBusiness();
+            EngineBusiness engineBusiness = new EngineBusiness();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView1.Rows.Clear();
             var carBusinessList = carBusiness.GetAllCars();
@@ -81,8 +83,11 @@ namespace Display
 
         private void PopulateDataGridView2()
         {
+            CarBusiness carBusiness = new CarBusiness();
+            EngineBusiness engineBusiness = new EngineBusiness();
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView1.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByDisplacemnetAscending();
+            var carBusinessList = carBusiness.SortCarsByDisplacementAscending();
             foreach (var car in carBusinessList)
             {
 
@@ -110,6 +115,9 @@ namespace Display
 
         private void PopulateDataGridView3()
         {
+            CarBusiness carBusiness = new CarBusiness();
+            EngineBusiness engineBusiness = new EngineBusiness();
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView1.Rows.Clear();
             var carBusinessList = carBusiness.SortCarsByPowerAscending();
             foreach (var car in carBusinessList)
@@ -179,6 +187,7 @@ namespace Display
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CarBusiness carBusiness = new CarBusiness();
             //ba4ka ama iska izdokusorqvane//
             var manufacturer = textBox1.Text;
             var model = textBox2.Text;
