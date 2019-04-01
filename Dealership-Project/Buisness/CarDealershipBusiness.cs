@@ -11,11 +11,6 @@ namespace Business
     {
         private CarDealershipContext carDealershipContext;
 
-        public CarDealershipBusiness()
-        {
-
-        }
-
         public CarDealershipBusiness(CarDealershipContext carDealershipContext)
         {
             this.carDealershipContext = carDealershipContext;
