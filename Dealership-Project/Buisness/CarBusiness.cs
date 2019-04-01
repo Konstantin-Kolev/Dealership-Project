@@ -25,7 +25,7 @@ namespace Business
         //Basic operations//
         public void Add(Car car)
         {
-            using (carContext = new CarDealershipContext())
+            using (carContext)
             {
                 carContext.Cars.Add(car);
                 carContext.SaveChanges();
@@ -34,7 +34,7 @@ namespace Business
 
         public void Update(Car car)
         {
-            using (carContext = new CarDealershipContext())
+            using (carContext)
             {
                 var item = carContext.Cars.Find(car.Id);
                 if (item != null)
@@ -47,7 +47,7 @@ namespace Business
 
         public void Delete(int id)
         {
-            using (carContext = new CarDealershipContext())
+            using (carContext)
             {
                 var car = carContext.Cars.Find(id);
                 if (car != null)
@@ -64,7 +64,7 @@ namespace Business
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.ToList();
+                return carContext.Cars.Include(b=>b.CarDealership).ToList();
             }
         }
 

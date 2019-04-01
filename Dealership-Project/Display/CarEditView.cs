@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using Business;
 using Data.Models;
 
+
 namespace Display
 {
     public partial class CarEditView : Form
     {
         private CarBusiness carBusiness = new CarBusiness();
-        private CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+
         private EngineBusiness engineBusiness = new EngineBusiness();
 
         public CarEditView()
@@ -33,6 +34,7 @@ namespace Display
 
         private void PopulateDataGridView()
         {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView1.Rows.Clear();
             var carBusinessList = carBusiness.GetAllCars();
             var carDealershipList = carDealershipBusiness.GetAllCarDealerships();
@@ -44,6 +46,7 @@ namespace Display
                 {
                     car.Manufacturer,
                     car.Model,
+                    //car.CarDealership.Name,
                     car.CarDealershipId.ToString(),
                     car.EngineId.ToString(),
                     car.TransmissionType,
@@ -136,7 +139,7 @@ namespace Display
 
         private void SetupDataGridView()
         {
-          //  this.Controls.Add(dataGridView1);
+            //  this.Controls.Add(dataGridView1);
 
             dataGridView1.ColumnCount = 9;
 
@@ -171,7 +174,7 @@ namespace Display
             dataGridView1.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
-           // dataGridView1.Dock = DockStyle.Fill;
+            // dataGridView1.Dock = DockStyle.Fill;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -220,10 +223,10 @@ namespace Display
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            switch(index)
+            switch (index)
             {
-                case 0:SetupDataGridView(); PopulateDataGridView2(); break;
-                case 1:SetupDataGridView(); PopulateDataGridView3(); break;
+                case 0: SetupDataGridView(); PopulateDataGridView2(); break;
+                case 1: SetupDataGridView(); PopulateDataGridView3(); break;
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Business
 
         public List<CarDealership> GetAllCarDealerships()
         {
-            using (carDealershipContext = new CarDealershipContext())
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.ToList();
             }
@@ -31,7 +31,7 @@ namespace Business
 
         public CarDealership GetCarDealershipById(int id)
         {
-            using (carDealershipContext )
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.Find(id);
             }
