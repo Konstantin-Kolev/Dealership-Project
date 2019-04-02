@@ -67,7 +67,7 @@ namespace Business
             }
         }
 
-        public Engine GetEngineBy(int id)
+        public Engine GetEngineById(int id)
         {
             using (engineContext)
             {

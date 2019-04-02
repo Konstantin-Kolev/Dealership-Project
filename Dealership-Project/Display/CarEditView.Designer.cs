@@ -56,6 +56,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,6 @@
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.Size = new System.Drawing.Size(100, 20);
             this.txtManufacturer.TabIndex = 2;
-
             // 
             // txtModel
             // 
@@ -91,7 +91,6 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(100, 20);
             this.txtModel.TabIndex = 3;
-
             // 
             // txtDealership
             // 
@@ -99,7 +98,6 @@
             this.txtDealership.Name = "txtDealership";
             this.txtDealership.Size = new System.Drawing.Size(100, 20);
             this.txtDealership.TabIndex = 4;
-
             // 
             // cbSort
             // 
@@ -131,11 +129,11 @@
             // lblSort
             // 
             this.lblSort.AutoSize = true;
-            this.lblSort.Location = new System.Drawing.Point(554, 48);
+            this.lblSort.Location = new System.Drawing.Point(545, 48);
             this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(67, 13);
+            this.lblSort.Size = new System.Drawing.Size(76, 13);
             this.lblSort.TabIndex = 6;
-            this.lblSort.Text = "Сортировки";
+            this.lblSort.Text = "Сортиране по";
             // 
             // cbGet
             // 
@@ -304,6 +302,7 @@
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -315,11 +314,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(464, 43);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 28;
+            this.btnReset.Text = "Нулирай";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // CarEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblOwner);
@@ -387,5 +397,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnReset;
     }
 }

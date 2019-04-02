@@ -178,6 +178,27 @@ namespace Business
             var dealership = carDealershipBusiness.GetCarDealershipById(dealershipId);
             return dealership.Name;
         }
+
+        public string GetEngineName(int engineId)
+        {
+            EngineBusiness engineBusiness = new EngineBusiness();
+            var engine = engineBusiness.GetEngineById(engineId);
+            return engine.Name;
+        }
+
+        public string GetOwnerName(int? ownerId)
+        {
+            CustomerBusiness customerBusiness = new CustomerBusiness();
+            var customer = customerBusiness.GetCustomerById(ownerId);
+            if (customer == null)
+            {
+                return "For Sale";
+            }
+            else
+            {
+                return customer.FirstName + ' ' + customer.LastName;
+            }
+        }
         //Get operations//
 
         //Sort operations//

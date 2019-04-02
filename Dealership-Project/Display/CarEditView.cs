@@ -25,27 +25,22 @@ namespace Display
         {
             //SetupLayout();
             SetupDataGridView();
-            PopulateDataGridView();
+            PopulateDataGridViewDefault();
         }
 
-        private void PopulateDataGridView()
+        private void PopulateDataGridViewDefault()
         {
             CarBusiness carBusiness = new CarBusiness();
-            EngineBusiness engineBusiness = new EngineBusiness();
-            //CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView.Rows.Clear();
             var carBusinessList = carBusiness.GetAllCars();
-            //var carDealershipList = carDealershipBusiness.GetAllCarDealerships();
-            var engineList = engineBusiness.GetAllEngines();
             foreach (var car in carBusinessList)
             {
-
                 string[] row =
                 {
                     car.Manufacturer,
                     car.Model,
                     //car.CarDealership.Name,
-                    carBusiness.GetDealershipName(car.CarDealershipId),
+                    car.CarDealershipId.ToString(),
                     car.EngineId.ToString(),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),
@@ -54,25 +49,26 @@ namespace Display
                     car.OwnerId.ToString(),
                     car.Id.ToString()
                 };
-                foreach (var engine in engineList)
+                /*foreach (var engine in engineList)
                 {
                     if (engine.Id.ToString() == row[3])
                     {
                         row[3] = engine.Name;
                     }
                 }
-                /*foreach (var dealership in carDealershipList)
+                foreach (var dealership in carDealershipList)
                 {
                     if (dealership.Id.ToString() == row[2])
                     {
                         row[2] = dealership.Name;
                     }
-                }*/
+                }
                 if (row[8] == "")
                 {
                     row[8] = "For Sale !";
-                }
+                }*/
                 dataGridView.Rows.Add(row);
+                
             }
             //dataGridView.Columns[9].Visible = false;
             //dataGridView1.Columns[0].DisplayIndex = 3;
@@ -84,7 +80,7 @@ namespace Display
             EngineBusiness engineBusiness = new EngineBusiness();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByDisplacementAscending();
+            var carBusinessList = carBusiness.SortCarsByPowerAscending();
             foreach (var car in carBusinessList)
             {
 
@@ -92,18 +88,15 @@ namespace Display
                 {
                     car.Manufacturer,
                     car.Model,
-                    car.CarDealershipId.ToString(),
+                    carBusiness.GetDealershipName(car.CarDealershipId),
+                    carBusiness.GetEngineName(car.EngineId),
                     car.EngineId.ToString(),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),
                     car.Color,
                     car.Price.ToString() + " лв.",
-                    car.OwnerId.ToString()
+                    carBusiness.GetOwnerName(car.OwnerId)
                 };
-                if (row[8] == "")
-                {
-                    row[8] = "For Sale !";
-                }
                 dataGridView.Rows.Add(row);
             }
 
@@ -116,7 +109,7 @@ namespace Display
             EngineBusiness engineBusiness = new EngineBusiness();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             dataGridView.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByPowerAscending();
+            var carBusinessList = carBusiness.SortCarsByPowerDescending();
             foreach (var car in carBusinessList)
             {
 
@@ -202,12 +195,12 @@ namespace Display
             car.Color = color;
             car.EngineId = engine;
             car.Manufacturer = manufacturer;
-            car.Model = model;
+            car.Model = txtModel.Text;
             car.Price = price;
             car.TransmissionGears = transmissionGears;
             car.TransmissionType = transmissionType;
-            carBusiness.Add(car);
-            PopulateDataGridView();
+            //carBusiness.Add(car);
+            //PopulateDataGridView();
         }
 
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,6 +210,20 @@ namespace Display
             {
                 case 0: SetupDataGridView(); PopulateDataGridView2(); break;
                 case 1: SetupDataGridView(); PopulateDataGridView3(); break;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            SetupDataGridView();
+            PopulateDataGridViewDefault();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                //Console.WriteLine("NQMA KOD");
             }
         }
     }

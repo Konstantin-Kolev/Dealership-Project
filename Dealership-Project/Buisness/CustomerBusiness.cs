@@ -75,6 +75,14 @@ namespace Business
             }
         }
 
+        public Customer GetCustomerById(int? id)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Find(id);
+            }
+        }
+
         public List<Customer> GetCustomersByFirstName(string firstName)
         {
             using (customerContext)
