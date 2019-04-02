@@ -11,49 +11,20 @@ namespace Business
     {
         private CarDealershipContext customerContext;
 
-        public List<Customer> GetAllCustomers()
+        public CustomerBusiness()
         {
-            using (customerContext = new CarDealershipContext())
-            {
-                return customerContext.Customers.ToList();
-            }
+            this.customerContext = new CarDealershipContext();
         }
 
-        public Customer GetCustomerById(int id)
+        public CustomerBusiness(CarDealershipContext carDealershipContext)
         {
-            using (customerContext = new CarDealershipContext())
-            {
-                return customerContext.Customers.Find(id);
-            }
+            this.customerContext = carDealershipContext;
         }
 
-        public List<Customer> GetCustomersByFirstName(string firstName)
-        {
-            using (customerContext = new CarDealershipContext())
-            {
-                return customerContext.Customers.Where(x => x.FirstName == firstName).ToList();
-            }
-        }
-
-        public List<Customer> GetCustomersByLastName(string lastName)
-        {
-            using (customerContext = new CarDealershipContext())
-            {
-                return customerContext.Customers.Where(x => x.LastName == lastName).ToList();
-            }
-        }
-
-        public List<Customer> GetCustomersByTownId(int townId)
-        {
-            using (customerContext = new CarDealershipContext())
-            {
-                return customerContext.Customers.Where(x => x.TownId == townId).ToList();
-            }
-        }
-
+        //Basic operations//
         public void Add(Customer customer)
         {
-            using (customerContext = new CarDealershipContext())
+            using (customerContext)
             {
                 customerContext.Customers.Add(customer);
                 customerContext.SaveChanges();
@@ -62,7 +33,7 @@ namespace Business
 
         public void Update(Customer customer)
         {
-            using (customerContext = new CarDealershipContext())
+            using (customerContext)
             {
                 var item = customerContext.Customers.Find(customer.Id);
                 if (item != null)
@@ -75,7 +46,7 @@ namespace Business
 
         public void Delete(int id)
         {
-            using (customerContext = new CarDealershipContext())
+            using (customerContext)
             {
                 var customer = customerContext.Customers.Find(id);
                 if (customer != null)
@@ -85,37 +56,130 @@ namespace Business
                 }
             }
         }
+        //Basic operations//
+
+        //Get operations//
+        public List<Customer> GetAllCustomers()
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.ToList();
+            }
+        }
+
+        public Customer GetCustomerById(int id)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Find(id);
+            }
+        }
+
+        public Customer GetCustomerById(int? id)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Find(id);
+            }
+        }
+
+        public List<Customer> GetCustomersByFirstName(string firstName)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Where(x => x.FirstName == firstName).ToList();
+            }
+        }
+
+        public List<Customer> GetCustomersByLastName(string lastName)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Where(x => x.LastName == lastName).ToList();
+            }
+        }
+
+        public List<Customer> GetCustomersByTownId(int townId)
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.Where(x => x.TownId == townId).ToList();
+            }
+        }
 
         public List<Customer> GetCustomersByTownName(string townName)
         {
-            using (customerContext=new CarDealershipContext())
+            using (customerContext)
             {
                 return customerContext.Customers.Where(x => x.Town.Name == townName).ToList();
             }
         }
+        //Get operations//
 
-        public List<Customer> SortCustomersByFirstName()
+        //Sort operations//
+        public List<Customer> SortCustomerByBothNamesAscending()
         {
-            using (customerContext=new CarDealershipContext())
+            using (customerContext)
+            {
+                return customerContext.Customers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomerByBothNamesDescending()
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.OrderByDescending(x => x.FirstName).ThenByDescending(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersByFirstNameAscending()
+        {
+            using (customerContext)
             {
                 return customerContext.Customers.OrderBy(x => x.FirstName).ToList();
             }
         }
 
-        public List<Customer> SortCustomersBylastName()
+        public List<Customer> SortCustomersByFirstNameDescending()
         {
-            using (customerContext=new CarDealershipContext())
+            using (customerContext)
+            {
+                return customerContext.Customers.OrderByDescending(x => x.FirstName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersByLastNameAscending()
+        {
+            using (customerContext)
             {
                 return customerContext.Customers.OrderBy(x => x.LastName).ToList();
             }
         }
 
-        public List<Customer> SortCustomersByTownName()
+        public List<Customer> SortCustomersByLastNameDescending()
         {
-            using (customerContext = new CarDealershipContext())
+            using (customerContext)
+            {
+                return customerContext.Customers.OrderByDescending(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Customer> SortCustomersByTownNameAscending()
+        {
+            using (customerContext)
             {
                 return customerContext.Customers.OrderBy(x => x.Town.Name).ToList();
             }
         }
+
+        public List<Customer> SortCustomersByTownNameDescending()
+        {
+            using (customerContext)
+            {
+                return customerContext.Customers.OrderByDescending(x => x.Town.Name).ToList();
+            }
+        }
+        //Sort operations//
     }
 }

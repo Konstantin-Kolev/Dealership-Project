@@ -13,8 +13,6 @@ namespace Data.Models
 
         //[ForeignKey(CarDealershipId)]
         public int CarDealershipId { get; set; }
-
-    
         public int EngineId { get; set; }
         public string TransmissionType { get; set; }
         public int TransmissionGears { get; set; }
@@ -23,7 +21,7 @@ namespace Data.Models
         public int? OwnerId { get; set; }
 
         //[ForeignKey("CarDealership")]
-        public virtual CarDealership CarDealership{ get; set; }
+        public virtual CarDealership CarDealership  { get; set; }
         public virtual Engine Engine { get; set; }
         public virtual Customer Owner { get; set; }
     }

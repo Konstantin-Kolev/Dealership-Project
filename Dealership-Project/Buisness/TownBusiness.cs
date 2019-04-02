@@ -10,34 +10,21 @@ namespace Business
     public class TownBusiness
     {
         private CarDealershipContext townContext;
-        
-        public List<Town> GetAll()
+
+        public TownBusiness()
         {
-            using (townContext = new CarDealershipContext())
-            {
-                return townContext.Towns.ToList();
-            }
+            this.townContext = new CarDealershipContext();
         }
 
-        public Town Get(int id)
+        public TownBusiness(CarDealershipContext carDealershipContext)
         {
-            using (townContext = new CarDealershipContext())
-            {
-                return townContext.Towns.Find(id);
-            }
+            this.townContext = carDealershipContext;
         }
 
-        public List<Town> GetTownsByName(string name)
-        {
-            using (townContext = new CarDealershipContext())
-            {
-                return townContext.Towns.Where(x => x.Name == name).ToList();
-            }
-        }
-
+        //Basic operations//
         public void Add(Town town)
         {
-            using (townContext = new CarDealershipContext())
+            using (townContext)
             {
                 townContext.Towns.Add(town);
                 townContext.SaveChanges();
@@ -46,7 +33,7 @@ namespace Business
 
         public void Update(Town town)
         {
-            using (townContext = new CarDealershipContext())
+            using (townContext)
             {
                 var item = townContext.Towns.Find(town.Id);
                 if (item != null)
@@ -59,7 +46,7 @@ namespace Business
 
         public void Delete(int id)
         {
-            using (townContext = new CarDealershipContext())
+            using (townContext)
             {
                 var town = townContext.Towns.Find(id);
                 if (town != null)
@@ -69,13 +56,50 @@ namespace Business
                 }
             }
         }
+        //Basic operations//
 
-        public List<Town> SortTownsByName()
+        //Get operations//
+        public List<Town> GetAllTowns()
         {
-            using (townContext = new CarDealershipContext())
+            using (townContext)
+            {
+                return townContext.Towns.ToList();
+            }
+        }
+
+        public Town GetTownById(int id)
+        {
+            using (townContext)
+            {
+                return townContext.Towns.Find(id);
+            }
+        }
+
+        public List<Town> GetTownsByName(string name)
+        {
+            using (townContext)
+            {
+                return townContext.Towns.Where(x => x.Name == name).ToList();
+            }
+        }
+        //Get operations//
+        
+        //Sort operations//
+        public List<Town> SortTownsByNameAscending()
+        {
+            using (townContext)
             {
                 return townContext.Towns.OrderBy(x => x.Name).ToList();
             }
         }
+
+        public List<Town> SortTownsByNameDescending()
+        {
+            using (townContext)
+            {
+                return townContext.Towns.OrderByDescending(x => x.Name).ToList();
+            }
+        }
+        //Sort operations//
     }
 }

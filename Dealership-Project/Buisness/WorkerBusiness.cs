@@ -11,65 +11,20 @@ namespace Business
     {
         private CarDealershipContext workerContext;
 
-        public List<Worker> GetAllWorkers()
+        public WorkerBusiness()
         {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.ToList();
-            }
+            this.workerContext = new CarDealershipContext();
         }
 
-        public Worker GetWorker(int id)
+        public WorkerBusiness(CarDealershipContext carDealershipContext)
         {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Find(id);
-            }
+            this.workerContext = new CarDealershipContext();
         }
 
-        public List<Worker> GetWorkersByFirstName(string firstName)
-        {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Where(x => x.FirstName == firstName).ToList();
-            }
-        }
-
-        public List<Worker> GetWorkersByLastName(string lastName)
-        {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Where(x => x.LastName == lastName).ToList();
-            }
-        }
-
-        public List<Worker> GetWorkersByPosition(string position)
-        {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Where(x => x.Position == position).ToList();
-            }
-        }
-
-        public List<Worker> GetWorkersBySalary(decimal salary)
-        {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Where(x => x.Salary == salary).ToList();
-            }
-        }
-
-        public List<Worker> GetWorkersByDealershipId(int dealershipId)
-        {
-            using (workerContext = new CarDealershipContext())
-            {
-                return workerContext.Workers.Where(x => x.CarDealershipId == dealershipId).ToList();
-            }
-        }
-
+        //Basic operations//
         public void Add(Worker worker)
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
             {
                 workerContext.Workers.Add(worker);
                 workerContext.SaveChanges();
@@ -78,7 +33,7 @@ namespace Business
 
         public void Update(Worker worker)
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
             {
                 var item = workerContext.Workers.Find(worker.Id);
                 if (item != null)
@@ -91,7 +46,7 @@ namespace Business
 
         public void Delete(int id)
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
             {
                 var worker = workerContext.Workers.Find(id);
                 if (worker != null)
@@ -101,34 +56,134 @@ namespace Business
                 }
             }
         }
+        //Basic operations//
 
-        public List<Worker> SortWorkersByFirstName()
+        //Get operations//
+        public List<Worker> GetAllWorkers()
         {
             using (workerContext = new CarDealershipContext())
+            {
+                return workerContext.Workers.ToList();
+            }
+        }
+
+        public Worker GetWorkerById(int id)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Find(id);
+            }
+        }
+
+        public List<Worker> GetWorkersByFirstName(string firstName)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.FirstName == firstName).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByLastName(string lastName)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.LastName == lastName).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByPosition(string position)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.Position == position).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersBySalary(decimal salary)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.Salary == salary).ToList();
+            }
+        }
+
+        public List<Worker> GetWorkersByDealershipId(int dealershipId)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.CarDealershipId == dealershipId).ToList();
+            }
+        }
+        //Get operations//
+
+        //Sort operations//
+        public List<Worker> SortWorkersByBothNamesAscending()
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByBothNamesDescending()
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.OrderByDescending(x => x.FirstName).ThenByDescending(x => x.LastName).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByFirstNameAscending()
+        {
+            using (workerContext)
             {
                 return workerContext.Workers.OrderBy(x => x.FirstName).ToList();
             }
         }
 
-        public List<Worker> SortWorkersByLastName()
+        public List<Worker> SortWorkersByFirstNameDescending()
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
+            {
+                return workerContext.Workers.OrderByDescending(x => x.FirstName).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersByLastNameAscending()
+        {
+            using (workerContext)
             {
                 return workerContext.Workers.OrderBy(x => x.LastName).ToList();
             }
         }
 
+        public List<Worker> SortWorkersByLastNameDescending()
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.OrderByDescending(x => x.LastName).ToList();
+            }
+        }
+
         public List<Worker> SortWorkersByPosition()
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
             {
                 return workerContext.Workers.OrderBy(x => x.Position).ToList();
             }
         }
 
-        public List<Worker> SortWorkersBySalary()
+        public List<Worker> SortWorkersBySalaryAscending()
         {
-            using (workerContext = new CarDealershipContext())
+            using (workerContext)
+            {
+                return workerContext.Workers.OrderBy(x => x.Salary).ToList();
+            }
+        }
+
+        public List<Worker> SortWorkersBySalaryDescending()
+        {
+            using (workerContext)
             {
                 return workerContext.Workers.OrderByDescending(x => x.Salary).ToList();
             }
@@ -141,5 +196,6 @@ namespace Business
                 return workerContext.Workers.OrderBy(x => x.CarDealership.Name).ToList();
             }
         }
+        //Sort operations//
     }
 }
