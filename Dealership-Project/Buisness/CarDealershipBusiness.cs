@@ -21,6 +21,45 @@ namespace Business
             this.carDealershipContext = carDealershipContext;
         }
 
+        //Basic operations//
+        public void Add(CarDealership carDealership)
+        {
+            using (carDealershipContext)
+            {
+                carDealershipContext.CarDealerships.Add(carDealership);
+                carDealershipContext.SaveChanges();
+            }
+        }
+
+        public void Update(CarDealership carDealership)
+        {
+            using (carDealershipContext)
+            {
+                var item = carDealershipContext.CarDealerships.Find(carDealership.Id);
+                if (item != null)
+                {
+                    carDealershipContext.Entry(item).CurrentValues.SetValues(carDealership);
+                    carDealershipContext.SaveChanges();
+                }
+            }
+
+        }
+
+        public void Delete(int id)
+        {
+            using (carDealershipContext)
+            {
+                var carDealership = carDealershipContext.CarDealerships.Find(id);
+                if (carDealership != null)
+                {
+                    carDealershipContext.CarDealerships.Remove(carDealership);
+                    carDealershipContext.SaveChanges();
+                }
+            }
+        }
+        //Basic operations//
+
+        //Get operations//
         public List<CarDealership> GetAllCarDealerships()
         {
             using (carDealershipContext)
@@ -45,60 +84,47 @@ namespace Business
             }
         }
 
-        public void Add(CarDealership carDealership)
-        {
-            using (carDealershipContext)
-            {
-                carDealershipContext.CarDealerships.Add(carDealership);
-                carDealershipContext.SaveChanges();
-            }
-        }
-
-        public void Update (CarDealership carDealership)
-        {
-            var item = carDealershipContext.CarDealerships.Find(carDealership.Id);
-            if (item != null)
-            {
-                carDealershipContext.Entry(item).CurrentValues.SetValues(carDealership);
-                carDealershipContext.SaveChanges();
-            }
-        }
-
-        public void Delete(int id)
-        {
-            using (carDealershipContext = new CarDealershipContext())
-            {
-                var carDealership = carDealershipContext.CarDealerships.Find(id);
-                if (carDealership != null)
-                {
-                    carDealershipContext.CarDealerships.Remove(carDealership);
-                    carDealershipContext.SaveChanges();
-                }
-            }
-        }
-
         public List<CarDealership> GetDealershipsByTown(string townName)
         {
-            using (carDealershipContext=new CarDealershipContext())
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.Where(x => x.Town.Name == townName).ToList();
             }
         }
+        //Get operations//
 
-        public List<CarDealership> SortDealershipsByName()
+        //Sort operations//
+        public List<CarDealership> SortDealershipsByNameAscending()
         {
-            using (carDealershipContext=new CarDealershipContext())
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.OrderBy(x => x.Name).ToList();
             }
         }
 
-        public List<CarDealership> SortDealershipsByTownName()
+        public List<CarDealership> SortDealershipsByNameDescending()
         {
-            using (carDealershipContext=new CarDealershipContext())
+            using (carDealershipContext)
+            {
+                return carDealershipContext.CarDealerships.OrderByDescending(x => x.Name).ToList();
+            }
+        }
+
+        public List<CarDealership> SortDealershipsByTownNameAscending()
+        {
+            using (carDealershipContext)
             {
                 return carDealershipContext.CarDealerships.OrderBy(x => x.Town.Name).ToList();
             }
         }
+
+        public List<CarDealership> SortDealershipsByTownNameDescending()
+        {
+            using (carDealershipContext)
+            {
+                return carDealershipContext.CarDealerships.OrderByDescending(x => x.Town.Name).ToList();
+            }
+        }
+        //Sort operations//
     }
 }

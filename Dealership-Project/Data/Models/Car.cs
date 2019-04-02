@@ -13,8 +13,6 @@ namespace Data.Models
 
         //[ForeignKey(CarDealershipId)]
         public int CarDealershipId { get; set; }
-
-    
         public int EngineId { get; set; }
         public string TransmissionType { get; set; }
         public int TransmissionGears { get; set; }

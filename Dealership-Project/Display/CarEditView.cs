@@ -15,10 +15,6 @@ namespace Display
 {
     public partial class CarEditView : Form
     {
-
-
-
-
         public CarEditView()
         {
             InitializeComponent();
@@ -36,10 +32,10 @@ namespace Display
         {
             CarBusiness carBusiness = new CarBusiness();
             EngineBusiness engineBusiness = new EngineBusiness();
-            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
-            dataGridView1.Rows.Clear();
+            //CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            dataGridView.Rows.Clear();
             var carBusinessList = carBusiness.GetAllCars();
-            var carDealershipList = carDealershipBusiness.GetAllCarDealerships();
+            //var carDealershipList = carDealershipBusiness.GetAllCarDealerships();
             var engineList = engineBusiness.GetAllEngines();
             foreach (var car in carBusinessList)
             {
@@ -49,13 +45,14 @@ namespace Display
                     car.Manufacturer,
                     car.Model,
                     //car.CarDealership.Name,
-                    car.CarDealershipId.ToString(),
+                    carBusiness.GetDealershipName(car.CarDealershipId),
                     car.EngineId.ToString(),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),
                     car.Color,
                     car.Price.ToString() + " лв.",
-                    car.OwnerId.ToString()
+                    car.OwnerId.ToString(),
+                    car.Id.ToString()
                 };
                 foreach (var engine in engineList)
                 {
@@ -64,20 +61,20 @@ namespace Display
                         row[3] = engine.Name;
                     }
                 }
-                foreach (var dealership in carDealershipList)
+                /*foreach (var dealership in carDealershipList)
                 {
                     if (dealership.Id.ToString() == row[2])
                     {
                         row[2] = dealership.Name;
                     }
-                }
+                }*/
                 if (row[8] == "")
                 {
                     row[8] = "For Sale !";
                 }
-                dataGridView1.Rows.Add(row);
+                dataGridView.Rows.Add(row);
             }
-
+            //dataGridView.Columns[9].Visible = false;
             //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
@@ -86,7 +83,7 @@ namespace Display
             CarBusiness carBusiness = new CarBusiness();
             EngineBusiness engineBusiness = new EngineBusiness();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
-            dataGridView1.Rows.Clear();
+            dataGridView.Rows.Clear();
             var carBusinessList = carBusiness.SortCarsByDisplacementAscending();
             foreach (var car in carBusinessList)
             {
@@ -107,7 +104,7 @@ namespace Display
                 {
                     row[8] = "For Sale !";
                 }
-                dataGridView1.Rows.Add(row);
+                dataGridView.Rows.Add(row);
             }
 
             //dataGridView1.Columns[0].DisplayIndex = 3;
@@ -118,13 +115,14 @@ namespace Display
             CarBusiness carBusiness = new CarBusiness();
             EngineBusiness engineBusiness = new EngineBusiness();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
-            dataGridView1.Rows.Clear();
+            dataGridView.Rows.Clear();
             var carBusinessList = carBusiness.SortCarsByPowerAscending();
             foreach (var car in carBusinessList)
             {
 
                 string[] row =
                 {
+                    //car.Id.ToString(),
                     car.Manufacturer,
                     car.Model,
                     car.CarDealershipId.ToString(),
@@ -139,9 +137,9 @@ namespace Display
                 {
                     row[8] = "For Sale !";
                 }
-                dataGridView1.Rows.Add(row);
+                dataGridView.Rows.Add(row);
             }
-
+            //dataGridView1.Columns[9].Visible = false;
             //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
@@ -149,48 +147,45 @@ namespace Display
         {
             //  this.Controls.Add(dataGridView1);
 
-            dataGridView1.ColumnCount = 9;
+            dataGridView.ColumnCount = 10;
 
-            dataGridView1.Columns[0].Name = "Manufacturer";
-            dataGridView1.Columns[1].Name = "Model";
-            dataGridView1.Columns[2].Name = "Dealership";
-            dataGridView1.Columns[3].Name = "Engine";
-            dataGridView1.Columns[4].Name = "Transmission";
-            dataGridView1.Columns[5].Name = "Gears";
-            dataGridView1.Columns[6].Name = "Color";
-            dataGridView1.Columns[7].Name = "Price";
-            dataGridView1.Columns[8].Name = "Owner";
+            dataGridView.Columns[0].Name = "Manufacturer";
+            dataGridView.Columns[1].Name = "Model";
+            dataGridView.Columns[2].Name = "Dealership";
+            dataGridView.Columns[3].Name = "Engine";
+            dataGridView.Columns[4].Name = "Transmission";
+            dataGridView.Columns[5].Name = "Gears";
+            dataGridView.Columns[6].Name = "Color";
+            dataGridView.Columns[7].Name = "Price";
+            dataGridView.Columns[8].Name = "Owner";
+            dataGridView.Columns[9].Name = "ID";
 
             //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             //dataGridView1.ColumnHeadersDefaultCellStyle.Font =
             //new Font(dataGridView1.Font, FontStyle.Bold);
-
-            //dataGridView1.Name = "dataGridView1";
-            //dataGridView1.Location = new Point(8, 8);
-            //dataGridView1.Size = new Size(500, 250);
-            //dataGridView1.AutoSizeRowsMode =
-            //DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            //dataGridView1.ColumnHeadersBorderStyle =
-            //DataGridViewHeaderBorderStyle.Single;
-            //dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             //dataGridView1.GridColor = Color.Black;
-            //dataGridView1.RowHeadersVisible = false;
+            dataGridView.RowHeadersVisible = false;
 
 
 
-            dataGridView1.SelectionMode =
+            dataGridView.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.MultiSelect = false;
+            dataGridView.MultiSelect = false;
             // dataGridView1.Dock = DockStyle.Fill;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             CarBusiness carBusiness = new CarBusiness();
             //ba4ka ama iska izdokusorqvane//
-            var manufacturer = textBox1.Text;
-            var model = textBox2.Text;
+            var manufacturer = txtManufacturer.Text;
+            var model = txtModel.Text;
             var engine = 2;
             var carDealershipId = 3;
 
@@ -200,6 +195,7 @@ namespace Display
             var transmissionGears = 5;
             var color = "Green";
             decimal price = 4000;
+
 
             Car car = new Car();
             car.CarDealershipId = carDealershipId;
@@ -214,24 +210,9 @@ namespace Display
             PopulateDataGridView();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = comboBox1.SelectedIndex;
+            int index = cbSort.SelectedIndex;
             switch (index)
             {
                 case 0: SetupDataGridView(); PopulateDataGridView2(); break;

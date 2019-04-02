@@ -64,7 +64,7 @@ namespace Business
         {
             using (carContext)
             {
-                return carContext.Cars.Include(b=>b.CarDealership).ToList();
+                return carContext.Cars.ToList();
             }
         }
 
@@ -170,6 +170,13 @@ namespace Business
             {
                 return carContext.Cars.Where(x => x.OwnerId == null).ToList();
             }
+        }
+
+        public string GetDealershipName(int dealershipId)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            var dealership = carDealershipBusiness.GetCarDealershipById(dealershipId);
+            return dealership.Name;
         }
         //Get operations//
 
