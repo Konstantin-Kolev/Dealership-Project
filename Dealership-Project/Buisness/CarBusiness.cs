@@ -16,7 +16,7 @@ namespace Business
         {
             using (carContext = new CarDealershipContext())
             {
-                return carContext.Cars.Include("CarDealershipNavigation").ToList();
+                return carContext.Cars.Include("CarDealership").ToList();
             }
         }
 

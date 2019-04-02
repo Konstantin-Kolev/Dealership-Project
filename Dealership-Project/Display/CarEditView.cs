@@ -38,7 +38,7 @@ namespace Display
                 
                 string[] row =
                 {
-                    car.Manufacturer, car.Model/*, car.CarDealershipNavigation.Name   , car.Engine.Name*/, car.TransmissionType, car.TransmissionGears.ToString(),
+                    car.Manufacturer, car.Model, car.TransmissionType, car.TransmissionGears.ToString(),
                     car.Color, car.Price.ToString(),""
                 };
                 dataGridView1.Rows.Add(row);
