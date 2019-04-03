@@ -37,11 +37,11 @@
             this.lblSort = new System.Windows.Forms.Label();
             this.cbGet = new System.Windows.Forms.ComboBox();
             this.lblGet = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtGet = new System.Windows.Forms.TextBox();
             this.txtEngine = new System.Windows.Forms.TextBox();
             this.txtGears = new System.Windows.Forms.TextBox();
             this.txtTransmission = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtColor = new System.Windows.Forms.TextBox();
             this.txtOwner = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblManufacturer = new System.Windows.Forms.Label();
@@ -57,13 +57,14 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnOpenHelper = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(51, 240);
+            this.dataGridView.Location = new System.Drawing.Point(51, 242);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(986, 338);
             this.dataGridView.TabIndex = 0;
@@ -155,12 +156,12 @@
             this.lblGet.TabIndex = 8;
             this.lblGet.Text = "Справки";
             // 
-            // textBox4
+            // txtGet
             // 
-            this.textBox4.Location = new System.Drawing.Point(937, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtGet.Location = new System.Drawing.Point(937, 45);
+            this.txtGet.Name = "txtGet";
+            this.txtGet.Size = new System.Drawing.Size(100, 20);
+            this.txtGet.TabIndex = 9;
             // 
             // txtEngine
             // 
@@ -183,12 +184,12 @@
             this.txtTransmission.Size = new System.Drawing.Size(100, 20);
             this.txtTransmission.TabIndex = 12;
             // 
-            // textBox6
+            // txtColor
             // 
-            this.textBox6.Location = new System.Drawing.Point(51, 166);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtColor.Location = new System.Drawing.Point(51, 166);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(100, 20);
+            this.txtColor.TabIndex = 13;
             // 
             // txtOwner
             // 
@@ -293,6 +294,7 @@
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -313,6 +315,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
@@ -324,11 +327,22 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnOpenHelper
+            // 
+            this.btnOpenHelper.Location = new System.Drawing.Point(464, 102);
+            this.btnOpenHelper.Name = "btnOpenHelper";
+            this.btnOpenHelper.Size = new System.Drawing.Size(157, 23);
+            this.btnOpenHelper.TabIndex = 29;
+            this.btnOpenHelper.Text = "Помощна таблица";
+            this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
+            // 
             // CarEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.Controls.Add(this.btnOpenHelper);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -343,11 +357,11 @@
             this.Controls.Add(this.lblManufacturer);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtOwner);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtColor);
             this.Controls.Add(this.txtTransmission);
             this.Controls.Add(this.txtGears);
             this.Controls.Add(this.txtEngine);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtGet);
             this.Controls.Add(this.lblGet);
             this.Controls.Add(this.cbGet);
             this.Controls.Add(this.lblSort);
@@ -378,11 +392,11 @@
         private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.ComboBox cbGet;
         private System.Windows.Forms.Label lblGet;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtGet;
         private System.Windows.Forms.TextBox txtEngine;
         private System.Windows.Forms.TextBox txtGears;
         private System.Windows.Forms.TextBox txtTransmission;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtOwner;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblManufacturer;
@@ -398,5 +412,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnOpenHelper;
     }
 }

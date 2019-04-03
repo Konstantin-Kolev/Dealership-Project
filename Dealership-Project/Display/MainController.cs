@@ -19,17 +19,7 @@ namespace Display
             InitializeComponent();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
+        private void MainController_Load(object sender, EventArgs e)
         {
 
         }
@@ -40,9 +30,10 @@ namespace Display
             carEditView.ShowDialog();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnDealerships_Click(object sender, EventArgs e)
         {
-            
+            CarDealershipEditView carDealershipEditView = new CarDealershipEditView();
+            carDealershipEditView.ShowDialog();
         }
     }
 }

@@ -179,11 +179,25 @@ namespace Business
             return dealership.Name;
         }
 
+        public string GetDealershipId(int dealershipId)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            var dealership = carDealershipBusiness.GetCarDealershipById(dealershipId);
+            return dealership.Id.ToString();
+        }
+
         public string GetEngineName(int engineId)
         {
             EngineBusiness engineBusiness = new EngineBusiness();
             var engine = engineBusiness.GetEngineById(engineId);
             return engine.Name;
+        }
+
+        public string GetEngineId(int engineId)
+        {
+            EngineBusiness engineBusiness = new EngineBusiness();
+            var engine = engineBusiness.GetEngineById(engineId);
+            return engine.Id.ToString();
         }
 
         public string GetOwnerName(int? ownerId)
@@ -192,11 +206,25 @@ namespace Business
             var customer = customerBusiness.GetCustomerById(ownerId);
             if (customer == null)
             {
-                return "For Sale";
+                return "Продава се";
             }
             else
             {
                 return customer.FirstName + ' ' + customer.LastName;
+            }
+        }
+
+        public string GetOwnerId(int? ownerId)
+        {
+            CustomerBusiness customerBusiness = new CustomerBusiness();
+            var customer = customerBusiness.GetCustomerById(ownerId);
+            if (customer == null)
+            {
+                return "Няма";
+            }
+            else
+            {
+                return customer.Id.ToString();
             }
         }
         //Get operations//

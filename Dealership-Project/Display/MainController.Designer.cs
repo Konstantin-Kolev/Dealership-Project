@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDealerships = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,7 +45,7 @@
             this.btnCars.Name = "btnCars";
             this.btnCars.Size = new System.Drawing.Size(151, 36);
             this.btnCars.TabIndex = 0;
-            this.btnCars.Text = "Коли";
+            this.btnCars.Text = "Автомобили";
             this.btnCars.UseVisualStyleBackColor = true;
             this.btnCars.Click += new System.EventHandler(this.btnCars_Click);
             // 
@@ -78,14 +78,15 @@
             this.button2.Text = "Коли";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDealerships
             // 
-            this.button3.Location = new System.Drawing.Point(45, 147);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Коли";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDealerships.Location = new System.Drawing.Point(45, 147);
+            this.btnDealerships.Name = "btnDealerships";
+            this.btnDealerships.Size = new System.Drawing.Size(151, 36);
+            this.btnDealerships.TabIndex = 4;
+            this.btnDealerships.Text = "Автокъщи";
+            this.btnDealerships.UseVisualStyleBackColor = true;
+            this.btnDealerships.Click += new System.EventHandler(this.btnDealerships_Click);
             // 
             // button4
             // 
@@ -112,14 +113,14 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDealerships);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainController";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainController_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,7 +133,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDealerships;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
     }

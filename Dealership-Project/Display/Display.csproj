@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -258,6 +259,12 @@
     <Compile Include="EngineEditView.Designer.cs">
       <DependentUpon>EngineEditView.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridInfoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridInfoPopUp.Designer.cs">
+      <DependentUpon>GridInfoPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,8 +285,20 @@
     <Compile Include="WorkerEditView.Designer.cs">
       <DependentUpon>WorkerEditView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CarDealershipEditView.resx">
+      <DependentUpon>CarDealershipEditView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarEditView.resx">
       <DependentUpon>CarEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerEditView.resx">
+      <DependentUpon>CustomerEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineEditView.resx">
+      <DependentUpon>EngineEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridInfoPopUp.resx">
+      <DependentUpon>GridInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainController.resx">
       <DependentUpon>MainController.cs</DependentUpon>
@@ -295,6 +314,9 @@
     </Compile>
     <EmbeddedResource Include="TownEditView.resx">
       <DependentUpon>TownEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerEditView.resx">
+      <DependentUpon>WorkerEditView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
