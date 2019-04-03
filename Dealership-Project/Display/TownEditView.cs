@@ -24,12 +24,5 @@ namespace Display
         {
 
         }
-
-        private void UpdateGrid()
-        {
-            dataGridTowns.DataSource = townBusiness.GetAllTowns();
-            dataGridTowns.ReadOnly = true;
-            dataGridTowns.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
     }
 }

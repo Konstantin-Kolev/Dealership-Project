@@ -15,6 +15,8 @@ namespace Display
 {
     public partial class CarEditView : Form
     {
+        private int editId = 0;
+
         public CarEditView()
         {
             InitializeComponent();
@@ -23,9 +25,47 @@ namespace Display
 
         private void CarEditView_Load(object sender, EventArgs e)
         {
-            //SetupLayout();
+            dataGridView.ReadOnly = true;
             SetupDataGridView();
             PopulateDataGridViewDefault();
+        }
+
+        private void DisableSelect()
+        {
+            dataGridView.Enabled = false;
+        }
+
+        private void ResetSelect()
+        {
+            dataGridView.ClearSelection();
+            dataGridView.Enabled = true;
+        }
+
+        private void ToggleSaveUpdate()
+        {
+            if (btnUpdate.Visible)
+            {
+                btnSave.Visible = true;
+                btnUpdate.Visible = false;
+            }
+            else
+            {
+                btnSave.Visible = false;
+                btnUpdate.Visible = true;
+            }
+        }
+
+        private void ClearTextBoxes()
+        {
+            txtDealership.Text = "";
+            txtEngine.Text = "";
+            txtGears.Text = "";
+            txtManufacturer.Text = "";
+            txtModel.Text = "";
+            txtOwner.Text = "";
+            txtPrice.Text = "";
+            txtTransmission.Text = "";
+            txtColor.Text = "";
         }
 
         private void PopulateDataGridViewDefault()
@@ -49,90 +89,10 @@ namespace Display
                     car.OwnerId.ToString(),
                     car.Id.ToString()
                 };
-                /*foreach (var engine in engineList)
-                {
-                    if (engine.Id.ToString() == row[3])
-                    {
-                        row[3] = engine.Name;
-                    }
-                }
-                foreach (var dealership in carDealershipList)
-                {
-                    if (dealership.Id.ToString() == row[2])
-                    {
-                        row[2] = dealership.Name;
-                    }
-                }
-                if (row[8] == "")
-                {
-                    row[8] = "For Sale !";
-                }*/
                 dataGridView.Rows.Add(row);
                 
             }
             //dataGridView.Columns[9].Visible = false;
-            //dataGridView1.Columns[0].DisplayIndex = 3;
-        }
-
-        private void PopulateDataGridView2()
-        {
-            CarBusiness carBusiness = new CarBusiness();
-            EngineBusiness engineBusiness = new EngineBusiness();
-            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
-            dataGridView.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByPowerAscending();
-            foreach (var car in carBusinessList)
-            {
-
-                string[] row =
-                {
-                    car.Manufacturer,
-                    car.Model,
-                    carBusiness.GetDealershipName(car.CarDealershipId),
-                    carBusiness.GetEngineName(car.EngineId),
-                    car.EngineId.ToString(),
-                    car.TransmissionType,
-                    car.TransmissionGears.ToString(),
-                    car.Color,
-                    car.Price.ToString() + " лв.",
-                    carBusiness.GetOwnerName(car.OwnerId)
-                };
-                dataGridView.Rows.Add(row);
-            }
-
-            //dataGridView1.Columns[0].DisplayIndex = 3;
-        }
-
-        private void PopulateDataGridView3()
-        {
-            CarBusiness carBusiness = new CarBusiness();
-            EngineBusiness engineBusiness = new EngineBusiness();
-            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
-            dataGridView.Rows.Clear();
-            var carBusinessList = carBusiness.SortCarsByPowerDescending();
-            foreach (var car in carBusinessList)
-            {
-
-                string[] row =
-                {
-                    //car.Id.ToString(),
-                    car.Manufacturer,
-                    car.Model,
-                    car.CarDealershipId.ToString(),
-                    car.EngineId.ToString(),
-                    car.TransmissionType,
-                    car.TransmissionGears.ToString(),
-                    car.Color,
-                    car.Price.ToString() + " лв.",
-                    car.OwnerId.ToString()
-                };
-                if (row[8] == "")
-                {
-                    row[8] = "For Sale !";
-                }
-                dataGridView.Rows.Add(row);
-            }
-            //dataGridView1.Columns[9].Visible = false;
             //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
@@ -206,11 +166,11 @@ namespace Display
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbSort.SelectedIndex;
-            switch (index)
+            /*switch (index)
             {
                 case 0: SetupDataGridView(); PopulateDataGridView2(); break;
                 case 1: SetupDataGridView(); PopulateDataGridView3(); break;
-            }
+            }*/
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -223,8 +183,66 @@ namespace Display
         {
             if (dataGridView.SelectedRows.Count > 0)
             {
-                //Console.WriteLine("NQMA KOD");
+                var item = dataGridView.SelectedRows[0].Cells;
+                var id = int.Parse(item[0].Value.ToString());
+                editId = id;
+                UpdateTextboxes(id);
+                ToggleSaveUpdate();
+                DisableSelect();
             }
+        }
+
+        private void UpdateTextboxes(int id)
+        {
+            CarBusiness carBusiness = new CarBusiness();
+            Car update = carBusiness.GetCarById(id);
+            //dovarwi//
+        }
+
+        private Car GetEditedCar()
+        {
+            Car car = new Car();
+            car.Id = editId;
+
+            var model = txtModel.Text;
+            decimal price = 0;
+            decimal.TryParse(txtPrice.Text, out price);
+            int gears = 0;
+            int.TryParse(txtGears.Text, out gears);
+            car.Model = model;
+            car.Price = price;
+            car.TransmissionGears = gears;
+
+            return car;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Car editedCar = GetEditedCar();
+            CarBusiness carBusiness = new CarBusiness();
+            carBusiness.Update(editedCar);
+            PopulateDataGridViewDefault();
+            ResetSelect();
+            ToggleSaveUpdate();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                var item = dataGridView.SelectedRows[0].Cells;
+                var id = int.Parse(item[0].Value.ToString());
+                CarBusiness carBusiness = new CarBusiness();
+                carBusiness.Delete(id);
+                PopulateDataGridViewDefault();
+                ResetSelect();
+            }
+        }
+
+        private void btnOpenHelper_Click(object sender, EventArgs e)
+        {
+            GridInfoPopUp gridInfoPopUp = new GridInfoPopUp();
+            gridInfoPopUp.Show();
         }
     }
 }

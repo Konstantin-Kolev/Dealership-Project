@@ -92,6 +92,20 @@ namespace Business
                 return carDealershipContext.CarDealerships.Where(x => x.Town.Name == townName).ToList();
             }
         }
+
+        public string GetTownName(int townId)
+        {
+            TownBusiness townBusiness = new TownBusiness();
+            var town = townBusiness.GetTownById(townId);
+            return town.Name;
+        }
+
+        public string GetTownId(int townId)
+        {
+            TownBusiness townBusiness = new TownBusiness();
+            var town = townBusiness.GetTownById(townId);
+            return town.Id.ToString();
+        }
         //Get operations//
 
         //Sort operations//
