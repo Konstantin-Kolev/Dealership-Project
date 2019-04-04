@@ -12,7 +12,7 @@ namespace Business
     {
         private CarDealershipContext carContext;
         /// <summary>
-        /// Creates a new instance of the class with an entirely new context
+        /// Creates a new instance of the class with a new context
         /// </summary>
         public CarBusiness()
         {
@@ -29,7 +29,7 @@ namespace Business
 
         //Basic operations//
         /// <summary>
-        /// Function that adds a new car to the database
+        /// Adds a new car to the database
         /// </summary>
         /// <param name="car">The car that needs to be added to the database</param>
         public void Add(Car car)
@@ -76,7 +76,7 @@ namespace Business
 
         //Get operations//
         /// <summary>
-        /// Get all cars in the database
+        /// FInd all cars in the database
         /// </summary>
         /// <returns>Returns a list of all cars in the database</returns>
         public List<Car> GetAllCars()
@@ -89,7 +89,7 @@ namespace Business
         /// <summary>
         /// Find a car by a given id
         /// </summary>
-        /// <param name="id">The id of the car you are looking for</param>
+        /// <param name="id">The id of the car you are searching for</param>
         /// <returns>Returns the car that matches the given id</returns>
         public Car GetCarById(int id)
         {

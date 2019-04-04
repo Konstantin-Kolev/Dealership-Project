@@ -11,18 +11,27 @@ namespace Business
     public class CarDealershipBusiness
     {
         private CarDealershipContext carDealershipContext;
-
+        /// <summary>
+        /// Creates a new instance of the class with a new context
+        /// </summary>
         public CarDealershipBusiness()
         {
             this.carDealershipContext = new CarDealershipContext();
         }
-
+        /// <summary>
+        /// Creates a new instance of the class with an existing context
+        /// </summary>
+        /// <param name="carDealershipContext">An existing context to be used by the instance of the class</param>
         public CarDealershipBusiness(CarDealershipContext carDealershipContext)
         {
             this.carDealershipContext = carDealershipContext;
         }
 
         //Basic operations//
+        /// <summary>
+        /// Adds a new dealership to the database
+        /// </summary>
+        /// <param name="carDealership">The dealership thta needs to be added to the database</param>
         public void Add(CarDealership carDealership)
         {
             using (carDealershipContext)
@@ -31,7 +40,10 @@ namespace Business
                 carDealershipContext.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Changes the information about one of the dealerships
+        /// </summary>
+        /// <param name="carDealership">A dealership with the new information and the same id as the old one</param>
         public void Update(CarDealership carDealership)
         {
             using (carDealershipContext)
@@ -45,7 +57,10 @@ namespace Business
             }
 
         }
-
+        /// <summary>
+        /// Removes a dealership from the database
+        /// </summary>
+        /// <param name="id">The id of the dealerships that needs to be removed</param>
         public void Delete(int id)
         {
             using (carDealershipContext)
@@ -61,6 +76,10 @@ namespace Business
         //Basic operations//
 
         //Get operations//
+        /// <summary>
+        /// Find all dealerships in the database
+        /// </summary>
+        /// <returns>Returns a list of all dealerships in the database</returns>
         public List<CarDealership> GetAllCarDealerships()
         {
             using (carDealershipContext)
@@ -68,7 +87,11 @@ namespace Business
                 return carDealershipContext.CarDealerships.ToList();
             }
         }
-
+        /// <summary>
+        /// Find a dealership by a given id
+        /// </summary>
+        /// <param name="id">The id of the dealership you are searching for</param>
+        /// <returns>Returns the dealership that matches the given id</returns>
         public CarDealership GetCarDealershipById(int id)
         {
             using (carDealershipContext)
@@ -76,7 +99,11 @@ namespace Business
                 return carDealershipContext.CarDealerships.Find(id);
             }
         }
-
+        /// <summary>
+        /// Find a dealership by a given name
+        /// </summary>
+        /// <param name="name">The name of the dealership you are searching for</param>
+        /// <returns>Returns the dealrship that matches the given name</returns>
         public CarDealership GetCarDealershipByName(string name)
         {
             using (carDealershipContext)
@@ -84,7 +111,11 @@ namespace Business
                 return carDealershipContext.CarDealerships.Find(name);
             }
         }
-
+        /// <summary>
+        /// Find all dealerships in a given town
+        /// </summary>
+        /// <param name="townName">The town you are searching for</param>
+        /// <returns>Returns a list of all dealerships in the given town</returns>
         public List<CarDealership> GetDealershipsByTown(string townName)
         {
             using (carDealershipContext)
@@ -92,14 +123,22 @@ namespace Business
                 return carDealershipContext.CarDealerships.Where(x => x.Town.Name == townName).ToList();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="townId"></param>
+        /// <returns></returns>
         public string GetTownName(int townId)
         {
             TownBusiness townBusiness = new TownBusiness();
             var town = townBusiness.GetTownById(townId);
             return town.Name;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="townId"></param>
+        /// <returns></returns>
         public string GetTownId(int townId)
         {
             TownBusiness townBusiness = new TownBusiness();
