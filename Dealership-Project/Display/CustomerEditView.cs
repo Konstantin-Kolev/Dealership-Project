@@ -16,5 +16,10 @@ namespace Display
         {
             InitializeComponent();
         }
+
+        private void CustomerEditView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

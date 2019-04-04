@@ -18,6 +18,12 @@ namespace Display
             InitializeComponent();
         }
 
+        private void GridInfoPopUp_Load(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            dataGridView.ReadOnly = true;
+        }
+
         private void HideSpecificInfo()
         {
             lblInfoCar.Visible = false;
@@ -32,12 +38,6 @@ namespace Display
             btnNewEngine.Visible = false;
             btnNewTown.Visible = false;
             btnNewWorker.Visible = false;
-        }
-
-        private void GridInfoPopUp_Load(object sender, EventArgs e)
-        {
-            HideSpecificInfo();
-            dataGridView.ReadOnly = true;
         }
 
         private void btnCars_Click(object sender, EventArgs e)

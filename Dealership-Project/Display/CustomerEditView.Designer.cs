@@ -247,6 +247,7 @@
             this.Controls.Add(this.btnSave);
             this.Name = "CustomerEditView";
             this.Text = "CustomerEditView";
+            this.Load += new System.EventHandler(this.CustomerEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -103,24 +103,6 @@
             // cbSort
             // 
             this.cbSort.FormattingEnabled = true;
-            this.cbSort.Items.AddRange(new object[] {
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
             this.cbSort.Location = new System.Drawing.Point(627, 45);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(121, 21);
@@ -139,9 +121,6 @@
             // cbGet
             // 
             this.cbGet.FormattingEnabled = true;
-            this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
             this.cbGet.Location = new System.Drawing.Point(810, 45);
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);

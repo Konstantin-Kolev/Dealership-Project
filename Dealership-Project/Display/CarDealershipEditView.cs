@@ -159,12 +159,13 @@ namespace Display
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CarDealership carDealership = GetEditedProduct();
+            CarDealership carDealership = GetEditedCarDealership();
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
             carDealershipBusiness.Update(carDealership);
             PopulateDataGridViewDefault();
             ResetSelect();
             ToggleSaveUpdate();
+            ClearTextBoxes();
         }
 
 
@@ -181,11 +182,11 @@ namespace Display
             }
         }
 
-        private CarDealership GetEditedProduct()
+        private CarDealership GetEditedCarDealership()
         {
             CarDealership carDealership = new CarDealership();
-            carDealership.Id = editId;
 
+            carDealership.Id = editId;
             carDealership.Name = txtName.Text;
             int.TryParse(txtTown.Text, out int townId);
             carDealership.TownId = townId;
