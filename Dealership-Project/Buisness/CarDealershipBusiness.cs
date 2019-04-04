@@ -124,26 +124,15 @@ namespace Business
             }
         }
         /// <summary>
-        /// 
+        /// Find the name of a town by a dealership's TownId
         /// </summary>
-        /// <param name="townId"></param>
-        /// <returns></returns>
+        /// <param name="townId">The id of a dealership's town you want the name of</param>
+        /// <returns>The name of the town as a string</returns>
         public string GetTownName(int townId)
         {
             TownBusiness townBusiness = new TownBusiness();
             var town = townBusiness.GetTownById(townId);
             return town.Name;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="townId"></param>
-        /// <returns></returns>
-        public string GetTownId(int townId)
-        {
-            TownBusiness townBusiness = new TownBusiness();
-            var town = townBusiness.GetTownById(townId);
-            return town.Id.ToString();
         }
         //Get operations//
 

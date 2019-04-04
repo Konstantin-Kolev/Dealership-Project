@@ -241,9 +241,9 @@ namespace Business
             }
         }
         /// <summary>
-        /// Find the name of a dealership from its id
+        /// Find the name of a dealership from a car's DealershipId
         /// </summary>
-        /// <param name="dealershipId">The id of the dealership you want the name of</param>
+        /// <param name="dealershipId">The id of a car's dealership you want the name of</param>
         /// <returns>Returns the name of the dealership as a string</returns>
         public string GetDealershipName(int dealershipId)
         {
@@ -252,9 +252,9 @@ namespace Business
             return dealership.Name;
         }
         /// <summary>
-        /// Find the name of an engine from its id
+        /// Find the name of an engine from a car's EngineId
         /// </summary>
-        /// <param name="engineId">The id of the engine you want the name of</param>
+        /// <param name="engineId">The id of a car's engine you want the name of</param>
         /// <returns>Returns the name of the engine as a string</returns>
         public string GetEngineName(int engineId)
         {
@@ -263,10 +263,10 @@ namespace Business
             return engine.Name;
         }
         /// <summary>
-        /// Find the name of an owner by his id
+        /// Find the name of an owner by a car's OwnerId
         /// </summary>
-        /// <param name="ownerId">The id of the owner you are looking for</param>
-        /// <returns></returns>
+        /// <param name="ownerId">The id of a car's owner you want the name of</param>
+        /// <returns>Returns both names of the owner as a string; returns "For Sale" if there is no owner</returns>
         public string GetOwnerName(int? ownerId)
         {
             CustomerBusiness customerBusiness = new CustomerBusiness();

@@ -63,15 +63,15 @@ namespace Display
                     car.Id.ToString(),
                     car.Manufacturer,
                     car.Model,
-                    carBusiness.GetDealershipId(car.CarDealershipId),
+                    car.CarDealershipId.ToString(),
                     carBusiness.GetDealershipName(car.CarDealershipId),
-                    carBusiness.GetEngineId(car.EngineId),
+                    car.EngineId.ToString(),
                     carBusiness.GetEngineName(car.EngineId),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),
                     car.Color,
                     car.Price.ToString(),
-                    carBusiness.GetOwnerId(car.OwnerId),
+                    car.OwnerId.ToString(),
                     carBusiness.GetOwnerName(car.OwnerId)
                 };
                 dataGridView.Rows.Add(row);
