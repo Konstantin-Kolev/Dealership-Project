@@ -98,15 +98,16 @@ namespace Business
             }
         }
         /// <summary>
-        /// 
+        /// Find a town by a given name
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public List<Town> GetTownsByName(string name)
+        /// <param name="name">The bname of the town you are searching for</param>
+        /// <returns>Returns the town that matches the given name</returns>
+        public Town GetTownByName(string name)
         {
             using (townContext)
             {
-                return townContext.Towns.Where(x => x.Name == name).ToList();
+                var list= townContext.Towns.Where(x => x.Name == name).ToList();
+                return list[0];
             }
         }
         //Get operations//

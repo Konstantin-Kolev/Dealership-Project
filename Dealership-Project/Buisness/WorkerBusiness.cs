@@ -10,18 +10,27 @@ namespace Business
     public class WorkerBusiness
     {
         private CarDealershipContext workerContext;
-
+        /// <summary>
+        /// Create a new instance of the class with a new context
+        /// </summary>
         public WorkerBusiness()
         {
             this.workerContext = new CarDealershipContext();
         }
-
+        /// <summary>
+        /// Create a new instance of the class with an existing context
+        /// </summary>
+        /// <param name="carDealershipContext">An existign context to be used by the instance of the class</param>
         public WorkerBusiness(CarDealershipContext carDealershipContext)
         {
             this.workerContext = new CarDealershipContext();
         }
 
         //Basic operations//
+        /// <summary>
+        /// Add a new worker to the database
+        /// </summary>
+        /// <param name="worker">The worker that need to be added to the database</param>
         public void Add(Worker worker)
         {
             using (workerContext)
@@ -30,7 +39,10 @@ namespace Business
                 workerContext.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Change the information about one of the workers
+        /// </summary>
+        /// <param name="worker">A worker with the new information and the same id as the old one</param>
         public void Update(Worker worker)
         {
             using (workerContext)
@@ -43,7 +55,10 @@ namespace Business
                 }
             }
         }
-
+        /// <summary>
+        /// Remove a worker from the database
+        /// </summary>
+        /// <param name="id">The id of the worker that needs to be removed</param>
         public void Delete(int id)
         {
             using (workerContext)
@@ -59,6 +74,10 @@ namespace Business
         //Basic operations//
 
         //Get operations//
+        /// <summary>
+        /// Find all workers in the database
+        /// </summary>
+        /// <returns>Returns a list of all workers in the database</returns>
         public List<Worker> GetAllWorkers()
         {
             using (workerContext = new CarDealershipContext())
@@ -66,7 +85,11 @@ namespace Business
                 return workerContext.Workers.ToList();
             }
         }
-
+        /// <summary>
+        /// Find a worker by a given id
+        /// </summary>
+        /// <param name="id">The id of the worker you are searching for</param>
+        /// <returns>Returns the worker that matches the given id</returns>
         public Worker GetWorkerById(int id)
         {
             using (workerContext)
@@ -74,7 +97,11 @@ namespace Business
                 return workerContext.Workers.Find(id);
             }
         }
-
+        /// <summary>
+        /// Find all workers with a given first name
+        /// </summary>
+        /// <param name="firstName">The first name you are searching for</param>
+        /// <returns>Returns a list of all workers with the given first name</returns>
         public List<Worker> GetWorkersByFirstName(string firstName)
         {
             using (workerContext)
@@ -82,7 +109,11 @@ namespace Business
                 return workerContext.Workers.Where(x => x.FirstName == firstName).ToList();
             }
         }
-
+        /// <summary>
+        /// Find all workers with a given last name
+        /// </summary>
+        /// <param name="firstName">The last name you are searching for</param>
+        /// <returns>Returns a list of all workers with the given last name</returns>
         public List<Worker> GetWorkersByLastName(string lastName)
         {
             using (workerContext)
@@ -90,7 +121,11 @@ namespace Business
                 return workerContext.Workers.Where(x => x.LastName == lastName).ToList();
             }
         }
-
+        /// <summary>
+        /// Find all workers with a given position
+        /// </summary>
+        /// <param name="position">The position you are searching for</param>
+        /// <returns>Returns a list of all workers with the given position</returns>
         public List<Worker> GetWorkersByPosition(string position)
         {
             using (workerContext)
@@ -98,7 +133,11 @@ namespace Business
                 return workerContext.Workers.Where(x => x.Position == position).ToList();
             }
         }
-
+        /// <summary>
+        /// Find all workers with a given salary
+        /// </summary>
+        /// <param name="salary">The salary you are searching for</param>
+        /// <returns>Returns a list of all workers with the given salary</returns>
         public List<Worker> GetWorkersBySalary(decimal salary)
         {
             using (workerContext)
@@ -106,7 +145,11 @@ namespace Business
                 return workerContext.Workers.Where(x => x.Salary == salary).ToList();
             }
         }
-
+        /// <summary>
+        /// Find all workers in a given dealership
+        /// </summary>
+        /// <param name="dealershipId">The id of the dealership you are searching for</param>
+        /// <returns>Returns a list of all workers in the given dealership</returns>
         public List<Worker> GetWorkersByDealershipId(int dealershipId)
         {
             using (workerContext)
