@@ -113,6 +113,11 @@ namespace Business
         //Get operations//
         
         //Sort operations//
+
+        /// <summary>
+        /// Sorts towns
+        /// </summary>
+        /// <returns>List of towns sorted by name in ascending order</returns>
         public List<Town> SortTownsByNameAscending()
         {
             using (townContext)
@@ -121,6 +126,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts towns
+        /// </summary>
+        /// <returns>List of towns sorted by name in ascending order</returns>
         public List<Town> SortTownsByNameDescending()
         {
             using (townContext)
