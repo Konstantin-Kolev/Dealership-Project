@@ -171,6 +171,11 @@ namespace Business
         //Get operations//
 
         //Sort operations//
+
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by both names in ascending order</returns>
         public List<Customer> SortCustomerByBothNamesAscending()
         {
             using (customerContext)
@@ -179,6 +184,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by both names in ascending order</returns>
         public List<Customer> SortCustomerByBothNamesDescending()
         {
             using (customerContext)
@@ -187,6 +196,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by first name in ascending order</returns>
         public List<Customer> SortCustomersByFirstNameAscending()
         {
             using (customerContext)
@@ -195,6 +208,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by first name in descending order</returns>
         public List<Customer> SortCustomersByFirstNameDescending()
         {
             using (customerContext)
@@ -203,6 +220,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by last name in ascending order</returns>
         public List<Customer> SortCustomersByLastNameAscending()
         {
             using (customerContext)
@@ -211,6 +232,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by last name in descending order</returns>
         public List<Customer> SortCustomersByLastNameDescending()
         {
             using (customerContext)
@@ -219,6 +244,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by town name in ascending order</returns>
         public List<Customer> SortCustomersByTownNameAscending()
         {
             using (customerContext)
@@ -227,6 +256,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts customer
+        /// </summary>
+        /// <returns>List of sorted customers by town name in ascending order</returns>
         public List<Customer> SortCustomersByTownNameDescending()
         {
             using (customerContext)
