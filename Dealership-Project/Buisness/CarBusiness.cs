@@ -283,6 +283,10 @@ namespace Business
         //Get operations//
 
         //Sort operations//
+        /// <summary>
+        /// Sorts cars by power
+        /// </summary>
+        /// <returns>List of cars sorted by power in ascending order</returns>
         public List<Car> SortCarsByPowerAscending()
         {
             using (carContext)
@@ -291,6 +295,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by power
+        /// </summary>
+        /// <returns>List of cars sorted by power in descending order</returns>
         public List<Car> SortCarsByPowerDescending()
         {
             using (carContext)
@@ -299,6 +307,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by fuel economy
+        /// </summary>
+        /// <returns>List of cars sorted by fuel economy in ascending order</returns>
         public List<Car> SortCarsByFuelEconomyAscending()
         {
             using (carContext)
@@ -307,6 +319,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by fuel economy
+        /// </summary>
+        /// <returns>List of cars sorted by fuel economy in descending order</returns>
         public List<Car> SortCarsByFuelEconomyDescending()
         {
             using (carContext)
@@ -315,6 +331,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by fuel type
+        /// </summary>
+        /// <returns>List of cars sorted by fuel type in ascending order</returns>
         public List<Car> SortCarsByFuelType()
         {
             using (carContext)
@@ -323,6 +343,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by displacement
+        /// </summary>
+        /// <returns>List of cars sorted by displacement in ascending order</returns>
         public List<Car> SortCarsByDisplacementAscending()
         {
             using (carContext)
@@ -331,6 +355,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by displacement
+        /// </summary>
+        /// <returns>List of cars sorted by displacement in descending order</returns>
         public List<Car> SortCarsByDisplacementDescending()
         {
             using (carContext)
@@ -339,6 +367,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by transmission type
+        /// </summary>
+        /// <returns>List of cars sorted by transmission type in ascending order</returns>
         public List<Car> SortCarsByTransmissionType()
         {
             using (carContext)
@@ -347,6 +379,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by number of transmission gears
+        /// </summary>
+        /// <returns>List of cars sorted by number of transmission gears in ascending order</returns>
         public List<Car> SortCarsByTransmissionGearsAscending()
         {
             using (carContext)
@@ -355,6 +391,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by number of transmission gears
+        /// </summary>
+        /// <returns>List of cars sorted by number of transmission gears in descending order</returns>
         public List<Car> SortCarsByTransmissionGearsDescending()
         {
             using (carContext)
@@ -363,6 +403,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by color
+        /// </summary>
+        /// <returns>List of cars sorted by their color in ascending order</returns>
         public List<Car> SortCarsByColor()
         {
             using (carContext)
@@ -371,6 +415,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by price
+        /// </summary>
+        /// <returns>List of cars sorted by price in ascending order</returns>
         public List<Car> SortCarsByPriceAscending()
         {
             using (carContext)
@@ -379,6 +427,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by price
+        /// </summary>
+        /// <returns>List of cars sorted by price in descending order</returns>
         public List<Car> SortCarsByPriceDescending()
         {
             using (carContext)
@@ -387,6 +439,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by manufacturer and model
+        /// </summary>
+        /// <returns>List of cars sorted by manufacturer and model in ascending order</returns>
         public List<Car> SortCarsByManufacturerAndModelAscending()
         {
             using (carContext)
@@ -395,6 +451,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by manufacturer and model
+        /// </summary>
+        /// <returns>List of cars sorted by manufacturer and model in descending order</returns>
         public List<Car> SortCarsByManufacturerAndModelDescending()
         {
             using (carContext)
@@ -403,6 +463,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by dealership name
+        /// </summary>
+        /// <returns>List of cars sorted by dealership name in ascending order</returns>
         public List<Car> SortCarsByDealershipNameAscending()
         {
             using (carContext)
@@ -411,6 +475,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts cars by dealership name
+        /// </summary>
+        /// <returns>List of cars sorted by dealership name in descending order</returns>
         public List<Car> SortCarsByDealershipNameDescending()
         {
             using (carContext)
