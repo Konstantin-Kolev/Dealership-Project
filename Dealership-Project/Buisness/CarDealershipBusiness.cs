@@ -138,6 +138,11 @@ namespace Business
         //Get operations//
 
         //Sort operations//
+
+        /// <summary>
+        /// Sorts dealerships 
+        /// </summary>
+        /// <returns>List of dealerships sorted by name in ascending order</returns>
         public List<CarDealership> SortDealershipsByNameAscending()
         {
             using (carDealershipContext)
@@ -146,6 +151,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts dealerships 
+        /// </summary>
+        /// <returns>List of dealerships sorted by name in ascending order</returns>
         public List<CarDealership> SortDealershipsByNameDescending()
         {
             using (carDealershipContext)
@@ -154,6 +163,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts dealerships 
+        /// </summary>
+        /// <returns>List of dealerships sorted by town name in ascending order</returns>
         public List<CarDealership> SortDealershipsByTownNameAscending()
         {
             using (carDealershipContext)
@@ -162,6 +175,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts dealerships 
+        /// </summary>
+        /// <returns>List of dealerships sorted by town name in descending order</returns>
         public List<CarDealership> SortDealershipsByTownNameDescending()
         {
             using (carDealershipContext)
