@@ -105,6 +105,7 @@
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -205,6 +206,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CarDealershipEditView
             // 

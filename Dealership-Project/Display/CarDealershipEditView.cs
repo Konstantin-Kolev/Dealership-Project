@@ -14,6 +14,8 @@ namespace Display
 {
     public partial class CarDealershipEditView : Form
     {
+        private int editId = 0;
+
         public CarDealershipEditView()
         {
             InitializeComponent();
@@ -119,6 +121,14 @@ namespace Display
             txtTown.Text = "";
         }
 
+        private void UpdateTextBoxes(int Id)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            CarDealership carDealership = carDealershipBusiness.GetCarDealershipById(Id);
+            txtName.Text = carDealership.Name;
+            txtTown.Text = carDealership.TownId.ToString();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var name = txtName.Text;
@@ -134,13 +144,48 @@ namespace Display
             ClearTextBoxes();
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                var dealership = dataGridView.SelectedRows[0].Cells;
+                var dealershipId = int.Parse(dealership[2].Value.ToString());
+                editId = dealershipId;
+                UpdateTextBoxes(dealershipId);
+                ToggleSaveUpdate();
+                DisableSelect();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            CarDealership carDealership = GetEditedProduct();
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            carDealershipBusiness.Update(carDealership);
+            PopulateDataGridViewDefault();
+            ResetSelect();
+            ToggleSaveUpdate();
+        }
+
+        private CarDealership GetEditedProduct()
+        {
+            CarDealership carDealership = new CarDealership();
+            carDealership.Id = editId;
+
+            carDealership.Name = txtName.Text;
+            int.TryParse(txtTown.Text, out int townId);
+            carDealership.TownId = townId;
+
+            return carDealership;
+        }
+
         private void cbGet_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbGet.SelectedIndex;
             switch (index)
             {
                 case 0: SetupDataGridView(); PopulateDataGridViewGetCarDealershipByName(); break;
-                    //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
+                //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
             }
         }
     }
