@@ -171,6 +171,11 @@ namespace Business
         //Get operations//
 
         //Sort operations//
+
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by both names in ascending order</returns>
         public List<Worker> SortWorkersByBothNamesAscending()
         {
             using (workerContext)
@@ -179,6 +184,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by both names in descending order</returns>
         public List<Worker> SortWorkersByBothNamesDescending()
         {
             using (workerContext)
@@ -187,6 +196,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by first name in ascending order</returns>
         public List<Worker> SortWorkersByFirstNameAscending()
         {
             using (workerContext)
@@ -195,6 +208,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by first name in descending order</returns>
         public List<Worker> SortWorkersByFirstNameDescending()
         {
             using (workerContext)
@@ -203,6 +220,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by last name in ascending order</returns>
         public List<Worker> SortWorkersByLastNameAscending()
         {
             using (workerContext)
@@ -211,6 +232,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by last name in descending order</returns>
         public List<Worker> SortWorkersByLastNameDescending()
         {
             using (workerContext)
@@ -219,6 +244,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers 
+        /// </summary>
+        /// <returns>List of workers sorted by position in ascending order</returns>
         public List<Worker> SortWorkersByPosition()
         {
             using (workerContext)
@@ -227,6 +256,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by salary in ascending order</returns>
         public List<Worker> SortWorkersBySalaryAscending()
         {
             using (workerContext)
@@ -235,6 +268,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by salary in descending order</returns>
         public List<Worker> SortWorkersBySalaryDescending()
         {
             using (workerContext)
@@ -243,6 +280,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts workers
+        /// </summary>
+        /// <returns>List of workers sorted by dealership name in ascending order</returns>
         public List<Worker> SortWorkersByCarDealership()
         {
             using (workerContext = new CarDealershipContext())
