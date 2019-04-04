@@ -11,6 +11,7 @@ namespace Business
     public class CarBusiness
     {
         private CarDealershipContext carContext;
+
         /// <summary>
         /// Create a new instance of the class with a new context
         /// </summary>
@@ -18,6 +19,7 @@ namespace Business
         {
             this.carContext = new CarDealershipContext();
         }
+
         /// <summary>
         /// Create a new instance of the class with an existing context
         /// </summary>
@@ -40,6 +42,7 @@ namespace Business
                 carContext.SaveChanges();
             }
         }
+
         /// <summary>
         /// Change the information about one of the cars
         /// </summary>
@@ -56,6 +59,7 @@ namespace Business
                 }
             }
         }
+
         /// <summary>
         /// Remove a car from the database
         /// </summary>
@@ -86,6 +90,7 @@ namespace Business
                 return carContext.Cars.ToList();
             }
         }
+
         /// <summary>
         /// Find a car by a given id
         /// </summary>
@@ -98,6 +103,7 @@ namespace Business
                 return carContext.Cars.Find(id);
             }
         }
+
         /// <summary>
         /// Find all cars from a given manufacturer
         /// </summary>
@@ -110,6 +116,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Manufacturer == manufacturer).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars of a given model
         /// </summary>
@@ -122,6 +129,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Model == model).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars from a given dealership
         /// </summary>
@@ -134,6 +142,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.CarDealershipId == dealershipId).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given color
         /// </summary>
@@ -146,6 +155,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Color == color).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given transmition type
         /// </summary>
@@ -158,6 +168,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.TransmissionType == transmissionType).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given price
         /// </summary>
@@ -170,6 +181,33 @@ namespace Business
                 return carContext.Cars.Where(x => x.Price == price).ToList();
             }
         }
+
+        /// <summary>
+        /// Find all cars with price lower than given
+        /// </summary>
+        /// <param name="price">The maximum price for which cars will be shown</param>
+        /// <returns>Returns a list of cars with price lower than the given</returns>
+        public List<Car> GetCarsUnderPrice(decimal price)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Price <= price).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all cars with price higher than given
+        /// </summary>
+        /// <param name="price">The minimum price for which cars will be shown</param>
+        /// <returns>Returns a list of cars with price higher than the given</returns>
+        public List<Car> GetCarsOverPrice(decimal price)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Price >= price).ToList();
+            }
+        }
+
         /// <summary>
         /// Find all cars with a given number of transmition gears
         /// </summary>
@@ -182,6 +220,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.TransmissionGears == transmissionGears).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given amount of horse power
         /// </summary>
@@ -194,6 +233,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Engine.Power == power).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given engine displacement
         /// </summary>
@@ -206,6 +246,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Engine.Displacement == displacement).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars that are owned
         /// </summary>
@@ -217,6 +258,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.OwnerId != null).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars with a given fuel tyoe
         /// </summary>
@@ -229,6 +271,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.Engine.FuelType == fuelType).ToList();
             }
         }
+
         /// <summary>
         /// Find all cars for sale
         /// </summary>
@@ -240,6 +283,7 @@ namespace Business
                 return carContext.Cars.Where(x => x.OwnerId == null).ToList();
             }
         }
+
         /// <summary>
         /// Find the name of a dealership from a car's DealershipId
         /// </summary>
@@ -251,6 +295,7 @@ namespace Business
             var dealership = carDealershipBusiness.GetCarDealershipById(dealershipId);
             return dealership.Name;
         }
+
         /// <summary>
         /// Find the name of an engine from a car's EngineId
         /// </summary>
@@ -262,6 +307,7 @@ namespace Business
             var engine = engineBusiness.GetEngineById(engineId);
             return engine.Name;
         }
+
         /// <summary>
         /// Find the name of an owner by a car's OwnerId
         /// </summary>
