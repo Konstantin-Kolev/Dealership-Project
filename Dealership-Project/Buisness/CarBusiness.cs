@@ -12,14 +12,14 @@ namespace Business
     {
         private CarDealershipContext carContext;
         /// <summary>
-        /// Creates a new instance of the class with a new context
+        /// Create a new instance of the class with a new context
         /// </summary>
         public CarBusiness()
         {
             this.carContext = new CarDealershipContext();
         }
         /// <summary>
-        /// Creates a new instance of the class with an existing context
+        /// Create a new instance of the class with an existing context
         /// </summary>
         /// <param name="carDealershipContext">An existing context to be used by the instance of the class</param>
         public CarBusiness(CarDealershipContext carDealershipContext)
@@ -29,7 +29,7 @@ namespace Business
 
         //Basic operations//
         /// <summary>
-        /// Adds a new car to the database
+        /// Add a new car to the database
         /// </summary>
         /// <param name="car">The car that needs to be added to the database</param>
         public void Add(Car car)
@@ -41,7 +41,7 @@ namespace Business
             }
         }
         /// <summary>
-        /// Changes the information about one of the cars
+        /// Change the information about one of the cars
         /// </summary>
         /// <param name="car">A car with the new information and the same id as the old one</param>
         public void Update(Car car)
@@ -57,7 +57,7 @@ namespace Business
             }
         }
         /// <summary>
-        /// Removes a car from the database
+        /// Remove a car from the database
         /// </summary>
         /// <param name="id">The id of the car that needs to be removed</param>
         public void Delete(int id)
@@ -76,7 +76,7 @@ namespace Business
 
         //Get operations//
         /// <summary>
-        /// FInd all cars in the database
+        /// Find all cars in the database
         /// </summary>
         /// <returns>Returns a list of all cars in the database</returns>
         public List<Car> GetAllCars()

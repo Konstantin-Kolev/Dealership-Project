@@ -12,14 +12,14 @@ namespace Business
     {
         private CarDealershipContext carDealershipContext;
         /// <summary>
-        /// Creates a new instance of the class with a new context
+        /// Create a new instance of the class with a new context
         /// </summary>
         public CarDealershipBusiness()
         {
             this.carDealershipContext = new CarDealershipContext();
         }
         /// <summary>
-        /// Creates a new instance of the class with an existing context
+        /// Create a new instance of the class with an existing context
         /// </summary>
         /// <param name="carDealershipContext">An existing context to be used by the instance of the class</param>
         public CarDealershipBusiness(CarDealershipContext carDealershipContext)
@@ -29,7 +29,7 @@ namespace Business
 
         //Basic operations//
         /// <summary>
-        /// Adds a new dealership to the database
+        /// Add a new dealership to the database
         /// </summary>
         /// <param name="carDealership">The dealership thta needs to be added to the database</param>
         public void Add(CarDealership carDealership)
@@ -41,7 +41,7 @@ namespace Business
             }
         }
         /// <summary>
-        /// Changes the information about one of the dealerships
+        /// Change the information about one of the dealerships
         /// </summary>
         /// <param name="carDealership">A dealership with the new information and the same id as the old one</param>
         public void Update(CarDealership carDealership)
@@ -58,7 +58,7 @@ namespace Business
 
         }
         /// <summary>
-        /// Removes a dealership from the database
+        /// Remove a dealership from the database
         /// </summary>
         /// <param name="id">The id of the dealerships that needs to be removed</param>
         public void Delete(int id)
