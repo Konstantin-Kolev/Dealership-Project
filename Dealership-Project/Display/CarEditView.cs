@@ -323,7 +323,7 @@ namespace Display
                 case 4: SetupDataGridView(); PopulateDataGridViewGetCarsByFuelType(); break;
                 case 5: SetupDataGridView(); PopulateDataGridViewGetCarsByPower(); break;
                 case 6: SetupDataGridView(); PopulateDataGridViewGetCarsByDisplacement(); break;
-                case 7: SetupDataGridView(); PopulateDataGridViewGetCarsByFuelType(); break;
+                case 7: SetupDataGridView(); PopulateDataGridViewGetCarsByTransmissionType(); break;
                 case 8: SetupDataGridView(); PopulateDataGridViewGetCarsTransmissionGears(); break;
                 case 9: SetupDataGridView(); PopulateDataGridViewGetCarsByColor(); break;
                 case 10: SetupDataGridView(); PopulateDataGridViewGetCarsByPrice(); break;
