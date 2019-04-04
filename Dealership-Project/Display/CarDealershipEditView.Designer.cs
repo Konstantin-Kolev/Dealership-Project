@@ -187,6 +187,7 @@
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);
             this.cbGet.TabIndex = 34;
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // txtGet
             // 

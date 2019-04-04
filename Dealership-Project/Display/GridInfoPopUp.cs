@@ -107,7 +107,7 @@ namespace Display
                 {
                     dealership.Id.ToString(),
                     dealership.Name,
-                    carDealershipBusiness.GetTownId(dealership.TownId),
+                    dealership.TownId.ToString(),
                     carDealershipBusiness.GetTownName(dealership.TownId)
                 };
                 dataGridView.Rows.Add(row);
