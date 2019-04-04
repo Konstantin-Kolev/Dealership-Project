@@ -161,6 +161,11 @@ namespace Business
         //Get operations//
 
         //Sort operations//
+        
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by fuel type in ascending order</returns>
         public List<Engine> SortEnginesByFuelType()
         {
             using (engineContext)
@@ -169,6 +174,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by displacement in ascending order</returns>
         public List<Engine> SortEnginesByDisplacementAscending()
         {
             using (engineContext)
@@ -177,6 +186,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by displacement in ascending order</returns>
         public List<Engine> SortEnginesByDisplacementDescending()
         {
             using (engineContext)
@@ -185,6 +198,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by power in ascending order</returns>
         public List<Engine> SortEnginesByPowerAscending()
         {
             using (engineContext)
@@ -193,6 +210,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by power in descending order order</returns>
         public List<Engine> SortEnginesByPowerDescending()
         {
             using (engineContext)
@@ -201,6 +222,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by fuel economy in ascending order</returns>
         public List<Engine> SortEnginesByEconomyPerHundredKmAscending()
         {
             using (engineContext)
@@ -209,6 +234,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by fuel economy in descending order</returns>
         public List<Engine> SortEnginesByEconomyPerHundredKmDescending()
         {
             using (engineContext)
@@ -217,6 +246,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by name in ascending order</returns>
         public List<Engine> SortEnginesByNameAscending()
         {
             using (engineContext)
@@ -225,6 +258,10 @@ namespace Business
             }
         }
 
+        /// <summary>
+        /// Sorts engines
+        /// </summary>
+        /// <returns>List of sorted engines by name in ascending order</returns>
         public List<Engine> SortEnginesByNameDescending()
         {
             using (engineContext)
