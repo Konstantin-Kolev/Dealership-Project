@@ -59,6 +59,14 @@ namespace Display
             DataPopulator(dealershipList);
         }
 
+        private void PopulateDataGridViewGetCarDealershipByName()
+        {
+            dataGridView.Rows.Clear();
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            var dealership = carDealershipBusiness.GetCarDealershipByName(txtGet.Text);
+            DataPopulatorSingle(dealership);
+        }
+
         private void DataPopulator(List<CarDealership> carDealerships)
         {
             foreach (var dealership in carDealerships)
@@ -72,6 +80,18 @@ namespace Display
                 };
                 dataGridView.Rows.Add(row);
             }
+        }
+
+        private void DataPopulatorSingle(CarDealership dealership)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            string[] row =
+            {
+                dealership.Name,
+                carDealershipBusiness.GetTownName(dealership.TownId),
+                dealership.Id.ToString()
+            };
+            dataGridView.Rows.Add(row);
         }
 
         private void SetupDataGridView()
@@ -112,6 +132,16 @@ namespace Display
             carDealershipBusiness.Add(carDealership);
             PopulateDataGridViewDefault();
             ClearTextBoxes();
+        }
+
+        private void cbGet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbGet.SelectedIndex;
+            switch (index)
+            {
+                case 0: SetupDataGridView(); PopulateDataGridViewGetCarDealershipByName(); break;
+                    //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
+            }
         }
     }
 }

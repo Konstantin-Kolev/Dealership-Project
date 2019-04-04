@@ -108,7 +108,8 @@ namespace Business
         {
             using (carDealershipContext)
             {
-                return carDealershipContext.CarDealerships.Find(name);
+                var list = carDealershipContext.CarDealerships.Where(x => x.Name == name).ToList();
+                return list[0];
             }
         }
         /// <summary>

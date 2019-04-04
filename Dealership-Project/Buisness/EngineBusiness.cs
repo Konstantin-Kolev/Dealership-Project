@@ -150,13 +150,13 @@ namespace Business
         /// </summary>
         /// <param name="name">The name you are searching for</param>
         /// <returns>Returns the engine that matches the given name</returns>
-        public Engine GetEnginesByName(string name)
+        /*public Engine GetEngineByName(string name)
         {
             using (engineContext)
             {
-                
+                return engineContext.Engines.Where(x => x.Name == name);
             }
-        }
+        }*/
         //Get operations//
 
         //Sort operations//
