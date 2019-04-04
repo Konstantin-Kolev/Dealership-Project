@@ -263,9 +263,9 @@ namespace Business
             return engine.Name;
         }
         /// <summary>
-        /// Find the name of an owner by his id
+        /// 
         /// </summary>
-        /// <param name="ownerId">The id of the owner you are looking for</param>
+        /// <param name="ownerId"></param>
         /// <returns></returns>
         public string GetOwnerName(int? ownerId)
         {
