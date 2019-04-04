@@ -172,7 +172,142 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+        private void PopulateDataGridViewSortCarsByDealershipNameAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByDealershipNameAscending();
+            DataPopulator(carsList);
+        }
 
+        private void PopulateDataGridViewSortCarsByDealershipNameDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByDealershipNameDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByTransmissionGearsAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByTransmissionGearsAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByTransmissionGearsDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByTransmissionGearsDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByManufacturerAndModelAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByManufacturerAndModelAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByManufacturerAndModelDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByManufacturerAndModelDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByPowerAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByPowerAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByPowerDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByPowerDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByFuelEconomyAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByFuelEconomyAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByFuelEconomyDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByFuelEconomyDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByDisplacementAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByDisplacementAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByDisplacementDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByDisplacementDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByPriceAscending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByPriceAscending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByPriceDescending()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByPriceDescending();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByFuelType()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByFuelType();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByTransmissionType()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByTransmissionType();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewSortCarsByColor()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.SortCarsByColor();
+            DataPopulator(carsList);
+        }
+        //Sort logic//
         //Main logic//
 
         //cbGet and cbSort//
@@ -204,7 +339,23 @@ namespace Display
             int index = cbSort.SelectedIndex;
             switch (index)
             {
-                case 0: SetupDataGridView(); break;
+                case 0: SetupDataGridView(); PopulateDataGridViewSortCarsByDealershipNameAscending(); break;
+                case 1: SetupDataGridView(); PopulateDataGridViewSortCarsByDealershipNameDescending(); break;
+                case 2: SetupDataGridView(); PopulateDataGridViewSortCarsByTransmissionGearsAscending(); break;
+                case 3: SetupDataGridView(); PopulateDataGridViewSortCarsByTransmissionGearsDescending(); break;
+                case 4: SetupDataGridView(); PopulateDataGridViewSortCarsByManufacturerAndModelAscending(); break;
+                case 5: SetupDataGridView(); PopulateDataGridViewSortCarsByManufacturerAndModelDescending(); break;
+                case 6: SetupDataGridView(); PopulateDataGridViewSortCarsByPowerAscending(); break;
+                case 7: SetupDataGridView(); PopulateDataGridViewSortCarsByPowerDescending(); break;
+                case 8: SetupDataGridView(); PopulateDataGridViewSortCarsByFuelEconomyAscending(); break;
+                case 9: SetupDataGridView(); PopulateDataGridViewSortCarsByFuelEconomyDescending(); break;
+                case 10: SetupDataGridView(); PopulateDataGridViewSortCarsByDisplacementAscending(); break;
+                case 11: SetupDataGridView(); PopulateDataGridViewSortCarsByDisplacementDescending(); break;
+                case 12: SetupDataGridView(); PopulateDataGridViewSortCarsByPriceAscending(); break;
+                case 13: SetupDataGridView(); PopulateDataGridViewSortCarsByPriceDescending(); break;
+                case 14: SetupDataGridView(); PopulateDataGridViewSortCarsByFuelType(); break;
+                case 15: SetupDataGridView(); PopulateDataGridViewSortCarsByTransmissionType(); break;
+                case 16: SetupDataGridView(); PopulateDataGridViewSortCarsByColor(); break;
             }
         }
         //cbGet and cbSort//
