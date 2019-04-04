@@ -167,6 +167,20 @@ namespace Display
             ToggleSaveUpdate();
         }
 
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                var dealership = dataGridView.SelectedRows[0].Cells;
+                var dealershipId = int.Parse(dealership[2].Value.ToString());
+                CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+                carDealershipBusiness.Delete(dealershipId);
+                PopulateDataGridViewDefault();
+                ResetSelect();
+            }
+        }
+
         private CarDealership GetEditedProduct()
         {
             CarDealership carDealership = new CarDealership();
@@ -185,7 +199,7 @@ namespace Display
             switch (index)
             {
                 case 0: SetupDataGridView(); PopulateDataGridViewGetCarDealershipByName(); break;
-                //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
+                    //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
             }
         }
     }

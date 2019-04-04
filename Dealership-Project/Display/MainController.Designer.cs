@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainController));
             this.btnCars = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEngines = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDealerships = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -60,14 +60,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnEngines
             // 
-            this.button1.Location = new System.Drawing.Point(45, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Коли";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEngines.Location = new System.Drawing.Point(45, 105);
+            this.btnEngines.Name = "btnEngines";
+            this.btnEngines.Size = new System.Drawing.Size(151, 36);
+            this.btnEngines.TabIndex = 2;
+            this.btnEngines.Text = "Двигатели";
+            this.btnEngines.UseVisualStyleBackColor = true;
+            this.btnEngines.Click += new System.EventHandler(this.btnEngines_Click);
             // 
             // button2
             // 
@@ -115,7 +116,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnDealerships);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEngines);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainController";
@@ -131,7 +132,7 @@
 
         private System.Windows.Forms.Button btnCars;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEngines;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDealerships;
         private System.Windows.Forms.Button button4;

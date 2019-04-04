@@ -16,5 +16,10 @@ namespace Display
         {
             InitializeComponent();
         }
+
+        private void WorkerEditView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

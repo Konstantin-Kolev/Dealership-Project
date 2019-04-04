@@ -157,6 +157,17 @@ namespace Business
                 return customerContext.Customers.Where(x => x.Town.Name == townName).ToList();
             }
         }
+        /// <summary>
+        /// Find the name of a town by a customer's TownId
+        /// </summary>
+        /// <param name="townId">The id of a customer's town you want the name of</param>
+        /// <returns>The name of the town as a string</returns>
+        public string GetTownName(int townId)
+        {
+            TownBusiness townBusiness = new TownBusiness();
+            var town = townBusiness.GetTownById(townId);
+            return town.Name;
+        }
         //Get operations//
 
         //Sort operations//

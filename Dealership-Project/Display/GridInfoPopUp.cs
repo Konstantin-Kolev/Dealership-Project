@@ -18,14 +18,34 @@ namespace Display
             InitializeComponent();
         }
 
-        private void GridInfoPopUp_Load(object sender, EventArgs e)
+        private void HideSpecificInfo()
         {
-            dataGridView.ReadOnly = true;
-            //this.GetAllCars();
+            lblInfoCar.Visible = false;
+            lblInfoCustomer.Visible = false;
+            lblInfoDealership.Visible = false;
+            lblInfoEngine.Visible = false;
+            lblInfoTown.Visible = false;
+            lblInfoWorker.Visible = false;
+            btnNewCar.Visible = false;
+            btnNewCustomer.Visible = false;
+            btnNewDealership.Visible = false;
+            btnNewEngine.Visible = false;
+            btnNewTown.Visible = false;
+            btnNewWorker.Visible = false;
         }
 
-        private void btnShowCars_Click(object sender, EventArgs e)
+        private void GridInfoPopUp_Load(object sender, EventArgs e)
         {
+            HideSpecificInfo();
+            dataGridView.ReadOnly = true;
+        }
+
+        private void btnCars_Click(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            lblInfoCar.Visible = true;
+            btnNewCar.Visible = true;
+
             dataGridView.Rows.Clear();
 
             dataGridView.ColumnCount = 13;
@@ -80,6 +100,10 @@ namespace Display
 
         private void btnDealerships_Click(object sender, EventArgs e)
         {
+            HideSpecificInfo();
+            lblInfoDealership.Visible = true;
+            btnNewDealership.Visible = true;
+
             dataGridView.Rows.Clear();
 
             dataGridView.ColumnCount = 4;
@@ -112,6 +136,210 @@ namespace Display
                 };
                 dataGridView.Rows.Add(row);
             }
+        }
+
+        private void btnEngines_Click(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            lblInfoEngine.Visible = true;
+            btnNewEngine.Visible = true;
+
+            dataGridView.Rows.Clear();
+
+            dataGridView.ColumnCount = 6;
+
+            dataGridView.Columns[0].Name = "ID";
+            dataGridView.Columns[1].Name = "Име";
+            dataGridView.Columns[2].Name = "Гориво";
+            dataGridView.Columns[3].Name = "Мощност";
+            dataGridView.Columns[4].Name = "Работен обем";
+            dataGridView.Columns[5].Name = "Разход на 100 километра";
+
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+
+            EngineBusiness engineBusiness = new EngineBusiness();
+            var enginesList = engineBusiness.GetAllEngines();
+            foreach (var engine in enginesList)
+            {
+                string[] row =
+                {
+                    engine.Id.ToString(),
+                    engine.Name,
+                    engine.FuelType,
+                    engine.Power.ToString(),
+                    engine.Displacement.ToString(),
+                    engine.EconomyPerHundredKm.ToString()
+                };
+                dataGridView.Rows.Add(row);
+            }
+        }
+
+        private void btnWorkers_Click(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            lblInfoWorker.Visible = true;
+            btnNewWorker.Visible = true;
+
+            dataGridView.Rows.Clear();
+
+            dataGridView.ColumnCount = 7;
+
+            dataGridView.Columns[0].Name = "ID";
+            dataGridView.Columns[1].Name = "Име";
+            dataGridView.Columns[2].Name = "Фамилия";
+            dataGridView.Columns[3].Name = "Длъжност";
+            dataGridView.Columns[4].Name = "Заплата";
+            dataGridView.Columns[5].Name = "ID на автокъща";
+            dataGridView.Columns[6].Name = "Автокъща";
+
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+
+            WorkerBusiness workerBusiness = new WorkerBusiness();
+            var workersList = workerBusiness.GetAllWorkers();
+            foreach (var worker in workersList)
+            {
+                string[] row =
+                {
+                    worker.Id.ToString(),
+                    worker.FirstName,
+                    worker.LastName,
+                    worker.Position,
+                    worker.Salary.ToString(),
+                    worker.CarDealershipId.ToString(),
+                    workerBusiness.GetDealershipName(worker.CarDealershipId)
+                };
+                dataGridView.Rows.Add(row);
+            }
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            lblInfoCustomer.Visible = true;
+            btnNewCustomer.Visible = true;
+
+            dataGridView.Rows.Clear();
+
+            dataGridView.ColumnCount = 5;
+
+            dataGridView.Columns[0].Name = "ID";
+            dataGridView.Columns[1].Name = "Име";
+            dataGridView.Columns[2].Name = "Фамилия";
+            dataGridView.Columns[3].Name = "ID град";
+            dataGridView.Columns[4].Name = "Град";
+
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+
+            CustomerBusiness customerBusiness = new CustomerBusiness();
+            var customersList = customerBusiness.GetAllCustomers();
+            foreach (var customer in customersList)
+            {
+                string[] row =
+                {
+                    customer.Id.ToString(),
+                    customer.FirstName,
+                    customer.LastName,
+                    customer.TownId.ToString(),
+                    customerBusiness.GetTownName(customer.TownId)
+                };
+                dataGridView.Rows.Add(row);
+            }
+        }
+
+        private void btnTowns_Click(object sender, EventArgs e)
+        {
+            HideSpecificInfo();
+            lblInfoTown.Visible = true;
+            btnNewTown.Visible = true;
+
+            dataGridView.Rows.Clear();
+
+            dataGridView.ColumnCount = 2;
+
+            dataGridView.Columns[0].Name = "ID";
+            dataGridView.Columns[1].Name = "Име";
+
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+
+            TownBusiness townBusiness = new TownBusiness();
+            var townsList = townBusiness.GetAllTowns();
+            foreach (var town in townsList)
+            {
+                string[] row =
+                {
+                    town.Id.ToString(),
+                    town.Name,
+                };
+                dataGridView.Rows.Add(row);
+            }
+        }
+
+        private void btnNewCar_Click(object sender, EventArgs e)
+        {
+            CarEditView carEditView = new CarEditView();
+            carEditView.Show();
+        }
+
+        private void btnNewDealership_Click(object sender, EventArgs e)
+        {
+            CarDealershipEditView carDealershipEditView = new CarDealershipEditView();
+            carDealershipEditView.Show();
+        }
+
+        private void btnNewEngine_Click(object sender, EventArgs e)
+        {
+            EngineEditView engineEditView = new EngineEditView();
+            engineEditView.Show();
+        }
+
+        private void btnNewWorker_Click(object sender, EventArgs e)
+        {
+            WorkerEditView workerEditView = new WorkerEditView();
+            workerEditView.Show();
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerEditView customerEditView = new CustomerEditView();
+            customerEditView.Show();
+        }
+
+        private void btnNewTown_Click(object sender, EventArgs e)
+        {
+            TownEditView townEditView = new TownEditView();
+            townEditView.Show();
         }
     }
 }

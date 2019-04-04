@@ -133,36 +133,6 @@ namespace Display
             // dataGridView1.Dock = DockStyle.Fill;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            CarBusiness carBusiness = new CarBusiness();
-            //ba4ka ama iska izdokusorqvane//
-            var manufacturer = txtManufacturer.Text;
-            var model = txtModel.Text;
-            var engine = 2;
-            var carDealershipId = 3;
-
-
-
-            var transmissionType = "Automatic";
-            var transmissionGears = 5;
-            var color = "Green";
-            decimal price = 4000;
-
-
-            Car car = new Car();
-            car.CarDealershipId = carDealershipId;
-            car.Color = color;
-            car.EngineId = engine;
-            car.Manufacturer = manufacturer;
-            car.Model = txtModel.Text;
-            car.Price = price;
-            car.TransmissionGears = transmissionGears;
-            car.TransmissionType = transmissionType;
-            //carBusiness.Add(car);
-            //PopulateDataGridView();
-        }
-
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbSort.SelectedIndex;
@@ -173,70 +143,56 @@ namespace Display
             }*/
         }
 
+        private void UpdateTextBoxes(int Id)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            CarDealership carDealership = carDealershipBusiness.GetCarDealershipById(Id);
+            
+        }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             SetupDataGridView();
             PopulateDataGridViewDefault();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                var item = dataGridView.SelectedRows[0].Cells;
-                var id = int.Parse(item[0].Value.ToString());
-                editId = id;
-                UpdateTextboxes(id);
-                ToggleSaveUpdate();
-                DisableSelect();
-            }
-        }
-
-        private void UpdateTextboxes(int id)
-        {
-            CarBusiness carBusiness = new CarBusiness();
-            Car update = carBusiness.GetCarById(id);
-            //dovarwi//
-        }
-
-        private Car GetEditedCar()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             Car car = new Car();
-            car.Id = editId;
-
-            var model = txtModel.Text;
-            decimal price = 0;
-            decimal.TryParse(txtPrice.Text, out price);
-            int gears = 0;
-            int.TryParse(txtGears.Text, out gears);
-            car.Model = model;
+            car.Color = txtColor.Text;
+            car.Manufacturer = txtManufacturer.Text;
+            car.Model = txtModel.Text;
+            decimal.TryParse(txtPrice.Text, out decimal price);
             car.Price = price;
+            int.TryParse(txtGears.Text, out int gears);
             car.TransmissionGears = gears;
+            car.TransmissionType = txtTransmission.Text;
+            int.TryParse(txtEngine.Text, out int engineId);
+            car.EngineId = engineId;
+            int.TryParse(txtDealership.Text, out int dealershipId);
+            car.CarDealershipId = dealershipId;
+            int.TryParse(txtOwner.Text, out int ownerId);
+            car.OwnerId = ownerId;
 
-            return car;
+            CarBusiness carBusiness = new CarBusiness();
+            carBusiness.Add(car);
+            PopulateDataGridViewDefault();
+            ClearTextBoxes();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Car editedCar = GetEditedCar();
-            CarBusiness carBusiness = new CarBusiness();
-            carBusiness.Update(editedCar);
-            PopulateDataGridViewDefault();
-            ResetSelect();
-            ToggleSaveUpdate();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                var item = dataGridView.SelectedRows[0].Cells;
-                var id = int.Parse(item[0].Value.ToString());
-                CarBusiness carBusiness = new CarBusiness();
-                carBusiness.Delete(id);
-                PopulateDataGridViewDefault();
-                ResetSelect();
-            }
+
         }
 
         private void btnOpenHelper_Click(object sender, EventArgs e)

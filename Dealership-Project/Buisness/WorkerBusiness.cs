@@ -157,6 +157,17 @@ namespace Business
                 return workerContext.Workers.Where(x => x.CarDealershipId == dealershipId).ToList();
             }
         }
+        /// <summary>
+        /// Find the name of a dealership from a worker's DealershipId
+        /// </summary>
+        /// <param name="dealershipId">The id of a worker's dealership you want the name of</param>
+        /// <returns>Returns the name of the dealership as a string</returns>
+        public string GetDealershipName(int dealershipId)
+        {
+            CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
+            var dealership = carDealershipBusiness.GetCarDealershipById(dealershipId);
+            return dealership.Name;
+        }
         //Get operations//
 
         //Sort operations//

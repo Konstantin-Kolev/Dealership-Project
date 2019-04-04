@@ -35,5 +35,11 @@ namespace Display
             CarDealershipEditView carDealershipEditView = new CarDealershipEditView();
             carDealershipEditView.ShowDialog();
         }
+
+        private void btnEngines_Click(object sender, EventArgs e)
+        {
+            EngineEditView engineEditView = new EngineEditView();
+            engineEditView.ShowDialog();
+        }
     }
 }

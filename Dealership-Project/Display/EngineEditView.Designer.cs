@@ -287,6 +287,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "EngineEditView";
             this.Text = "EngineEditView";
+            this.Load += new System.EventHandler(this.EngineEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

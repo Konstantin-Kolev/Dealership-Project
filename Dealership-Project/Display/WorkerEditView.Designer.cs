@@ -287,6 +287,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "WorkerEditView";
             this.Text = "WorkerEditView";
+            this.Load += new System.EventHandler(this.WorkerEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
