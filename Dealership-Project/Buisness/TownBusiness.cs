@@ -10,18 +10,27 @@ namespace Business
     public class TownBusiness
     {
         private CarDealershipContext townContext;
-
+        /// <summary>
+        /// Create a new instance of the class with a new context
+        /// </summary>
         public TownBusiness()
         {
             this.townContext = new CarDealershipContext();
         }
-
+        /// <summary>
+        /// Create a new instance of the class with an existing context
+        /// </summary>
+        /// <param name="carDealershipContext">AN existing context to be used by the instance of the class</param>
         public TownBusiness(CarDealershipContext carDealershipContext)
         {
             this.townContext = carDealershipContext;
         }
 
         //Basic operations//
+        /// <summary>
+        /// Add a new town to the database
+        /// </summary>
+        /// <param name="town">The town that needs to be added to the database</param>
         public void Add(Town town)
         {
             using (townContext)
@@ -30,7 +39,10 @@ namespace Business
                 townContext.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Change the information about one of the towns
+        /// </summary>
+        /// <param name="town">A town with the new information an the same id as the old one</param>
         public void Update(Town town)
         {
             using (townContext)
@@ -43,7 +55,10 @@ namespace Business
                 }
             }
         }
-
+        /// <summary>
+        /// Remove a town from the database
+        /// </summary>
+        /// <param name="id">The id of the town that needs to be removed</param>
         public void Delete(int id)
         {
             using (townContext)
@@ -59,6 +74,10 @@ namespace Business
         //Basic operations//
 
         //Get operations//
+        /// <summary>
+        /// Find all towns in the database
+        /// </summary>
+        /// <returns>Retuns a list of all towns in the database</returns>
         public List<Town> GetAllTowns()
         {
             using (townContext)
@@ -66,7 +85,11 @@ namespace Business
                 return townContext.Towns.ToList();
             }
         }
-
+        /// <summary>
+        /// Find a town by a given id
+        /// </summary>
+        /// <param name="id">The id of the town you are searching for</param>
+        /// <returns>Returns the town that matches the given id</returns>
         public Town GetTownById(int id)
         {
             using (townContext)
@@ -74,7 +97,11 @@ namespace Business
                 return townContext.Towns.Find(id);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public List<Town> GetTownsByName(string name)
         {
             using (townContext)
