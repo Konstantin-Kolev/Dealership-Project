@@ -27,55 +27,188 @@ namespace Display
         {
             dataGridView.ReadOnly = true;
             SetupDataGridView();
+            dataGridView.Columns[9].Visible = false;
             PopulateDataGridViewDefault();
         }
 
-        
+        //Main logic//
+        //Get logic//
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
             CarBusiness carBusiness = new CarBusiness();
             var carsList = carBusiness.GetAllCars();
             DataPopulator(carsList);
-            dataGridView.Columns[9].Visible = false;
             //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
-        private void SetupDataGridView()
+        private void PopulateDataGridViewGetCarById()
         {
-            dataGridView.ColumnCount = 10;
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int carId);
+            var cars = carBusiness.GetCarById(carId);
+            DataPopulatorSingle(cars);
+        }
 
-            dataGridView.Columns[0].Name = "Manufacturer";
-            dataGridView.Columns[1].Name = "Model";
-            dataGridView.Columns[2].Name = "Dealership";
-            dataGridView.Columns[3].Name = "Engine";
-            dataGridView.Columns[4].Name = "Transmission";
-            dataGridView.Columns[5].Name = "Gears";
-            dataGridView.Columns[6].Name = "Color";
-            dataGridView.Columns[7].Name = "Price";
-            dataGridView.Columns[8].Name = "Owner";
-            dataGridView.Columns[9].Name = "ID";
+        private void PopulateDataGridViewGetCarsByCarDealership()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int carDealershipId);
+            var carsList = carBusiness.GetCarsByCarDealership(carDealershipId);
+            DataPopulator(carsList);
+        }
 
-            dataGridView.AutoSizeRowsMode =
-            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            dataGridView.ColumnHeadersBorderStyle =
-            DataGridViewHeaderBorderStyle.Single;
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.SelectionMode =
-            DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.MultiSelect = false;
+        private void PopulateDataGridViewGetCarsByColor()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsByColor(txtGet.Text);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByDisplacement()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int displacement);
+            var carsList = carBusiness.GetCarsByDisplacement(displacement);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByFuelType()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsByFuelType(txtGet.Text);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByManufacturer()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsByManufacturer(txtGet.Text);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByModel()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsByModel(txtGet.Text);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByPower()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int power);
+            var carsList = carBusiness.GetCarsByPower(power);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByPrice()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int price);
+            var carsList = carBusiness.GetCarsByPrice(price);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsByTransmissionType()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsByTransmissionType(txtGet.Text);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsForSale()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetCarsForSale();
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsOverPrice()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int price);
+            var carsList = carBusiness.GetCarsOverPrice(price);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsTransmissionGears()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int gears);
+            var carsList = carBusiness.GetCarsTransmissionGears(gears);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetCarsUnderPrice()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            int.TryParse(txtGet.Text, out int price);
+            var carsList = carBusiness.GetCarsUnderPrice(price);
+            DataPopulator(carsList);
+        }
+
+        private void PopulateDataGridViewGetOwnedCars()
+        {
+            dataGridView.Rows.Clear();
+            CarBusiness carBusiness = new CarBusiness();
+            var carsList = carBusiness.GetOwnedCars();
+            DataPopulator(carsList);
+        }
+        //Get logic//
+
+        //Sort logic//
+
+        //Main logic//
+
+        //cbGet and cbSort//
+        private void cbGet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbGet.SelectedIndex;
+            switch (index)
+            {
+                case 0: SetupDataGridView(); PopulateDataGridViewGetCarById(); break;
+                case 1: SetupDataGridView(); PopulateDataGridViewGetCarsByManufacturer(); break;
+                case 2: SetupDataGridView(); PopulateDataGridViewGetCarsByModel(); break;
+                case 3: SetupDataGridView(); PopulateDataGridViewGetCarsByCarDealership(); break;
+                case 4: SetupDataGridView(); PopulateDataGridViewGetCarsByFuelType(); break;
+                case 5: SetupDataGridView(); PopulateDataGridViewGetCarsByPower(); break;
+                case 6: SetupDataGridView(); PopulateDataGridViewGetCarsByDisplacement(); break;
+                case 7: SetupDataGridView(); PopulateDataGridViewGetCarsByFuelType(); break;
+                case 8: SetupDataGridView(); PopulateDataGridViewGetCarsTransmissionGears(); break;
+                case 9: SetupDataGridView(); PopulateDataGridViewGetCarsByColor(); break;
+                case 10: SetupDataGridView(); PopulateDataGridViewGetCarsByPrice(); break;
+                case 11: SetupDataGridView(); PopulateDataGridViewGetCarsUnderPrice(); break;
+                case 12: SetupDataGridView(); PopulateDataGridViewGetCarsOverPrice(); break;
+                case 13: SetupDataGridView(); PopulateDataGridViewGetCarsForSale(); break;
+                case 14: SetupDataGridView(); PopulateDataGridViewGetOwnedCars(); break;
+            }
         }
 
         private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbSort.SelectedIndex;
-            /*switch (index)
+            switch (index)
             {
-                case 0: SetupDataGridView(); PopulateDataGridView2(); break;
-                case 1: SetupDataGridView(); PopulateDataGridView3(); break;
-            }*/
+                case 0: SetupDataGridView(); break;
+            }
         }
+        //cbGet and cbSort//
+
         //Buttons + attached logic//
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -235,6 +368,32 @@ namespace Display
         //Data populators//
 
         //FormatLogic
+        private void SetupDataGridView()
+        {
+            dataGridView.ColumnCount = 10;
+
+            dataGridView.Columns[0].Name = "Manufacturer";
+            dataGridView.Columns[1].Name = "Model";
+            dataGridView.Columns[2].Name = "Dealership";
+            dataGridView.Columns[3].Name = "Engine";
+            dataGridView.Columns[4].Name = "Transmission";
+            dataGridView.Columns[5].Name = "Gears";
+            dataGridView.Columns[6].Name = "Color";
+            dataGridView.Columns[7].Name = "Price";
+            dataGridView.Columns[8].Name = "Owner";
+            dataGridView.Columns[9].Name = "ID";
+
+            dataGridView.AutoSizeRowsMode =
+            DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridView.ColumnHeadersBorderStyle =
+            DataGridViewHeaderBorderStyle.Single;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+        }
+
         private void DisableSelect()
         {
             dataGridView.Enabled = false;

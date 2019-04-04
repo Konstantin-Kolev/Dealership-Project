@@ -33,9 +33,9 @@
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtDealership = new System.Windows.Forms.TextBox();
-            this.cbSort = new System.Windows.Forms.ComboBox();
-            this.lblSort = new System.Windows.Forms.Label();
             this.cbGet = new System.Windows.Forms.ComboBox();
+            this.lblSort = new System.Windows.Forms.Label();
+            this.cbSort = new System.Windows.Forms.ComboBox();
             this.lblGet = new System.Windows.Forms.Label();
             this.txtGet = new System.Windows.Forms.TextBox();
             this.txtEngine = new System.Windows.Forms.TextBox();
@@ -100,14 +100,30 @@
             this.txtDealership.Size = new System.Drawing.Size(100, 20);
             this.txtDealership.TabIndex = 4;
             // 
-            // cbSort
+            // cbGet
             // 
-            this.cbSort.FormattingEnabled = true;
-            this.cbSort.Location = new System.Drawing.Point(627, 45);
-            this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(121, 21);
-            this.cbSort.TabIndex = 5;
-            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
+            this.cbGet.FormattingEnabled = true;
+            this.cbGet.Items.AddRange(new object[] {
+            "Кола по ID",
+            "Коли по марка",
+            "Коли по модел",
+            "Коли по автокъща",
+            "Коли по гориво",
+            "Коли по мощност",
+            "Коли по работен обем",
+            "Коли по скоростна кутия",
+            "Коли по брой предавки",
+            "Коли по цвят",
+            "Коли по цена",
+            "Коли до цена",
+            "Коли над цена",
+            "Коли за продан",
+            "Продадени коли"});
+            this.cbGet.Location = new System.Drawing.Point(810, 45);
+            this.cbGet.Name = "cbGet";
+            this.cbGet.Size = new System.Drawing.Size(121, 21);
+            this.cbGet.TabIndex = 5;
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // lblSort
             // 
@@ -118,13 +134,32 @@
             this.lblSort.TabIndex = 6;
             this.lblSort.Text = "Сортиране по";
             // 
-            // cbGet
+            // cbSort
             // 
-            this.cbGet.FormattingEnabled = true;
-            this.cbGet.Location = new System.Drawing.Point(810, 45);
-            this.cbGet.Name = "cbGet";
-            this.cbGet.Size = new System.Drawing.Size(121, 21);
-            this.cbGet.TabIndex = 7;
+            this.cbSort.FormattingEnabled = true;
+            this.cbSort.Items.AddRange(new object[] {
+            "Автокъща възходящ",
+            "Автокъща низходящ",
+            "Брой предавки възходящ",
+            "Брой предавки низходящ",
+            "Марка и модел възходящ",
+            "Марка и модел низходящ",
+            "Мощност възходящ",
+            "Мощност низходящ",
+            "Икономия възходящ",
+            "Икономия низходящ",
+            "Работен обем възходящ",
+            "Работен обем низходящ",
+            "Цена възходящ",
+            "Цена низходящ",
+            "Гориво",
+            "Скоростна кутия",
+            "Цвят"});
+            this.cbSort.Location = new System.Drawing.Point(627, 45);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(121, 21);
+            this.cbSort.TabIndex = 7;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -342,9 +377,9 @@
             this.Controls.Add(this.txtEngine);
             this.Controls.Add(this.txtGet);
             this.Controls.Add(this.lblGet);
-            this.Controls.Add(this.cbGet);
-            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.cbSort);
+            this.Controls.Add(this.lblSort);
+            this.Controls.Add(this.cbGet);
             this.Controls.Add(this.txtDealership);
             this.Controls.Add(this.txtModel);
             this.Controls.Add(this.txtManufacturer);
@@ -367,9 +402,9 @@
         private System.Windows.Forms.TextBox txtManufacturer;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtDealership;
-        private System.Windows.Forms.ComboBox cbSort;
-        private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.ComboBox cbGet;
+        private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.ComboBox cbSort;
         private System.Windows.Forms.Label lblGet;
         private System.Windows.Forms.TextBox txtGet;
         private System.Windows.Forms.TextBox txtEngine;
