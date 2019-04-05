@@ -98,10 +98,10 @@ namespace Business
             }
         }
         /// <summary>
-        /// 
+        /// Find a customer by a given nullable id
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">The nullable id of the customer you are searching for</param>
+        /// <returns>Returns the customer that matches the given id, null in most cases</returns>
         public Customer GetCustomerById(int? id)
         {
             using (customerContext)

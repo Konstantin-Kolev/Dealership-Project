@@ -109,7 +109,7 @@ namespace Business.Tests
         }
 
         [Test]
-        public void GetcarDealershipByTown()
+        public void GetCarDealershipByTown()
         {
             var data = new List<CarDealership>
             {
