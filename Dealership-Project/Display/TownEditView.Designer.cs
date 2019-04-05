@@ -143,27 +143,13 @@
             // 
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
+            "Име възходящ",
+            "Име низходящ"});
             this.cbSort.Location = new System.Drawing.Point(627, 45);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(121, 21);
             this.cbSort.TabIndex = 33;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -178,12 +164,13 @@
             // 
             this.cbGet.FormattingEnabled = true;
             this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
+            "Град по ID",
+            "Град по име"});
             this.cbGet.Location = new System.Drawing.Point(810, 45);
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);
             this.cbGet.TabIndex = 35;
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // txtGet
             // 
@@ -212,7 +199,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
             this.Name = "TownEditView";
-            this.Text = "TownEditView";
+            this.Text = "Градове";
             this.Load += new System.EventHandler(this.TownEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
