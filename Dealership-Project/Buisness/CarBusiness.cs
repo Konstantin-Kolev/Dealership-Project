@@ -157,10 +157,10 @@ namespace Business
         }
 
         /// <summary>
-        /// Find all cars with a given transmition type
+        /// Find all cars with a given transmission type
         /// </summary>
-        /// <param name="transmissionType">The transmition type you are searching for</param>
-        /// <returns>Returs a list of a ll cars with the given tranmition type</returns>
+        /// <param name="transmissionType">The transmission type you are searching for</param>
+        /// <returns>Returs a list of all cars with the given tranmission type</returns>
         public List<Car> GetCarsByTransmissionType(string transmissionType)
         {
             using (carContext)
@@ -186,8 +186,8 @@ namespace Business
         /// Find all cars with price lower than given
         /// </summary>
         /// <param name="price">The maximum price for which cars will be shown</param>
-        /// <returns>Returns a list of cars with price lower than the given</returns>
-        public List<Car> GetCarsUnderPrice(decimal price)
+        /// <returns>Returns a list of cars with price lower than given</returns>
+        public List<Car> GetCarsWithLowerPrice(decimal price)
         {
             using (carContext)
             {
@@ -199,8 +199,8 @@ namespace Business
         /// Find all cars with price higher than given
         /// </summary>
         /// <param name="price">The minimum price for which cars will be shown</param>
-        /// <returns>Returns a list of cars with price higher than the given</returns>
-        public List<Car> GetCarsOverPrice(decimal price)
+        /// <returns>Returns a list of cars with price higher than given</returns>
+        public List<Car> GetCarsWithHigherPrice(decimal price)
         {
             using (carContext)
             {
@@ -209,11 +209,11 @@ namespace Business
         }
 
         /// <summary>
-        /// Find all cars with a given number of transmition gears
+        /// Find all cars with a given number of transmission gears
         /// </summary>
-        /// <param name="transmissionGears">The number of transmition gears you are searching for</param>
-        /// <returns>Returns a list of all cars with the given number of transmition gears</returns>
-        public List<Car> GetCarsTransmissionGears(int transmissionGears)
+        /// <param name="transmissionGears">The number of transmission gears you are searching for</param>
+        /// <returns>Returns a list of all cars with the given number of transmission gears</returns>
+        public List<Car> GetCarsByTransmissionGears(int transmissionGears)
         {
             using (carContext)
             {
@@ -222,7 +222,7 @@ namespace Business
         }
 
         /// <summary>
-        /// Find all cars with a given amount of horse power
+        /// Find all cars with a given amount of horsepower
         /// </summary>
         /// <param name="power">The amount of horse power you are serching for</param>
         /// <returns>Returns a list of all cars with the given amount of horse power</returns>
@@ -235,15 +235,67 @@ namespace Business
         }
 
         /// <summary>
+        /// Find all cars with horsepower lower than given
+        /// </summary>
+        /// <param name="displacement">The most power for which cars will be shown</param>
+        /// <returns>Returns a list of all cars with more power than given</returns>
+        public List<Car> GetCarsWithLowerPower(int power)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Engine.Power <= power).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all cars with horsepower higher than given
+        /// </summary>
+        /// <param name="displacement">The least power for which cars will be shown</param>
+        /// <returns>Returns a list of all cars with less power than given</returns>
+        public List<Car> GetCarsWithHigherPower(int power)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Engine.Power >= power).ToList();
+            }
+        }
+
+        /// <summary>
         /// Find all cars with a given engine displacement
         /// </summary>
-        /// <param name="displacement">The engine displacemnt you are searching for</param>
+        /// <param name="displacement">The engine displacement you are searching for</param>
         /// <returns>Returns a list of all cars with the given engine displacement</returns>
         public List<Car> GetCarsByDisplacement(int displacement)
         {
             using (carContext)
             {
                 return carContext.Cars.Where(x => x.Engine.Displacement == displacement).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all cars with engine displacement lower than given
+        /// </summary>
+        /// <param name="displacement">The largest engine displacement for which cars will be shown</param>
+        /// <returns>Returns a list of all cars with engine displacement lower than given</returns>
+        public List<Car> GetCarsWithLowerDisplacement(int displacement)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Engine.Displacement <= displacement).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all cars with engine displacement higher than given
+        /// </summary>
+        /// <param name="displacement">The smallest engine displacement for which cars will be shown</param>
+        /// <returns>Returns a list of all cars with engine displacement greater than given</returns>
+        public List<Car> GetCarsWithHigherDisplacement(int displacement)
+        {
+            using (carContext)
+            {
+                return carContext.Cars.Where(x => x.Engine.Displacement >= displacement).ToList();
             }
         }
 
@@ -319,7 +371,7 @@ namespace Business
             var customer = customerBusiness.GetCustomerById(ownerId);
             if (customer == null)
             {
-                return "For Sale";
+                return "Продава се";
             }
             else
             {

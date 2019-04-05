@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainController";
-            this.Text = "Form1";
+            this.Text = "Главно меню";
             this.Load += new System.EventHandler(this.MainController_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

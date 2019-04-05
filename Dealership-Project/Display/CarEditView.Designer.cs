@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarEditView));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
@@ -64,298 +65,212 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(51, 242);
+            resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(986, 338);
-            this.dataGridView.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(369, 43);
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Добави";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtManufacturer
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(51, 45);
+            resources.ApplyResources(this.txtManufacturer, "txtManufacturer");
             this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(100, 20);
-            this.txtManufacturer.TabIndex = 2;
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(157, 45);
+            resources.ApplyResources(this.txtModel, "txtModel");
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(100, 20);
-            this.txtModel.TabIndex = 3;
             // 
             // txtDealership
             // 
-            this.txtDealership.Location = new System.Drawing.Point(263, 45);
+            resources.ApplyResources(this.txtDealership, "txtDealership");
             this.txtDealership.Name = "txtDealership";
-            this.txtDealership.Size = new System.Drawing.Size(100, 20);
-            this.txtDealership.TabIndex = 4;
             // 
             // cbGet
             // 
             this.cbGet.FormattingEnabled = true;
             this.cbGet.Items.AddRange(new object[] {
-            "Кола по ID",
-            "Коли по марка",
-            "Коли по модел",
-            "Коли по автокъща",
-            "Коли по гориво",
-            "Коли по мощност",
-            "Коли по работен обем",
-            "Коли по скоростна кутия",
-            "Коли по брой предавки",
-            "Коли по цвят",
-            "Коли по цена",
-            "Коли до цена",
-            "Коли над цена",
-            "Коли за продан",
-            "Продадени коли"});
-            this.cbGet.Location = new System.Drawing.Point(810, 45);
+            resources.GetString("cbGet.Items"),
+            resources.GetString("cbGet.Items1"),
+            resources.GetString("cbGet.Items2"),
+            resources.GetString("cbGet.Items3"),
+            resources.GetString("cbGet.Items4"),
+            resources.GetString("cbGet.Items5"),
+            resources.GetString("cbGet.Items6"),
+            resources.GetString("cbGet.Items7"),
+            resources.GetString("cbGet.Items8"),
+            resources.GetString("cbGet.Items9"),
+            resources.GetString("cbGet.Items10"),
+            resources.GetString("cbGet.Items11"),
+            resources.GetString("cbGet.Items12"),
+            resources.GetString("cbGet.Items13"),
+            resources.GetString("cbGet.Items14"),
+            resources.GetString("cbGet.Items15"),
+            resources.GetString("cbGet.Items16"),
+            resources.GetString("cbGet.Items17"),
+            resources.GetString("cbGet.Items18")});
+            resources.ApplyResources(this.cbGet, "cbGet");
             this.cbGet.Name = "cbGet";
-            this.cbGet.Size = new System.Drawing.Size(121, 21);
-            this.cbGet.TabIndex = 5;
             this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // lblSort
             // 
-            this.lblSort.AutoSize = true;
-            this.lblSort.Location = new System.Drawing.Point(545, 48);
+            resources.ApplyResources(this.lblSort, "lblSort");
             this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(76, 13);
-            this.lblSort.TabIndex = 6;
-            this.lblSort.Text = "Сортиране по";
             // 
             // cbSort
             // 
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
-            "Автокъща възходящ",
-            "Автокъща низходящ",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Гориво",
-            "Скоростна кутия",
-            "Цвят"});
-            this.cbSort.Location = new System.Drawing.Point(627, 45);
+            resources.GetString("cbSort.Items"),
+            resources.GetString("cbSort.Items1"),
+            resources.GetString("cbSort.Items2"),
+            resources.GetString("cbSort.Items3"),
+            resources.GetString("cbSort.Items4"),
+            resources.GetString("cbSort.Items5"),
+            resources.GetString("cbSort.Items6"),
+            resources.GetString("cbSort.Items7"),
+            resources.GetString("cbSort.Items8"),
+            resources.GetString("cbSort.Items9"),
+            resources.GetString("cbSort.Items10"),
+            resources.GetString("cbSort.Items11"),
+            resources.GetString("cbSort.Items12"),
+            resources.GetString("cbSort.Items13"),
+            resources.GetString("cbSort.Items14"),
+            resources.GetString("cbSort.Items15"),
+            resources.GetString("cbSort.Items16")});
+            resources.ApplyResources(this.cbSort, "cbSort");
             this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(121, 21);
-            this.cbSort.TabIndex = 7;
             this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
-            this.lblGet.AutoSize = true;
-            this.lblGet.Location = new System.Drawing.Point(754, 48);
+            resources.ApplyResources(this.lblGet, "lblGet");
             this.lblGet.Name = "lblGet";
-            this.lblGet.Size = new System.Drawing.Size(50, 13);
-            this.lblGet.TabIndex = 8;
-            this.lblGet.Text = "Справки";
             // 
             // txtGet
             // 
-            this.txtGet.Location = new System.Drawing.Point(937, 45);
+            resources.ApplyResources(this.txtGet, "txtGet");
             this.txtGet.Name = "txtGet";
-            this.txtGet.Size = new System.Drawing.Size(100, 20);
-            this.txtGet.TabIndex = 9;
             // 
             // txtEngine
             // 
-            this.txtEngine.Location = new System.Drawing.Point(51, 104);
+            resources.ApplyResources(this.txtEngine, "txtEngine");
             this.txtEngine.Name = "txtEngine";
-            this.txtEngine.Size = new System.Drawing.Size(100, 20);
-            this.txtEngine.TabIndex = 10;
             // 
             // txtGears
             // 
-            this.txtGears.Location = new System.Drawing.Point(263, 104);
+            resources.ApplyResources(this.txtGears, "txtGears");
             this.txtGears.Name = "txtGears";
-            this.txtGears.Size = new System.Drawing.Size(100, 20);
-            this.txtGears.TabIndex = 11;
             // 
             // txtTransmission
             // 
-            this.txtTransmission.Location = new System.Drawing.Point(157, 104);
+            resources.ApplyResources(this.txtTransmission, "txtTransmission");
             this.txtTransmission.Name = "txtTransmission";
-            this.txtTransmission.Size = new System.Drawing.Size(100, 20);
-            this.txtTransmission.TabIndex = 12;
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(51, 166);
+            resources.ApplyResources(this.txtColor, "txtColor");
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(100, 20);
-            this.txtColor.TabIndex = 13;
             // 
             // txtOwner
             // 
-            this.txtOwner.Location = new System.Drawing.Point(263, 166);
+            resources.ApplyResources(this.txtOwner, "txtOwner");
             this.txtOwner.Name = "txtOwner";
-            this.txtOwner.Size = new System.Drawing.Size(100, 20);
-            this.txtOwner.TabIndex = 14;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(157, 166);
+            resources.ApplyResources(this.txtPrice, "txtPrice");
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtPrice.TabIndex = 15;
             // 
             // lblManufacturer
             // 
-            this.lblManufacturer.AutoSize = true;
-            this.lblManufacturer.Location = new System.Drawing.Point(48, 29);
+            resources.ApplyResources(this.lblManufacturer, "lblManufacturer");
             this.lblManufacturer.Name = "lblManufacturer";
-            this.lblManufacturer.Size = new System.Drawing.Size(40, 13);
-            this.lblManufacturer.TabIndex = 16;
-            this.lblManufacturer.Text = "Марка";
             // 
             // lblEngine
             // 
-            this.lblEngine.AutoSize = true;
-            this.lblEngine.Location = new System.Drawing.Point(48, 88);
+            resources.ApplyResources(this.lblEngine, "lblEngine");
             this.lblEngine.Name = "lblEngine";
-            this.lblEngine.Size = new System.Drawing.Size(56, 13);
-            this.lblEngine.TabIndex = 17;
-            this.lblEngine.Text = "Двигател";
             // 
             // lblColor
             // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(48, 150);
+            resources.ApplyResources(this.lblColor, "lblColor");
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(32, 13);
-            this.lblColor.TabIndex = 18;
-            this.lblColor.Text = "Цвят";
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(154, 150);
+            resources.ApplyResources(this.lblPrice, "lblPrice");
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(33, 13);
-            this.lblPrice.TabIndex = 19;
-            this.lblPrice.Text = "Цена";
             // 
             // lblTransmission
             // 
-            this.lblTransmission.AutoSize = true;
-            this.lblTransmission.Location = new System.Drawing.Point(154, 88);
+            resources.ApplyResources(this.lblTransmission, "lblTransmission");
             this.lblTransmission.Name = "lblTransmission";
-            this.lblTransmission.Size = new System.Drawing.Size(92, 13);
-            this.lblTransmission.TabIndex = 20;
-            this.lblTransmission.Text = "Скоростна кутия";
             // 
             // lblModel
             // 
-            this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(154, 29);
+            resources.ApplyResources(this.lblModel, "lblModel");
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(40, 13);
-            this.lblModel.TabIndex = 21;
-            this.lblModel.Text = "Модел";
             // 
             // lblDealership
             // 
-            this.lblDealership.AutoSize = true;
-            this.lblDealership.Location = new System.Drawing.Point(260, 29);
+            resources.ApplyResources(this.lblDealership, "lblDealership");
             this.lblDealership.Name = "lblDealership";
-            this.lblDealership.Size = new System.Drawing.Size(59, 13);
-            this.lblDealership.TabIndex = 22;
-            this.lblDealership.Text = "Автокъща";
             // 
             // lblGears
             // 
-            this.lblGears.AutoSize = true;
-            this.lblGears.Location = new System.Drawing.Point(260, 88);
+            resources.ApplyResources(this.lblGears, "lblGears");
             this.lblGears.Name = "lblGears";
-            this.lblGears.Size = new System.Drawing.Size(57, 13);
-            this.lblGears.TabIndex = 23;
-            this.lblGears.Text = "Предавки";
             // 
             // lblOwner
             // 
-            this.lblOwner.AutoSize = true;
-            this.lblOwner.Location = new System.Drawing.Point(260, 150);
+            resources.ApplyResources(this.lblOwner, "lblOwner");
             this.lblOwner.Name = "lblOwner";
-            this.lblOwner.Size = new System.Drawing.Size(67, 13);
-            this.lblOwner.TabIndex = 24;
-            this.lblOwner.Text = "Собственик";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(369, 164);
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(369, 102);
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(369, 102);
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 27;
-            this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(464, 43);
+            resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 28;
-            this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOpenHelper
             // 
-            this.btnOpenHelper.Location = new System.Drawing.Point(464, 102);
+            resources.ApplyResources(this.btnOpenHelper, "btnOpenHelper");
             this.btnOpenHelper.Name = "btnOpenHelper";
-            this.btnOpenHelper.Size = new System.Drawing.Size(157, 23);
-            this.btnOpenHelper.TabIndex = 29;
-            this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = true;
             this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // CarEditView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 623);
             this.Controls.Add(this.btnOpenHelper);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);
@@ -387,7 +302,6 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
             this.Name = "CarEditView";
-            this.Text = "CarEditView";
             this.Load += new System.EventHandler(this.CarEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
