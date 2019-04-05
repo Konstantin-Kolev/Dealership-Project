@@ -46,9 +46,9 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOpenHelper = new System.Windows.Forms.Button();
             this.lblSort = new System.Windows.Forms.Label();
-            this.cbSort = new System.Windows.Forms.ComboBox();
-            this.lblGet = new System.Windows.Forms.Label();
             this.cbGet = new System.Windows.Forms.ComboBox();
+            this.lblGet = new System.Windows.Forms.Label();
+            this.cbSort = new System.Windows.Forms.ComboBox();
             this.txtGet = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -149,6 +149,7 @@
             this.btnAdd.TabIndex = 27;
             this.btnAdd.Text = "Добави";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -159,6 +160,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -168,6 +170,7 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -177,6 +180,7 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -186,6 +190,7 @@
             this.btnReset.TabIndex = 31;
             this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOpenHelper
             // 
@@ -195,6 +200,7 @@
             this.btnOpenHelper.TabIndex = 32;
             this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // lblSort
             // 
@@ -205,31 +211,23 @@
             this.lblSort.TabIndex = 33;
             this.lblSort.Text = "Сортиране по";
             // 
-            // cbSort
+            // cbGet
             // 
-            this.cbSort.FormattingEnabled = true;
-            this.cbSort.Items.AddRange(new object[] {
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
-            this.cbSort.Location = new System.Drawing.Point(627, 45);
-            this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(121, 21);
-            this.cbSort.TabIndex = 34;
+            this.cbGet.FormattingEnabled = true;
+            this.cbGet.Items.AddRange(new object[] {
+            "Служител по ID",
+            "Служители по ID на автокъща",
+            "Служители по име",
+            "Служители по фамилия",
+            "Служители по длъжност",
+            "Служители по заплата",
+            "Служители до заплата",
+            "Служители над заплата"});
+            this.cbGet.Location = new System.Drawing.Point(810, 45);
+            this.cbGet.Name = "cbGet";
+            this.cbGet.Size = new System.Drawing.Size(121, 21);
+            this.cbGet.TabIndex = 34;
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -240,16 +238,25 @@
             this.lblGet.TabIndex = 35;
             this.lblGet.Text = "Справки";
             // 
-            // cbGet
+            // cbSort
             // 
-            this.cbGet.FormattingEnabled = true;
-            this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
-            this.cbGet.Location = new System.Drawing.Point(810, 45);
-            this.cbGet.Name = "cbGet";
-            this.cbGet.Size = new System.Drawing.Size(121, 21);
-            this.cbGet.TabIndex = 36;
+            this.cbSort.FormattingEnabled = true;
+            this.cbSort.Items.AddRange(new object[] {
+            "Две имена възходящ",
+            "Две имена низходящ",
+            "Име възходящ",
+            "Име низходящ",
+            "Фамилия възходящ",
+            "Фамилия низходящ",
+            "Заплата възходящ",
+            "Заплата низходящ",
+            "Длъжност",
+            "Автокъща"});
+            this.cbSort.Location = new System.Drawing.Point(627, 45);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(121, 21);
+            this.cbSort.TabIndex = 36;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // txtGet
             // 
@@ -264,9 +271,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 623);
             this.Controls.Add(this.txtGet);
-            this.Controls.Add(this.cbGet);
-            this.Controls.Add(this.lblGet);
             this.Controls.Add(this.cbSort);
+            this.Controls.Add(this.lblGet);
+            this.Controls.Add(this.cbGet);
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnOpenHelper);
             this.Controls.Add(this.btnReset);
@@ -285,8 +292,9 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WorkerEditView";
-            this.Text = "WorkerEditView";
+            this.Text = "Служители";
             this.Load += new System.EventHandler(this.WorkerEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -314,9 +322,9 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnOpenHelper;
         private System.Windows.Forms.Label lblSort;
-        private System.Windows.Forms.ComboBox cbSort;
-        private System.Windows.Forms.Label lblGet;
         private System.Windows.Forms.ComboBox cbGet;
+        private System.Windows.Forms.Label lblGet;
+        private System.Windows.Forms.ComboBox cbSort;
         private System.Windows.Forms.TextBox txtGet;
     }
 }

@@ -256,6 +256,7 @@
             this.Controls.Add(this.btnDealerships);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GridInfoPopUp";
             this.Text = "Помощна таблица";
             this.Load += new System.EventHandler(this.GridInfoPopUp_Load);

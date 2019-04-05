@@ -59,7 +59,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOpenHelper = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -267,6 +269,12 @@
             this.btnOpenHelper.UseVisualStyleBackColor = true;
             this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
+            // pictureBox
+            // 
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.TabStop = false;
+            // 
             // CarEditView
             // 
             resources.ApplyResources(this, "$this");
@@ -301,9 +309,12 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.pictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CarEditView";
             this.Load += new System.EventHandler(this.CarEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +352,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnOpenHelper;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

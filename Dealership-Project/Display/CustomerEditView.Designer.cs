@@ -248,6 +248,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerEditView";
             this.Text = "Клиенти";
             this.Load += new System.EventHandler(this.CustomerEditView_Load);

@@ -146,6 +146,30 @@ namespace Business
             }
         }
         /// <summary>
+        /// Find all workers with salary higher than given
+        /// </summary>
+        /// <param name="salary">The lowest salary for which workers will be shown</param>
+        /// <returns>Returns a list of workers with salary higher than given</returns>
+        public List<Worker> GetWorkersWithHigherSalary(decimal salary)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.Salary >= salary).ToList();
+            }
+        }
+        /// <summary>
+        /// Find all workers with salary lower than given
+        /// </summary>
+        /// <param name="salary">The highest salary for which workers will be shown</param>
+        /// <returns>Returns a list of workers with salary lower than given</returns>
+        public List<Worker> GetWorkersWithLowerSalary(decimal salary)
+        {
+            using (workerContext)
+            {
+                return workerContext.Workers.Where(x => x.Salary <= salary).ToList();
+            }
+        }
+        /// <summary>
         /// Find all workers in a given dealership
         /// </summary>
         /// <param name="dealershipId">The id of the dealership you are searching for</param>
@@ -171,7 +195,6 @@ namespace Business
         //Get operations//
 
         //Sort operations//
-
         /// <summary>
         /// Sorts workers
         /// </summary>

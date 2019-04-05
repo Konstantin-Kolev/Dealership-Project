@@ -198,6 +198,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TownEditView";
             this.Text = "Градове";
             this.Load += new System.EventHandler(this.TownEditView_Load);

@@ -230,8 +230,9 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CarDealershipEditView";
-            this.Text = "CarDealershipEditView";
+            this.Text = "Автокъщи";
             this.Load += new System.EventHandler(this.CarDealershipEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
