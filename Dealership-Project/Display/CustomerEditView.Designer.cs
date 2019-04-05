@@ -113,6 +113,7 @@
             this.btnAdd.TabIndex = 23;
             this.btnAdd.Text = "Добави";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -122,6 +123,7 @@
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -131,6 +133,7 @@
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -140,6 +143,7 @@
             this.btnReset.TabIndex = 29;
             this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOpenHelper
             // 
@@ -149,6 +153,7 @@
             this.btnOpenHelper.TabIndex = 30;
             this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // lblSort
             // 
@@ -163,27 +168,19 @@
             // 
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
+            "Две имена възходящ",
+            "Две имена низходящ",
+            "Име възходящ",
+            "Име низходящ",
+            "Фамилия възходящ",
+            "Фамилия низходящ",
+            "Име на град възходящ",
+            "Име на град низходящ"});
             this.cbSort.Location = new System.Drawing.Point(627, 45);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(121, 21);
             this.cbSort.TabIndex = 32;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -198,12 +195,17 @@
             // 
             this.cbGet.FormattingEnabled = true;
             this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
+            "Клиент по ID",
+            "Клиент по ID на град",
+            "Клиент по име",
+            "Клиент по фамилия",
+            "Клиент по име на град"});
             this.cbGet.Location = new System.Drawing.Point(810, 45);
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);
             this.cbGet.TabIndex = 34;
+            this.cbGet.Tag = "";
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // txtGet
             // 
@@ -221,6 +223,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CustomerEditView
             // 
@@ -246,7 +249,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
             this.Name = "CustomerEditView";
-            this.Text = "CustomerEditView";
+            this.Text = "Клиенти";
             this.Load += new System.EventHandler(this.CustomerEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

@@ -257,7 +257,7 @@
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.dataGridView);
             this.Name = "GridInfoPopUp";
-            this.Text = "GridInfoPopUp";
+            this.Text = "Помощна таблица";
             this.Load += new System.EventHandler(this.GridInfoPopUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

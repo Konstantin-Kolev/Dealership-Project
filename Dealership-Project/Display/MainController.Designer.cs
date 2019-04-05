@@ -32,10 +32,10 @@
             this.btnCars = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEngines = new System.Windows.Forms.Button();
-            this.btnTowns = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
             this.btnDealerships = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnWorkers = new System.Windows.Forms.Button();
+            this.btnTowns = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(35, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(-12, -12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(636, 357);
@@ -70,15 +70,15 @@
             this.btnEngines.UseVisualStyleBackColor = true;
             this.btnEngines.Click += new System.EventHandler(this.btnEngines_Click);
             // 
-            // btnTowns
+            // btnCustomers
             // 
-            this.btnTowns.Location = new System.Drawing.Point(202, 147);
-            this.btnTowns.Name = "btnTowns";
-            this.btnTowns.Size = new System.Drawing.Size(118, 36);
-            this.btnTowns.TabIndex = 3;
-            this.btnTowns.Text = "Градове";
-            this.btnTowns.UseVisualStyleBackColor = true;
-            this.btnTowns.Click += new System.EventHandler(this.btnTowns_Click);
+            this.btnCustomers.Location = new System.Drawing.Point(202, 147);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(118, 36);
+            this.btnCustomers.TabIndex = 3;
+            this.btnCustomers.Text = "Клиенти";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnDealerships
             // 
@@ -90,33 +90,35 @@
             this.btnDealerships.UseVisualStyleBackColor = true;
             this.btnDealerships.Click += new System.EventHandler(this.btnDealerships_Click);
             // 
-            // button4
+            // btnWorkers
             // 
-            this.button4.Location = new System.Drawing.Point(202, 106);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 35);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Коли";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnWorkers.Location = new System.Drawing.Point(202, 106);
+            this.btnWorkers.Name = "btnWorkers";
+            this.btnWorkers.Size = new System.Drawing.Size(118, 35);
+            this.btnWorkers.TabIndex = 5;
+            this.btnWorkers.Text = "Служители";
+            this.btnWorkers.UseVisualStyleBackColor = true;
+            this.btnWorkers.Click += new System.EventHandler(this.btnWorkers_Click);
             // 
-            // button5
+            // btnTowns
             // 
-            this.button5.Location = new System.Drawing.Point(45, 63);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(151, 36);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Коли";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTowns.Location = new System.Drawing.Point(45, 63);
+            this.btnTowns.Name = "btnTowns";
+            this.btnTowns.Size = new System.Drawing.Size(151, 36);
+            this.btnTowns.TabIndex = 6;
+            this.btnTowns.Text = "Градове";
+            this.btnTowns.UseVisualStyleBackColor = true;
+            this.btnTowns.Click += new System.EventHandler(this.btnTowns_Click);
             // 
             // MainController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnDealerships);
+            this.ClientSize = new System.Drawing.Size(613, 335);
             this.Controls.Add(this.btnTowns);
+            this.Controls.Add(this.btnWorkers);
+            this.Controls.Add(this.btnDealerships);
+            this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnEngines);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
@@ -134,10 +136,10 @@
         private System.Windows.Forms.Button btnCars;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEngines;
-        private System.Windows.Forms.Button btnTowns;
+        private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnDealerships;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnWorkers;
+        private System.Windows.Forms.Button btnTowns;
     }
 }
 

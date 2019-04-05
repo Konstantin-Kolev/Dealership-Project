@@ -603,7 +603,7 @@ namespace Display
             dataGridView.Columns[12].Name = "Цена";
             dataGridView.Columns[13].Name = "Собственик";
 
-
+   
             dataGridView.AutoSizeRowsMode =
             DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataGridView.ColumnHeadersBorderStyle =

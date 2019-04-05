@@ -42,6 +42,18 @@ namespace Display
             engineEditView.ShowDialog();
         }
 
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            CustomerEditView customerEditView = new CustomerEditView();
+            customerEditView.ShowDialog();
+        }
+
+        private void btnWorkers_Click(object sender, EventArgs e)
+        {
+            WorkerEditView workerEditView = new WorkerEditView();
+            workerEditView.ShowDialog();
+        }
+
         private void btnTowns_Click(object sender, EventArgs e)
         {
             TownEditView townEditView = new TownEditView();
