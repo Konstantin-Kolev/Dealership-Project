@@ -58,7 +58,7 @@ namespace Business.Tests
             Assert.AreEqual("CarDealership3", carDealershipsFound[2].Name);
         }
 
-        [Test]
+        /*[Test]
         public void GetCarDealershipById()
         {
             var data = new List<CarDealership>
@@ -81,7 +81,7 @@ namespace Business.Tests
             var carDealershipFound = service.GetCarDealershipById(1);
 
             Assert.AreEqual("CarDealership1", carDealershipFound.Name);
-        }
+        }*/
 
         [Test]
         public void GetCarDealershipByName()
@@ -135,7 +135,7 @@ namespace Business.Tests
             Assert.AreEqual("CarDealership3", dealershipsFound[1].Name);
         }
 
-        [Test]
+        /*[Test]
         public void GetTownName()
         {
             var data = new List<CarDealership>
@@ -158,6 +158,116 @@ namespace Business.Tests
             var townNameFound = service.GetTownName(list[1].Town.Id);
 
             Assert.AreEqual("Town1", townNameFound);
+        }*/
+
+        [Test]
+        public void SortDealershipsByNameAscending()
+        {
+            var data = new List<CarDealership>
+            {
+                new CarDealership{ Name="DealershipC"},
+                new CarDealership{ Name="DealershipA"},
+                new CarDealership{ Name="DealershipB"},
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<CarDealership>>();
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<CarDealershipContext>();
+            mockContext.Setup(m => m.CarDealerships).Returns(mockSet.Object);
+
+            var service = new CarDealershipBusiness(mockContext.Object);
+            var sortedDealerships = service.SortDealershipsByNameAscending();
+
+            Assert.AreEqual("DealershipA", sortedDealerships[0].Name);
+            Assert.AreEqual("DealershipB", sortedDealerships[1].Name);
+            Assert.AreEqual("DealershipC", sortedDealerships[2].Name);
+        }
+
+        [Test]
+        public void SortDealershipsByNameDescending()
+        {
+            var data = new List<CarDealership>
+            {
+                new CarDealership{ Name="DealershipA"},
+                new CarDealership{ Name="DealershipC"},
+                new CarDealership{ Name="DealershipB"},
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<CarDealership>>();
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<CarDealershipContext>();
+            mockContext.Setup(m => m.CarDealerships).Returns(mockSet.Object);
+
+            var service = new CarDealershipBusiness(mockContext.Object);
+            var sortedDealerships = service.SortDealershipsByNameDescending();
+
+            Assert.AreEqual("DealershipC", sortedDealerships[0].Name);
+            Assert.AreEqual("DealershipB", sortedDealerships[1].Name);
+            Assert.AreEqual("DealershipA", sortedDealerships[2].Name);
+        }
+
+        [Test]
+        public void SortDealershipsByTownNameAscending()
+        {
+            var data = new List<CarDealership>
+            {
+                new CarDealership{ Name="DealershipA",Town=new Town{ Name="TownB"} },
+                new CarDealership{ Name="DealershipB",Town=new Town{ Name="TownC"} },
+                new CarDealership{ Name="DealershipC",Town=new Town{ Name="TownA"} },
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<CarDealership>>();
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<CarDealershipContext>();
+            mockContext.Setup(m => m.CarDealerships).Returns(mockSet.Object);
+
+            var service = new CarDealershipBusiness(mockContext.Object);
+            var sortedDealerships = service.SortDealershipsByTownNameAscending();
+
+            Assert.AreEqual("DealershipC", sortedDealerships[0].Name);
+            Assert.AreEqual("DealershipA", sortedDealerships[1].Name);
+            Assert.AreEqual("DealershipB", sortedDealerships[2].Name);
+
+        }
+
+        [Test]
+        public void SortDealershipsByTownNameDescending()
+        {
+            var data = new List<CarDealership>
+            {
+                new CarDealership{ Name="DealershipA",Town=new Town{ Name="TownB"} },
+                new CarDealership{ Name="DealershipB",Town=new Town{ Name="TownC"} },
+                new CarDealership{ Name="DealershipC",Town=new Town{ Name="TownA"} },
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<CarDealership>>();
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<CarDealership>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<CarDealershipContext>();
+            mockContext.Setup(m => m.CarDealerships).Returns(mockSet.Object);
+
+            var service = new CarDealershipBusiness(mockContext.Object);
+            var sortedDealerships = service.SortDealershipsByTownNameDescending();
+
+            Assert.AreEqual("DealershipB", sortedDealerships[0].Name);
+            Assert.AreEqual("DealershipA", sortedDealerships[1].Name);
+            Assert.AreEqual("DealershipC", sortedDealerships[2].Name);
+
         }
     }
 }
