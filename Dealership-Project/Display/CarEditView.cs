@@ -35,7 +35,7 @@ namespace Display
         //Get logic//
         private void PopulateDataGridViewDefault()
         {
-            dataGridView.Rows.Clear(); HideSpecificInfo(); HideSpecificInfo();
+            dataGridView.Rows.Clear(); HideSpecificInfo();
             CarBusiness carBusiness = new CarBusiness();
             var carsList = carBusiness.GetAllCars();
             DataPopulator(carsList);
@@ -44,7 +44,7 @@ namespace Display
 
         private void PopulateDataGridViewGetCarById()
         {
-            dataGridView.Rows.Clear(); HideSpecificInfo(); HideSpecificInfo();
+            dataGridView.Rows.Clear(); HideSpecificInfo();
             CarBusiness carBusiness = new CarBusiness();
             int.TryParse(txtGet.Text, out int carId);
             var cars = carBusiness.GetCarById(carId);
@@ -53,7 +53,7 @@ namespace Display
 
         private void PopulateDataGridViewGetCarsByCarDealership()
         {
-            dataGridView.Rows.Clear(); HideSpecificInfo(); HideSpecificInfo();
+            dataGridView.Rows.Clear(); HideSpecificInfo();
             CarBusiness carBusiness = new CarBusiness();
             int.TryParse(txtGet.Text, out int carDealershipId);
             var carsList = carBusiness.GetCarsByCarDealership(carDealershipId);
@@ -521,7 +521,6 @@ namespace Display
             gridInfoPopUp.Show();
         }
 
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             SetupDataGridView();
@@ -579,7 +578,7 @@ namespace Display
                     car.Color,
                     car.Price.ToString() + " лв.",
                     carBusiness.GetOwnerName(car.OwnerId),
-                };
+            };
             dataGridView.Rows.Add(row);
         }
         //Data populators//
@@ -603,7 +602,7 @@ namespace Display
             dataGridView.Columns[11].Name = "Цвят";
             dataGridView.Columns[12].Name = "Цена";
             dataGridView.Columns[13].Name = "Собственик";
-            
+
 
             dataGridView.AutoSizeRowsMode =
             DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;

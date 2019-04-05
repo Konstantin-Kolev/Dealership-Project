@@ -77,6 +77,7 @@
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Добави";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -86,6 +87,7 @@
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -96,6 +98,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -105,6 +108,7 @@
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnOpenHelper
             // 
@@ -114,6 +118,7 @@
             this.btnOpenHelper.TabIndex = 30;
             this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // btnReset
             // 
@@ -123,6 +128,7 @@
             this.btnReset.TabIndex = 31;
             this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lblSort
             // 
