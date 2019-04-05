@@ -59,5 +59,10 @@ namespace Display
             TownEditView townEditView = new TownEditView();
             townEditView.ShowDialog();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

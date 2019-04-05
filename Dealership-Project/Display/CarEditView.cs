@@ -526,6 +526,12 @@ namespace Display
             SetupDataGridView();
             PopulateDataGridViewDefault();
         }
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //Buttons + attached logic//
 
         //Data populators//

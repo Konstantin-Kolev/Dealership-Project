@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EngineEditView));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lblDisplacement = new System.Windows.Forms.Label();
             this.lblEconomy = new System.Windows.Forms.Label();
@@ -50,7 +51,10 @@
             this.lblGet = new System.Windows.Forms.Label();
             this.cbGet = new System.Windows.Forms.ComboBox();
             this.txtGet = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -64,6 +68,8 @@
             // lblDisplacement
             // 
             this.lblDisplacement.AutoSize = true;
+            this.lblDisplacement.BackColor = System.Drawing.Color.Black;
+            this.lblDisplacement.ForeColor = System.Drawing.Color.White;
             this.lblDisplacement.Location = new System.Drawing.Point(260, 29);
             this.lblDisplacement.Name = "lblDisplacement";
             this.lblDisplacement.Size = new System.Drawing.Size(78, 13);
@@ -73,6 +79,8 @@
             // lblEconomy
             // 
             this.lblEconomy.AutoSize = true;
+            this.lblEconomy.BackColor = System.Drawing.Color.Black;
+            this.lblEconomy.ForeColor = System.Drawing.Color.White;
             this.lblEconomy.Location = new System.Drawing.Point(154, 88);
             this.lblEconomy.Name = "lblEconomy";
             this.lblEconomy.Size = new System.Drawing.Size(137, 13);
@@ -82,6 +90,8 @@
             // lblFuelType
             // 
             this.lblFuelType.AutoSize = true;
+            this.lblFuelType.BackColor = System.Drawing.Color.Black;
+            this.lblFuelType.ForeColor = System.Drawing.Color.White;
             this.lblFuelType.Location = new System.Drawing.Point(154, 29);
             this.lblFuelType.Name = "lblFuelType";
             this.lblFuelType.Size = new System.Drawing.Size(43, 13);
@@ -91,6 +101,8 @@
             // lblPower
             // 
             this.lblPower.AutoSize = true;
+            this.lblPower.BackColor = System.Drawing.Color.Black;
+            this.lblPower.ForeColor = System.Drawing.Color.White;
             this.lblPower.Location = new System.Drawing.Point(48, 88);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(54, 13);
@@ -100,6 +112,8 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Black;
+            this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(48, 29);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 13);
@@ -189,16 +203,19 @@
             // 
             // btnOpenHelper
             // 
+            this.btnOpenHelper.BackColor = System.Drawing.Color.White;
             this.btnOpenHelper.Location = new System.Drawing.Point(464, 102);
             this.btnOpenHelper.Name = "btnOpenHelper";
             this.btnOpenHelper.Size = new System.Drawing.Size(157, 23);
             this.btnOpenHelper.TabIndex = 32;
             this.btnOpenHelper.Text = "Помощна таблица";
-            this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.UseVisualStyleBackColor = false;
             // 
             // lblSort
             // 
             this.lblSort.AutoSize = true;
+            this.lblSort.BackColor = System.Drawing.Color.Black;
+            this.lblSort.ForeColor = System.Drawing.Color.White;
             this.lblSort.Location = new System.Drawing.Point(545, 48);
             this.lblSort.Name = "lblSort";
             this.lblSort.Size = new System.Drawing.Size(76, 13);
@@ -207,6 +224,7 @@
             // 
             // cbSort
             // 
+            this.cbSort.BackColor = System.Drawing.Color.White;
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
             "Мощност възходящ",
@@ -234,6 +252,8 @@
             // lblGet
             // 
             this.lblGet.AutoSize = true;
+            this.lblGet.BackColor = System.Drawing.Color.Transparent;
+            this.lblGet.ForeColor = System.Drawing.Color.White;
             this.lblGet.Location = new System.Drawing.Point(754, 48);
             this.lblGet.Name = "lblGet";
             this.lblGet.Size = new System.Drawing.Size(50, 13);
@@ -253,19 +273,46 @@
             // 
             // txtGet
             // 
+            this.txtGet.BackColor = System.Drawing.SystemColors.Control;
             this.txtGet.Location = new System.Drawing.Point(937, 45);
             this.txtGet.Name = "txtGet";
             this.txtGet.Size = new System.Drawing.Size(100, 20);
             this.txtGet.TabIndex = 37;
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(-17, -4);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(1144, 710);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 38;
+            this.pictureBox.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnExit.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExit.Location = new System.Drawing.Point(962, 164);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 39;
+            this.btnExit.Text = "ИЗКЛЮЧИ";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // EngineEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.Controls.Add(this.lblGet);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtGet);
             this.Controls.Add(this.cbGet);
-            this.Controls.Add(this.lblGet);
             this.Controls.Add(this.cbSort);
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnOpenHelper);
@@ -285,11 +332,13 @@
             this.Controls.Add(this.lblEconomy);
             this.Controls.Add(this.lblDisplacement);
             this.Controls.Add(this.dataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EngineEditView";
             this.Text = "Двигатели";
             this.Load += new System.EventHandler(this.EngineEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +368,7 @@
         private System.Windows.Forms.Label lblGet;
         private System.Windows.Forms.ComboBox cbGet;
         private System.Windows.Forms.TextBox txtGet;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button btnExit;
     }
 }

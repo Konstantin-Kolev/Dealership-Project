@@ -203,5 +203,10 @@ namespace Display
                     //case 1: SetupDataGridView(); PopulateDataGridView3(); break;
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
