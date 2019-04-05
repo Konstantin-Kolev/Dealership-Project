@@ -122,6 +122,7 @@
             this.Controls.Add(this.btnEngines);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainController";
             this.Text = "Главно меню";
             this.Load += new System.EventHandler(this.MainController_Load);

@@ -25,7 +25,7 @@ namespace Display
         {
             dataGridView.ReadOnly = true;
             SetupDataGridView();
-            dataGridView.Columns[0].Visible = true;
+            dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[4].Visible = false;
             PopulateDataGridViewDefault();
         }
@@ -181,7 +181,7 @@ namespace Display
         }
         //cbGet and cbSort//
 
-        //Buttons + Attached logic//
+        //Buttons + attached logic//
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Customer customer = new Customer
@@ -269,7 +269,7 @@ namespace Display
             SetupDataGridView();
             PopulateDataGridViewDefault();
         }
-        //Buttons + Attached logic//
+        //Buttons + attached logic//
 
         //Data populators//
         private void DataPopulator(List<Customer> customers)

@@ -285,8 +285,9 @@
             this.Controls.Add(this.lblEconomy);
             this.Controls.Add(this.lblDisplacement);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EngineEditView";
-            this.Text = "EngineEditView";
+            this.Text = "Двигатели";
             this.Load += new System.EventHandler(this.EngineEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
