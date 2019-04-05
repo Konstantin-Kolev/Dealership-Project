@@ -32,7 +32,7 @@
             this.btnCars = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEngines = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTowns = new System.Windows.Forms.Button();
             this.btnDealerships = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -70,14 +70,15 @@
             this.btnEngines.UseVisualStyleBackColor = true;
             this.btnEngines.Click += new System.EventHandler(this.btnEngines_Click);
             // 
-            // button2
+            // btnTowns
             // 
-            this.button2.Location = new System.Drawing.Point(202, 147);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 36);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Коли";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTowns.Location = new System.Drawing.Point(202, 147);
+            this.btnTowns.Name = "btnTowns";
+            this.btnTowns.Size = new System.Drawing.Size(118, 36);
+            this.btnTowns.TabIndex = 3;
+            this.btnTowns.Text = "Градове";
+            this.btnTowns.UseVisualStyleBackColor = true;
+            this.btnTowns.Click += new System.EventHandler(this.btnTowns_Click);
             // 
             // btnDealerships
             // 
@@ -115,12 +116,12 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnDealerships);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTowns);
             this.Controls.Add(this.btnEngines);
             this.Controls.Add(this.btnCars);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainController";
-            this.Text = "Form1";
+            this.Text = "Главно меню";
             this.Load += new System.EventHandler(this.MainController_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -133,7 +134,7 @@
         private System.Windows.Forms.Button btnCars;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEngines;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTowns;
         private System.Windows.Forms.Button btnDealerships;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

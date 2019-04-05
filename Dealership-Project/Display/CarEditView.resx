@@ -117,4 +117,849 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 242</value>
+  </data>
+  <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 338</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Name" xml:space="preserve">
+    <value>dataGridView</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 43</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="txtManufacturer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 45</value>
+  </data>
+  <data name="txtManufacturer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtManufacturer.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtManufacturer.Name" xml:space="preserve">
+    <value>txtManufacturer</value>
+  </data>
+  <data name="&gt;&gt;txtManufacturer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtManufacturer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtManufacturer.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="txtModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 45</value>
+  </data>
+  <data name="txtModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtModel.Name" xml:space="preserve">
+    <value>txtModel</value>
+  </data>
+  <data name="&gt;&gt;txtModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtModel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtModel.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="txtDealership.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 45</value>
+  </data>
+  <data name="txtDealership.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtDealership.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtDealership.Name" xml:space="preserve">
+    <value>txtDealership</value>
+  </data>
+  <data name="&gt;&gt;txtDealership.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDealership.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtDealership.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="cbGet.Items" xml:space="preserve">
+    <value>Кола по ID</value>
+  </data>
+  <data name="cbGet.Items1" xml:space="preserve">
+    <value>Коли по марка</value>
+  </data>
+  <data name="cbGet.Items2" xml:space="preserve">
+    <value>Коли по модел</value>
+  </data>
+  <data name="cbGet.Items3" xml:space="preserve">
+    <value>Коли по автокъща</value>
+  </data>
+  <data name="cbGet.Items4" xml:space="preserve">
+    <value>Коли по гориво</value>
+  </data>
+  <data name="cbGet.Items5" xml:space="preserve">
+    <value>Коли по мощност</value>
+  </data>
+  <data name="cbGet.Items6" xml:space="preserve">
+    <value>Коли до мощност</value>
+  </data>
+  <data name="cbGet.Items7" xml:space="preserve">
+    <value>Коли над мощност</value>
+  </data>
+  <data name="cbGet.Items8" xml:space="preserve">
+    <value>Коли по работен обем</value>
+  </data>
+  <data name="cbGet.Items9" xml:space="preserve">
+    <value>Коли до работен обем</value>
+  </data>
+  <data name="cbGet.Items10" xml:space="preserve">
+    <value>Коли над работен обем</value>
+  </data>
+  <data name="cbGet.Items11" xml:space="preserve">
+    <value>Коли по скоростна кутия</value>
+  </data>
+  <data name="cbGet.Items12" xml:space="preserve">
+    <value>Коли по брой предавки</value>
+  </data>
+  <data name="cbGet.Items13" xml:space="preserve">
+    <value>Коли по цвят</value>
+  </data>
+  <data name="cbGet.Items14" xml:space="preserve">
+    <value>Коли по цена</value>
+  </data>
+  <data name="cbGet.Items15" xml:space="preserve">
+    <value>Коли до цена</value>
+  </data>
+  <data name="cbGet.Items16" xml:space="preserve">
+    <value>Коли над цена</value>
+  </data>
+  <data name="cbGet.Items17" xml:space="preserve">
+    <value>Коли за продан</value>
+  </data>
+  <data name="cbGet.Items18" xml:space="preserve">
+    <value>Продадени коли</value>
+  </data>
+  <data name="cbGet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>810, 45</value>
+  </data>
+  <data name="cbGet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cbGet.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbGet.Name" xml:space="preserve">
+    <value>cbGet</value>
+  </data>
+  <data name="&gt;&gt;cbGet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbGet.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="lblSort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 48</value>
+  </data>
+  <data name="lblSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="lblSort.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblSort.Text" xml:space="preserve">
+    <value>Сортиране по</value>
+  </data>
+  <data name="&gt;&gt;lblSort.Name" xml:space="preserve">
+    <value>lblSort</value>
+  </data>
+  <data name="&gt;&gt;lblSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSort.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSort.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="cbSort.Items" xml:space="preserve">
+    <value>Автокъща възходящ</value>
+  </data>
+  <data name="cbSort.Items1" xml:space="preserve">
+    <value>Автокъща низходящ</value>
+  </data>
+  <data name="cbSort.Items2" xml:space="preserve">
+    <value>Брой предавки възходящ</value>
+  </data>
+  <data name="cbSort.Items3" xml:space="preserve">
+    <value>Брой предавки низходящ</value>
+  </data>
+  <data name="cbSort.Items4" xml:space="preserve">
+    <value>Марка и модел възходящ</value>
+  </data>
+  <data name="cbSort.Items5" xml:space="preserve">
+    <value>Марка и модел низходящ</value>
+  </data>
+  <data name="cbSort.Items6" xml:space="preserve">
+    <value>Мощност възходящ</value>
+  </data>
+  <data name="cbSort.Items7" xml:space="preserve">
+    <value>Мощност низходящ</value>
+  </data>
+  <data name="cbSort.Items8" xml:space="preserve">
+    <value>Икономия възходящ</value>
+  </data>
+  <data name="cbSort.Items9" xml:space="preserve">
+    <value>Икономия низходящ</value>
+  </data>
+  <data name="cbSort.Items10" xml:space="preserve">
+    <value>Работен обем възходящ</value>
+  </data>
+  <data name="cbSort.Items11" xml:space="preserve">
+    <value>Работен обем низходящ</value>
+  </data>
+  <data name="cbSort.Items12" xml:space="preserve">
+    <value>Цена възходящ</value>
+  </data>
+  <data name="cbSort.Items13" xml:space="preserve">
+    <value>Цена низходящ</value>
+  </data>
+  <data name="cbSort.Items14" xml:space="preserve">
+    <value>Гориво</value>
+  </data>
+  <data name="cbSort.Items15" xml:space="preserve">
+    <value>Скоростна кутия</value>
+  </data>
+  <data name="cbSort.Items16" xml:space="preserve">
+    <value>Цвят</value>
+  </data>
+  <data name="cbSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>627, 45</value>
+  </data>
+  <data name="cbSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cbSort.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbSort.Name" xml:space="preserve">
+    <value>cbSort</value>
+  </data>
+  <data name="&gt;&gt;cbSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSort.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbSort.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="lblGet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 48</value>
+  </data>
+  <data name="lblGet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblGet.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblGet.Text" xml:space="preserve">
+    <value>Справки</value>
+  </data>
+  <data name="&gt;&gt;lblGet.Name" xml:space="preserve">
+    <value>lblGet</value>
+  </data>
+  <data name="&gt;&gt;lblGet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGet.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtGet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>937, 45</value>
+  </data>
+  <data name="txtGet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtGet.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtGet.Name" xml:space="preserve">
+    <value>txtGet</value>
+  </data>
+  <data name="&gt;&gt;txtGet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtGet.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="txtEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 104</value>
+  </data>
+  <data name="txtEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtEngine.Name" xml:space="preserve">
+    <value>txtEngine</value>
+  </data>
+  <data name="&gt;&gt;txtEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEngine.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtEngine.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="txtGears.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 104</value>
+  </data>
+  <data name="txtGears.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtGears.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtGears.Name" xml:space="preserve">
+    <value>txtGears</value>
+  </data>
+  <data name="&gt;&gt;txtGears.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGears.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtGears.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtTransmission.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 104</value>
+  </data>
+  <data name="txtTransmission.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtTransmission.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtTransmission.Name" xml:space="preserve">
+    <value>txtTransmission</value>
+  </data>
+  <data name="&gt;&gt;txtTransmission.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTransmission.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtTransmission.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="txtColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 166</value>
+  </data>
+  <data name="txtColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtColor.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtColor.Name" xml:space="preserve">
+    <value>txtColor</value>
+  </data>
+  <data name="&gt;&gt;txtColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtColor.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="txtOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 166</value>
+  </data>
+  <data name="txtOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtOwner.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtOwner.Name" xml:space="preserve">
+    <value>txtOwner</value>
+  </data>
+  <data name="&gt;&gt;txtOwner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOwner.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtOwner.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 166</value>
+  </data>
+  <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txtPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtPrice.Name" xml:space="preserve">
+    <value>txtPrice</value>
+  </data>
+  <data name="&gt;&gt;txtPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtPrice.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblManufacturer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblManufacturer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 29</value>
+  </data>
+  <data name="lblManufacturer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblManufacturer.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblManufacturer.Text" xml:space="preserve">
+    <value>Марка</value>
+  </data>
+  <data name="&gt;&gt;lblManufacturer.Name" xml:space="preserve">
+    <value>lblManufacturer</value>
+  </data>
+  <data name="&gt;&gt;lblManufacturer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblManufacturer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblManufacturer.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblEngine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 88</value>
+  </data>
+  <data name="lblEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblEngine.Text" xml:space="preserve">
+    <value>Двигател</value>
+  </data>
+  <data name="&gt;&gt;lblEngine.Name" xml:space="preserve">
+    <value>lblEngine</value>
+  </data>
+  <data name="&gt;&gt;lblEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEngine.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEngine.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 150</value>
+  </data>
+  <data name="lblColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblColor.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblColor.Text" xml:space="preserve">
+    <value>Цвят</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Name" xml:space="preserve">
+    <value>lblColor</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblColor.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblPrice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 150</value>
+  </data>
+  <data name="lblPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="lblPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblPrice.Text" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Name" xml:space="preserve">
+    <value>lblPrice</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblTransmission.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTransmission.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 88</value>
+  </data>
+  <data name="lblTransmission.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="lblTransmission.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblTransmission.Text" xml:space="preserve">
+    <value>Скоростна кутия</value>
+  </data>
+  <data name="&gt;&gt;lblTransmission.Name" xml:space="preserve">
+    <value>lblTransmission</value>
+  </data>
+  <data name="&gt;&gt;lblTransmission.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTransmission.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTransmission.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblModel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 29</value>
+  </data>
+  <data name="lblModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblModel.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblModel.Text" xml:space="preserve">
+    <value>Модел</value>
+  </data>
+  <data name="&gt;&gt;lblModel.Name" xml:space="preserve">
+    <value>lblModel</value>
+  </data>
+  <data name="&gt;&gt;lblModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblModel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblModel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblDealership.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDealership.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 29</value>
+  </data>
+  <data name="lblDealership.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="lblDealership.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblDealership.Text" xml:space="preserve">
+    <value>Автокъща</value>
+  </data>
+  <data name="&gt;&gt;lblDealership.Name" xml:space="preserve">
+    <value>lblDealership</value>
+  </data>
+  <data name="&gt;&gt;lblDealership.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDealership.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDealership.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblGears.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGears.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 88</value>
+  </data>
+  <data name="lblGears.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="lblGears.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblGears.Text" xml:space="preserve">
+    <value>Предавки</value>
+  </data>
+  <data name="&gt;&gt;lblGears.Name" xml:space="preserve">
+    <value>lblGears</value>
+  </data>
+  <data name="&gt;&gt;lblGears.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGears.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGears.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblOwner.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 150</value>
+  </data>
+  <data name="lblOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="lblOwner.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="lblOwner.Text" xml:space="preserve">
+    <value>Собственик</value>
+  </data>
+  <data name="&gt;&gt;lblOwner.Name" xml:space="preserve">
+    <value>lblOwner</value>
+  </data>
+  <data name="&gt;&gt;lblOwner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwner.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblOwner.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 164</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Изтрий</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 102</value>
+  </data>
+  <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>Промени</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Name" xml:space="preserve">
+    <value>btnUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 102</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Запази</value>
+  </data>
+  <data name="btnSave.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 43</value>
+  </data>
+  <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Нулирай</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
+    <value>btnReset</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnOpenHelper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 102</value>
+  </data>
+  <data name="btnOpenHelper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnOpenHelper.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="btnOpenHelper.Text" xml:space="preserve">
+    <value>Помощна таблица</value>
+  </data>
+  <data name="&gt;&gt;btnOpenHelper.Name" xml:space="preserve">
+    <value>btnOpenHelper</value>
+  </data>
+  <data name="&gt;&gt;btnOpenHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenHelper.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOpenHelper.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1086, 623</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Автомобили</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CarEditView</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

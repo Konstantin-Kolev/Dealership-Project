@@ -41,5 +41,11 @@ namespace Display
             EngineEditView engineEditView = new EngineEditView();
             engineEditView.ShowDialog();
         }
+
+        private void btnTowns_Click(object sender, EventArgs e)
+        {
+            TownEditView townEditView = new TownEditView();
+            townEditView.ShowDialog();
+        }
     }
 }
