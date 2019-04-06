@@ -129,6 +129,7 @@
             this.btnReset.TabIndex = 29;
             this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOpenHelper
             // 
@@ -138,6 +139,7 @@
             this.btnOpenHelper.TabIndex = 30;
             this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = true;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // lblSort
             // 
@@ -152,27 +154,15 @@
             // 
             this.cbSort.FormattingEnabled = true;
             this.cbSort.Items.AddRange(new object[] {
-            "Мощност възходящ",
-            "Мощност низходящ",
-            "Икономия възходящ",
-            "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
-            "Работен обем възходящ",
-            "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
+            "Име възходящ",
+            "Име низходящ",
+            "Име на град възходящ",
+            "Име на град низходящ"});
             this.cbSort.Location = new System.Drawing.Point(627, 45);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(121, 21);
             this.cbSort.TabIndex = 32;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -187,8 +177,9 @@
             // 
             this.cbGet.FormattingEnabled = true;
             this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
+            "Автокъща по ID",
+            "Автокъща по име",
+            "Автокъща по име на град"});
             this.cbGet.Location = new System.Drawing.Point(810, 45);
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);

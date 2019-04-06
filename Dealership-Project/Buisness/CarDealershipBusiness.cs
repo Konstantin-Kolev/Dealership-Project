@@ -138,7 +138,6 @@ namespace Business
         //Get operations//
 
         //Sort operations//
-
         /// <summary>
         /// Sorts dealerships 
         /// </summary>

@@ -52,6 +52,7 @@ namespace Business
                 if (item != null)
                 {
                     engineContext.Entry(item).CurrentValues.SetValues(engine);
+                    engineContext.SaveChanges();
                 }
             }
         }
@@ -122,6 +123,31 @@ namespace Business
             }
         }
         /// <summary>
+        /// Find all engines with engine displacement higher than given
+        /// </summary>
+        /// <param name="displacement">The smallest engine displacement for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with displacement larger than given</returns>
+        public List<Engine> GetEnginesWithHigherDisplacement(int displacement)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.Displacement >= displacement).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all engines with engine displacement lower than given
+        /// </summary>
+        /// <param name="displacement">The largest engine displacement for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with displacement lower than given</returns>
+        public List<Engine> GetEnginesWithLowerDisplacement(int displacement)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.Displacement <= displacement).ToList();
+            }
+        }
+        /// <summary>
         /// Find all engines with a given power
         /// </summary>
         /// <param name="power">The power you are searching for</param>
@@ -134,6 +160,31 @@ namespace Business
             }
         }
         /// <summary>
+        /// Find all engines with horsepower lower than given
+        /// </summary>
+        /// <param name="displacement">The most power for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with less power than given</returns>
+        public List<Engine> GetEnginesWithLowerPower(int power)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.Power <= power).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Find all engines with horsepower higher than given
+        /// </summary>
+        /// <param name="displacement">The least power for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with more power than given</returns>
+        public List<Engine> GetEnginesWithHigherPower(int power)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.Power >= power).ToList();
+            }
+        }
+        /// <summary>
         /// Find all engines with a given economy
         /// </summary>
         /// <param name="economyPerHundredKm">The economy you are searching for</param>
@@ -143,6 +194,30 @@ namespace Business
             using (engineContext)
             {
                 return engineContext.Engines.Where(x => x.EconomyPerHundredKm == economyPerHundredKm).ToList();
+            }
+        }
+        /// <summary>
+        /// Find all engines with economy lower than given
+        /// </summary>
+        /// <param name="economyPerHundredKm">The worst economy for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with economy better than given</returns>
+        public List<Engine> GetEnginesWithLowerEconomyPerHundredKm(decimal economyPerHundredKm)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.EconomyPerHundredKm <= economyPerHundredKm).ToList();
+            }
+        }
+        /// <summary>
+        /// Find all engines with economy higher than given
+        /// </summary>
+        /// <param name="economyPerHundredKm">The best economy for which engines will be shown</param>
+        /// <returns>Returns a list of all engines with economy worse than given</returns>
+        public List<Engine> GetEnginesWithHigherEconomyPerHundredKm(decimal economyPerHundredKm)
+        {
+            using (engineContext)
+            {
+                return engineContext.Engines.Where(x => x.EconomyPerHundredKm >= economyPerHundredKm).ToList();
             }
         }
         /// <summary>

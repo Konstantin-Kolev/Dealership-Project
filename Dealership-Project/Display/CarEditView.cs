@@ -527,7 +527,6 @@ namespace Display
             PopulateDataGridViewDefault();
         }
 
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -535,6 +534,11 @@ namespace Display
         //Buttons + attached logic//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid with information about cars
+        /// </summary>
+        /// <param name="cars">A list of cars used to populate the data grid</param>
         private void DataPopulator(List<Car> cars)
         {
             foreach (var car in cars)
@@ -563,6 +567,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information about a single car
+        /// </summary>
+        /// <param name="car"></param>
         private void DataPopulatorSingle(Car car)
         {
             EngineBusiness engineBusiness = new EngineBusiness();
@@ -590,6 +598,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic
+        
+        /// <summary>
+        /// Setup a data grid for cars
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 14;
@@ -621,17 +633,26 @@ namespace Display
             dataGridView.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' button
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
@@ -646,6 +667,9 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Clear the input text boxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtDealership.Text = "";
@@ -659,6 +683,9 @@ namespace Display
             txtColor.Text = "";
         }
 
+        /// <summary>
+        /// Hide specific info that could not be of relevancy in the default context
+        /// </summary>
         private void HideSpecificInfo()
         {
             dataGridView.Columns[5].Visible = false;

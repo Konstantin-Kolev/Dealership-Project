@@ -35,11 +35,11 @@
             this.lblFuelType = new System.Windows.Forms.Label();
             this.lblPower = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtManufacturer = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEconomy = new System.Windows.Forms.TextBox();
+            this.txtPower = new System.Windows.Forms.TextBox();
+            this.txtDisplacement = new System.Windows.Forms.TextBox();
+            this.txtFuelType = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -120,40 +120,40 @@
             this.lblName.TabIndex = 21;
             this.lblName.Text = "Име";
             // 
-            // txtManufacturer
+            // txtEconomy
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(157, 104);
-            this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(100, 20);
-            this.txtManufacturer.TabIndex = 22;
+            this.txtEconomy.Location = new System.Drawing.Point(157, 104);
+            this.txtEconomy.Name = "txtEconomy";
+            this.txtEconomy.Size = new System.Drawing.Size(100, 20);
+            this.txtEconomy.TabIndex = 22;
             // 
-            // textBox1
+            // txtPower
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 23;
+            this.txtPower.Location = new System.Drawing.Point(51, 104);
+            this.txtPower.Name = "txtPower";
+            this.txtPower.Size = new System.Drawing.Size(100, 20);
+            this.txtPower.TabIndex = 23;
             // 
-            // textBox2
+            // txtDisplacement
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 24;
+            this.txtDisplacement.Location = new System.Drawing.Point(263, 45);
+            this.txtDisplacement.Name = "txtDisplacement";
+            this.txtDisplacement.Size = new System.Drawing.Size(100, 20);
+            this.txtDisplacement.TabIndex = 24;
             // 
-            // textBox3
+            // txtFuelType
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 25;
+            this.txtFuelType.Location = new System.Drawing.Point(157, 45);
+            this.txtFuelType.Name = "txtFuelType";
+            this.txtFuelType.Size = new System.Drawing.Size(100, 20);
+            this.txtFuelType.TabIndex = 25;
             // 
-            // textBox4
+            // txtName
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 26;
+            this.txtName.Location = new System.Drawing.Point(51, 45);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 26;
             // 
             // btnAdd
             // 
@@ -163,6 +163,7 @@
             this.btnAdd.TabIndex = 27;
             this.btnAdd.Text = "Добави";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -173,6 +174,7 @@
             this.btnSave.Text = "Запази";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -182,6 +184,7 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Промени";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -191,6 +194,7 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Изтрий";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -200,6 +204,7 @@
             this.btnReset.TabIndex = 31;
             this.btnReset.Text = "Нулирай";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOpenHelper
             // 
@@ -210,6 +215,7 @@
             this.btnOpenHelper.TabIndex = 32;
             this.btnOpenHelper.Text = "Помощна таблица";
             this.btnOpenHelper.UseVisualStyleBackColor = false;
+            this.btnOpenHelper.Click += new System.EventHandler(this.btnOpenHelper_Click);
             // 
             // lblSort
             // 
@@ -231,23 +237,16 @@
             "Мощност низходящ",
             "Икономия възходящ",
             "Икономия низходящ",
-            "Вид гориво",
-            "Вид трансмисия",
-            "Брой предавки възходящ",
-            "Брой предавки низходящ",
             "Работен обем възходящ",
             "Работен обем низходящ",
-            "Цвят",
-            "Цена възходящ",
-            "Цена низходящ",
-            "Марка и модел възходящ",
-            "Марка и модел низходящ",
-            "Автокъща възходящ",
-            "Автокъща низходящ"});
+            "Име възходящ",
+            "Име низходящ",
+            "Вид гориво"});
             this.cbSort.Location = new System.Drawing.Point(627, 45);
             this.cbSort.Name = "cbSort";
             this.cbSort.Size = new System.Drawing.Size(121, 21);
             this.cbSort.TabIndex = 34;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // lblGet
             // 
@@ -264,12 +263,23 @@
             // 
             this.cbGet.FormattingEnabled = true;
             this.cbGet.Items.AddRange(new object[] {
-            "spravka 1",
-            "spravka2"});
+            "Двигател по ID",
+            "Двигател по име",
+            "Двигатели по гориво",
+            "Двигатели по работен обем",
+            "Двигатели до работен обем",
+            "Двигатели над работен обем",
+            "Двигатели по мощност",
+            "Двигатели до мощност",
+            "Двигатели над мощност",
+            "Двигатели по икономия",
+            "Двигатели до икономия",
+            "Двигатели над икономия"});
             this.cbGet.Location = new System.Drawing.Point(810, 45);
             this.cbGet.Name = "cbGet";
             this.cbGet.Size = new System.Drawing.Size(121, 21);
             this.cbGet.TabIndex = 36;
+            this.cbGet.SelectedIndexChanged += new System.EventHandler(this.cbGet_SelectedIndexChanged);
             // 
             // txtGet
             // 
@@ -321,11 +331,11 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtManufacturer);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtFuelType);
+            this.Controls.Add(this.txtDisplacement);
+            this.Controls.Add(this.txtPower);
+            this.Controls.Add(this.txtEconomy);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblPower);
             this.Controls.Add(this.lblFuelType);
@@ -352,11 +362,11 @@
         private System.Windows.Forms.Label lblFuelType;
         private System.Windows.Forms.Label lblPower;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtManufacturer;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEconomy;
+        private System.Windows.Forms.TextBox txtPower;
+        private System.Windows.Forms.TextBox txtDisplacement;
+        private System.Windows.Forms.TextBox txtFuelType;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
