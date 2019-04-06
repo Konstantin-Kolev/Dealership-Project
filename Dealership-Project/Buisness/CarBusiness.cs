@@ -557,7 +557,7 @@ namespace Business
         {
             using (carContext)
             {
-                return carContext.Cars.OrderByDescending(x => x.Manufacturer).ThenBy(x => x.Model).ToList();
+                return carContext.Cars.OrderByDescending(x => x.Manufacturer).ThenByDescending(x => x.Model).ToList();
             }
         }
 
