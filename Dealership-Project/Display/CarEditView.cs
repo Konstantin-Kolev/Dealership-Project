@@ -15,6 +15,9 @@ namespace Display
 {
     public partial class CarEditView : Form
     {
+        /// <summary>
+        /// Variable used in 'Update' operation
+        /// </summary>
         private int editId = 0;
 
         public CarEditView()
@@ -33,6 +36,7 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
         /// <summary>
         /// Populate the data grid with information about all existing cars in the database
         /// </summary>
@@ -570,7 +574,7 @@ namespace Display
         /// <summary>
         /// Update the input text boxes with information for a selected car
         /// </summary>
-        /// <param name="Id">The ID of a selected</param>
+        /// <param name="Id">The ID of a selected car</param>
         private void UpdateTextBoxes(int Id)
         {
             CarBusiness carBusiness = new CarBusiness();
@@ -688,7 +692,7 @@ namespace Display
         }
 
         /// <summary>
-        /// Populate the data grid with information about a single car
+        /// Populate the data grid with information for a single car
         /// </summary>
         /// <param name="car">A single car used to populate the data grid</param>
         private void DataPopulatorSingle(Car car)
@@ -771,7 +775,7 @@ namespace Display
         }
 
         /// <summary>
-        /// Toggle the visibilty of the 'Update' and 'Save' button
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
         /// </summary>
         private void ToggleSaveUpdate()
         {
