@@ -206,7 +206,7 @@ namespace Display
         /// <summary>
         /// Pull edited information from the input text boxes to an instance of a car dealership
         /// </summary>
-        /// <returns>A car dealership with edited information</returns>
+        /// <returns>Returns a car dealership with edited information</returns>
         private CarDealership GetEditedCarDealership()
         {
             CarDealership carDealership = new CarDealership();

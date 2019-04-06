@@ -31,6 +31,10 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
+        /// <summary>
+        /// Populate the data grid with information about all existing towns in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
@@ -39,6 +43,9 @@ namespace Display
             DataPopulator(townList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about town with given town Id
+        /// </summary>
         private void PopulateDataGridViewGetTownById()
         {
             dataGridView.Rows.Clear();
@@ -48,6 +55,9 @@ namespace Display
             DataPopulatorSingle(town);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about town with given town name
+        /// </summary>
         private void PopulateDataGridViewGetTownByName()
         {
             dataGridView.Rows.Clear();
@@ -58,6 +68,10 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by towns' name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortTownsByNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -66,6 +80,9 @@ namespace Display
             DataPopulator(townList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by towns' name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortTownsByNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -125,6 +142,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected town
+        /// </summary>
+        /// <param name="Id">The ID of a selected town</param>
         private void UpdateTextBoxes(int Id)
         {
             TownBusiness townBusiness = new TownBusiness();
@@ -143,6 +164,10 @@ namespace Display
             txtName.Text = "";
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a town
+        /// </summary>
+        /// <returns>Returns a town with edited information</returns>
         private Town GetEditedTown()
         {
             Town town = new Town();
@@ -177,9 +202,19 @@ namespace Display
             GridInfoPopUp gridInfoPopUp = new GridInfoPopUp();
             gridInfoPopUp.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //Buttons + attached logic//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid with information about towns
+        /// </summary>
+        /// <param name="towns">A list of towns used to populate the data grid</param>
         private void DataPopulator(List<Town> towns)
         {
             foreach (var town in towns)
@@ -193,6 +228,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information for a single town
+        /// </summary>
+        /// <param name="town">A single town used to populate the data grid</param>
         private void DataPopulatorSingle(Town town)
         {
             string[] row =
@@ -205,6 +244,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic//
+
+        /// <summary>
+        /// Setup a data grid for towns
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 2;
@@ -223,17 +266,26 @@ namespace Display
             dataGridView.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
