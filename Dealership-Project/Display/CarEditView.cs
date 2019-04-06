@@ -622,8 +622,11 @@ namespace Display
             car.EngineId = engineId;
             int.TryParse(txtDealership.Text, out int dealershipId);
             car.CarDealershipId = dealershipId;
-            int.TryParse(txtOwner.Text, out int ownerId);
-            car.OwnerId = ownerId;
+            if (txtOwner.Text != "")
+            {
+                int.TryParse(txtOwner.Text, out int ownerId);
+                car.OwnerId = ownerId;
+            }
 
             return car;
         }
