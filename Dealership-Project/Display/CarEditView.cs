@@ -33,6 +33,9 @@ namespace Display
 
         //Main logic//
         //Get logic//
+        /// <summary>
+        /// Populate the data grid with information about all existing cars in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -42,6 +45,9 @@ namespace Display
             //dataGridView1.Columns[0].DisplayIndex = 3;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about car with given car Id
+        /// </summary>
         private void PopulateDataGridViewGetCarById()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -51,6 +57,9 @@ namespace Display
             DataPopulatorSingle(cars);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given dealership Id
+        /// </summary>
         private void PopulateDataGridViewGetCarsByCarDealership()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -60,6 +69,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given color
+        /// </summary>
         private void PopulateDataGridViewGetCarsByColor()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -68,6 +80,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given displacement
+        /// </summary>
         private void PopulateDataGridViewGetCarsByDisplacement()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -78,6 +93,9 @@ namespace Display
             dataGridView.Columns[6].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with displacement larger than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithHigherDisplacement()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -88,6 +106,9 @@ namespace Display
             dataGridView.Columns[6].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with displacement smaller than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithLowerDisplacement()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -98,6 +119,9 @@ namespace Display
             dataGridView.Columns[6].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given fuel type
+        /// </summary>
         private void PopulateDataGridViewGetCarsByFuelType()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -107,6 +131,9 @@ namespace Display
             dataGridView.Columns[7].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given manufacturer
+        /// </summary>
         private void PopulateDataGridViewGetCarsByManufacturer()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -115,6 +142,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given model
+        /// </summary>
         private void PopulateDataGridViewGetCarsByModel()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -123,6 +153,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given power
+        /// </summary>
         private void PopulateDataGridViewGetCarsByPower()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -133,6 +166,9 @@ namespace Display
             dataGridView.Columns[5].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with power more than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithHigherPower()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -143,6 +179,9 @@ namespace Display
             dataGridView.Columns[5].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with power less than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithLowerPower()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -153,6 +192,9 @@ namespace Display
             dataGridView.Columns[5].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given price
+        /// </summary>
         private void PopulateDataGridViewGetCarsByPrice()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -162,6 +204,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with price higher than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithHigherPrice()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -171,6 +216,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with price lower than given
+        /// </summary>
         private void PopulateDataGridViewGetCarsWithLowerPrice()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -180,6 +228,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given type of transmission
+        /// </summary>
         private void PopulateDataGridViewGetCarsByTransmissionType()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -188,6 +239,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars with given number of gears
+        /// </summary>
         private void PopulateDataGridViewGetCarsByTransmissionGears()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -197,6 +251,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars which are for sale
+        /// </summary>
         private void PopulateDataGridViewGetCarsForSale()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -205,6 +262,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about cars which have been sold
+        /// </summary>
         private void PopulateDataGridViewGetOwnedCars()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -215,6 +275,10 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' dealership in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByDealershipNameAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -223,6 +287,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' dealership in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByDealershipNameDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -231,6 +298,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' number of gears in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByTransmissionGearsAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -239,6 +309,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' number of gears in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByTransmissionGearsDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -247,6 +320,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' manufacturer and model in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByManufacturerAndModelAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -255,6 +331,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' manufacturer and model in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByManufacturerAndModelDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -263,6 +342,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' power in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByPowerAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -272,6 +354,9 @@ namespace Display
             dataGridView.Columns[5].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' power in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByPowerDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -281,6 +366,9 @@ namespace Display
             dataGridView.Columns[5].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' fuel economy in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByFuelEconomyAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -290,6 +378,9 @@ namespace Display
             dataGridView.Columns[8].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' fuel economy in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByFuelEconomyDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -299,6 +390,9 @@ namespace Display
             dataGridView.Columns[8].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' displacement in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByDisplacementAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -308,6 +402,9 @@ namespace Display
             dataGridView.Columns[6].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' displacement in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByDisplacementDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -317,6 +414,9 @@ namespace Display
             dataGridView.Columns[6].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' price in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByPriceAscending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -325,6 +425,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' price in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCarsByPriceDescending()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -333,6 +436,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' fuel type
+        /// </summary>
         private void PopulateDataGridViewSortCarsByFuelType()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -342,6 +448,9 @@ namespace Display
             dataGridView.Columns[7].Visible = true;
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' transmission type
+        /// </summary>
         private void PopulateDataGridViewSortCarsByTransmissionType()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -350,6 +459,9 @@ namespace Display
             DataPopulator(carsList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by cars' color
+        /// </summary>
         private void PopulateDataGridViewSortCarsByColor()
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
@@ -455,6 +567,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected car
+        /// </summary>
+        /// <param name="Id">The ID of a selected</param>
         private void UpdateTextBoxes(int Id)
         {
             CarBusiness carBusiness = new CarBusiness();
@@ -481,6 +597,10 @@ namespace Display
             ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a car
+        /// </summary>
+        /// <returns>A car with edited information</returns>
         private Car GetEditedCar()
         {
             Car car = new Car();
@@ -570,7 +690,7 @@ namespace Display
         /// <summary>
         /// Populate the data grid with information about a single car
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="car">A single car used to populate the data grid</param>
         private void DataPopulatorSingle(Car car)
         {
             EngineBusiness engineBusiness = new EngineBusiness();
