@@ -139,7 +139,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarBusinessTest.cs" />
+    <Compile Include="CarBusinessTests.cs" />
     <Compile Include="CarDealershipBuisnessTests.cs" />
     <Compile Include="CustomerBusinessTests.cs" />
     <Compile Include="EngineBusinessTests.cs" />
