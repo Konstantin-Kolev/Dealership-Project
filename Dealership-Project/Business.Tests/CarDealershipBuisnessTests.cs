@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moq;
-using Data.Models;
 using Data;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Business.Tests
