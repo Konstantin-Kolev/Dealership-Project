@@ -173,12 +173,37 @@ namespace Display
                 {
                     engine.Id.ToString(),
                     engine.Name,
-                    engine.FuelType,
+                    FuelENGToBG(engine.FuelType),
                     engine.Power.ToString(),
                     engine.Displacement.ToString(),
                     engine.EconomyPerHundredKm.ToString()
                 };
                 dataGridView.Rows.Add(row);
+            }
+        }
+
+        /// <summary>
+        /// Convert engine's fuel from English to Bulgarian
+        /// </summary>
+        /// <param name="fuel">Engine's fuel in English</param>
+        /// <returns>Returns engine's fuel in Bulgarian</returns>
+        private string FuelENGToBG(string fuel)
+        {
+            if (fuel == "Gasoline")
+            {
+                return "Бензин";
+            }
+            else if (fuel == "Diesel")
+            {
+                return "Дизел";
+            }
+            else if (fuel == "LPG")
+            {
+                return "Газ";
+            }
+            else
+            {
+                return "Електричество";
             }
         }
 

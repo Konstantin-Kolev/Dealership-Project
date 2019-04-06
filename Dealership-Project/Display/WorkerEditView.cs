@@ -31,6 +31,10 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
+        /// <summary>
+        /// Populate the data grid with information about all existing workers in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
@@ -39,6 +43,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about worker with given worker Id
+        /// </summary>
         private void PopulateDataGridViewGetWorkerById()
         {
             dataGridView.Rows.Clear();
@@ -48,6 +55,9 @@ namespace Display
             DataPopulatorSingle(worker);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with given dealership Id
+        /// </summary>
         private void PopulateDataGridViewGetWorkersByDealershipId()
         {
             dataGridView.Rows.Clear();
@@ -57,6 +67,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with given first name
+        /// </summary>
         private void PopulateDataGridViewGetWorkersByFirstName()
         {
             dataGridView.Rows.Clear();
@@ -65,6 +78,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with given last name
+        /// </summary>
         private void PopulateDataGridViewGetWorkersByLastName()
         {
             dataGridView.Rows.Clear();
@@ -73,6 +89,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with position
+        /// </summary>
         private void PopulateDataGridViewGetWorkersByPosition()
         {
             dataGridView.Rows.Clear();
@@ -81,6 +100,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with given salary
+        /// </summary>
         private void PopulateDataGridViewGetWorkersBySalary()
         {
             dataGridView.Rows.Clear();
@@ -90,6 +112,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with salary higher than given
+        /// </summary>
         private void PopulateDataGridViewGetWorkersWithHigherSalary()
         {
             dataGridView.Rows.Clear();
@@ -99,6 +124,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about workers with salary lower than given
+        /// </summary>
         private void PopulateDataGridViewGetWorkersWithLowerSalary()
         {
             dataGridView.Rows.Clear();
@@ -110,6 +138,10 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' both names in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByBothNamesAscending()
         {
             dataGridView.Rows.Clear();
@@ -118,6 +150,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' both names in descending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByBothNamesDescending()
         {
             dataGridView.Rows.Clear();
@@ -126,6 +161,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' car dealership name
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByCarDealership()
         {
             dataGridView.Rows.Clear();
@@ -134,6 +172,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' first name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByFirstNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -142,6 +183,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' first name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByFirstNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -150,6 +194,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' last name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByLastNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -158,6 +205,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' last name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByLastNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -166,6 +216,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' positions
+        /// </summary>
         private void PopulateDataGridViewSortWorkersByPosition()
         {
             dataGridView.Rows.Clear();
@@ -174,6 +227,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' salaries in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersBySalaryAscending()
         {
             dataGridView.Rows.Clear();
@@ -182,6 +238,9 @@ namespace Display
             DataPopulator(workersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by workers' salaries in descending order
+        /// </summary>
         private void PopulateDataGridViewSortWorkersBySalaryDescending()
         {
             dataGridView.Rows.Clear();
@@ -261,6 +320,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected worker
+        /// </summary>
+        /// <param name="Id">The ID of a selected worker</param>
         private void UpdateTextBoxes(int Id)
         {
             WorkerBusiness workerBusiness = new WorkerBusiness();
@@ -284,6 +347,10 @@ namespace Display
             ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a worker
+        /// </summary>
+        /// <returns>Returns a worker with edited information</returns>
         private Worker GetEditedWorker()
         {
             Worker worker = new Worker();
@@ -327,6 +394,11 @@ namespace Display
         //Buttons + attached logic//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid with information about workers
+        /// </summary>
+        /// <param name="workers">A list of workers used to populate the data grid</param>
         private void DataPopulator(List<Worker> workers)
         {
             foreach (var worker in workers)
@@ -345,6 +417,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information for a single worker
+        /// </summary>
+        /// <param name="worker">A single worker used to populate the data grid</param>
         private void DataPopulatorSingle(Worker worker)
         {
             WorkerBusiness workerBusiness = new WorkerBusiness();
@@ -362,6 +438,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic//
+
+        /// <summary>
+        /// Setup a data grid for workers
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 6;
@@ -385,17 +465,26 @@ namespace Display
             dataGridView.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
@@ -410,6 +499,9 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Clear the input text boxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtFirstName.Text = "";

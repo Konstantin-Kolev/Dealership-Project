@@ -130,7 +130,7 @@ namespace Display
         {
             dataGridView.Rows.Clear(); HideSpecificInfo();
             CarBusiness carBusiness = new CarBusiness();
-            var carsList = carBusiness.GetCarsByFuelType(txtGet.Text);
+            var carsList = carBusiness.GetCarsByFuelType(FuelBGTtoENG(txtGet.Text));
             DataPopulator(carsList);
             dataGridView.Columns[7].Visible = true;
         }
@@ -281,7 +281,7 @@ namespace Display
         //Sort logic//
 
         /// <summary>
-        /// Populate the data grid with information sorted by cars' dealership in ascending order
+        /// Populate the data grid with information sorted by cars' dealership name in ascending order
         /// </summary>
         private void PopulateDataGridViewSortCarsByDealershipNameAscending()
         {
@@ -292,7 +292,7 @@ namespace Display
         }
 
         /// <summary>
-        /// Populate the data grid with information sorted by cars' dealership in descending order
+        /// Populate the data grid with information sorted by cars' dealership name in descending order
         /// </summary>
         private void PopulateDataGridViewSortCarsByDealershipNameDescending()
         {
@@ -657,6 +657,56 @@ namespace Display
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Convert car's fuel from Bulgarian to English
+        /// </summary>
+        /// <param name="fuel">Car's fuel in Bulgarian</param>
+        /// <returns>Returns car's fuel in English</returns>
+        private string FuelBGTtoENG(string fuel)
+        {
+            if (fuel == "Бензин")
+            {
+                return "Gasoline";
+            }
+            else if (fuel == "Дизел")
+            {
+                return "Diesel";
+            }
+            else if (fuel == "Газ")
+            {
+                return "LPG";
+            }
+            else
+            {
+                return "Electricity";
+            }
+        }
+
+        /// <summary>
+        /// Convert car's fuel from English to Bulgarian
+        /// </summary>
+        /// <param name="fuel">Car's fuel in English</param>
+        /// <returns>Returns car's fuel in Bulgarian</returns>
+        private string FuelENGToBG(string fuel)
+        {
+            if (fuel == "Gasoline")
+            {
+                return "Бензин";
+            }
+            else if (fuel == "Diesel")
+            {
+                return "Дизел";
+            }
+            else if (fuel == "LPG")
+            {
+                return "Газ";
+            }
+            else
+            {
+                return "Електричество";
+            }
+        }
         //Buttons + attached logic//
 
         //Data populators//
@@ -681,7 +731,7 @@ namespace Display
                     engine.Name,
                     engine.Power.ToString(),
                     engine.Displacement.ToString(),
-                    engine.FuelType,
+                    FuelENGToBG(engine.FuelType),
                     engine.EconomyPerHundredKm.ToString(),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),
@@ -711,7 +761,7 @@ namespace Display
                     engine.Name,
                     engine.Power.ToString(),
                     engine.Displacement.ToString(),
-                    engine.FuelType,
+                    FuelENGToBG(engine.FuelType),
                     engine.EconomyPerHundredKm.ToString(),
                     car.TransmissionType,
                     car.TransmissionGears.ToString(),

@@ -31,6 +31,10 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
+        /// <summary>
+        /// Populate the data grid with information about all existing engines in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
@@ -39,6 +43,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given engine Id
+        /// </summary>
         private void PopulateDataGridViewGetEngineById()
         {
             dataGridView.Rows.Clear();
@@ -48,6 +55,9 @@ namespace Display
             DataPopulatorSingle(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given name
+        /// </summary>
         private void PopulateDataGridViewGetEngineByName()
         {
             dataGridView.Rows.Clear();
@@ -56,6 +66,9 @@ namespace Display
             DataPopulatorSingle(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given fuel type
+        /// </summary>
         private void PopulateDataGridViewGetEnginesByFuelType()
         {
             dataGridView.Rows.Clear();
@@ -64,6 +77,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given displacement
+        /// </summary>
         private void PopulateDataGridViewGetEnginesByDisplacement()
         {
             dataGridView.Rows.Clear();
@@ -73,6 +89,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with displacement smaller than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithLowerDisplacement()
         {
             dataGridView.Rows.Clear();
@@ -82,6 +101,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with displacement larger than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithHigherDisplacement()
         {
             dataGridView.Rows.Clear();
@@ -91,6 +113,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given power
+        /// </summary>
         private void PopulateDataGridViewGetEnginesByPower()
         {
             dataGridView.Rows.Clear();
@@ -100,6 +125,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with less power than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithLowerPower()
         {
             dataGridView.Rows.Clear();
@@ -109,6 +137,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with more power than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithHigherPower()
         {
             dataGridView.Rows.Clear();
@@ -118,6 +149,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engine with given economy
+        /// </summary>
         private void PopulateDataGridViewGetEnginesByEconomyPerHundredKm()
         {
             dataGridView.Rows.Clear();
@@ -127,6 +161,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with worse economy than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithLowerEconomyPerHundredKm()
         {
             dataGridView.Rows.Clear();
@@ -136,6 +173,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about engines with better economy than given
+        /// </summary>
         private void PopulateDataGridViewGetEnginesWithHigherEconomyPerHundredKm()
         {
             dataGridView.Rows.Clear();
@@ -145,7 +185,12 @@ namespace Display
             DataPopulator(enginesList);
         }
         //Get logic//
+
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' power in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByPowerAscending()
         {
             dataGridView.Rows.Clear();
@@ -154,6 +199,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' power in descending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByPowerDescending()
         {
             dataGridView.Rows.Clear();
@@ -162,6 +210,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' economy in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByEconomyPerHundredKmAscending()
         {
             dataGridView.Rows.Clear();
@@ -170,6 +221,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' economy in descending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByEconomyPerHundredKmDescending()
         {
             dataGridView.Rows.Clear();
@@ -178,6 +232,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' displacement in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByDisplacementAscending()
         {
             dataGridView.Rows.Clear();
@@ -186,6 +243,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' displacement in descending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByDisplacementDescending()
         {
             dataGridView.Rows.Clear();
@@ -194,6 +254,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -202,6 +265,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -210,6 +276,9 @@ namespace Display
             DataPopulator(enginesList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by engines' fuel type
+        /// </summary>
         private void PopulateDataGridViewSortEnginesByFuelType()
         {
             dataGridView.Rows.Clear();
@@ -265,7 +334,7 @@ namespace Display
             Engine engine = new Engine();
 
             engine.Name = txtName.Text;
-            engine.FuelType = txtFuelType.Text;
+            engine.FuelType = FuelBGTtoENG(txtFuelType.Text);
             decimal.TryParse(txtEconomy.Text, out decimal economy);
             engine.EconomyPerHundredKm = economy;
             int.TryParse(txtDisplacement.Text, out int displacement);
@@ -292,13 +361,17 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected engine
+        /// </summary>
+        /// <param name="Id">The ID of a selected engine</param>
         private void UpdateTextBoxes(int Id)
         {
             EngineBusiness engineBusiness = new EngineBusiness();
             Engine engine = engineBusiness.GetEngineById(Id);
             txtDisplacement.Text = engine.Displacement.ToString();
             txtEconomy.Text = engine.EconomyPerHundredKm.ToString();
-            txtFuelType.Text = engine.FuelType;
+            txtFuelType.Text = FuelENGToBG(engine.FuelType);
             txtName.Text = engine.Name;
             txtPower.Text = engine.Power.ToString();
         }
@@ -314,6 +387,10 @@ namespace Display
             ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a engine
+        /// </summary>
+        /// <returns>Returns an engine with edited information</returns>
         private Engine GetEditedEngine()
         {
             Engine engine = new Engine();
@@ -321,7 +398,7 @@ namespace Display
             engine.Id = editId;
 
             engine.Name = txtName.Text;
-            engine.FuelType = txtFuelType.Text;
+            engine.FuelType = FuelBGTtoENG(txtFuelType.Text);
             decimal.TryParse(txtEconomy.Text, out decimal economy);
             engine.EconomyPerHundredKm = economy;
             int.TryParse(txtDisplacement.Text, out int displacement);
@@ -361,9 +438,64 @@ namespace Display
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Convert engine's fuel from Bulgarian to English
+        /// </summary>
+        /// <param name="fuel">Engine's fuel in Bulgarian</param>
+        /// <returns>Returns engine's fuel in English</returns>
+        private string FuelBGTtoENG(string fuel)
+        {
+            if (fuel == "Бензин")
+            {
+                return "Gasoline";
+            }
+            else if (fuel == "Дизел")
+            {
+                return "Diesel";
+            }
+            else if (fuel == "Газ")
+            {
+                return "LPG";
+            }
+            else
+            {
+                return "Electricity";
+            }
+        }
+
+        /// <summary>
+        /// Convert engine's fuel from English to Bulgarian
+        /// </summary>
+        /// <param name="fuel">Engine's fuel in English</param>
+        /// <returns>Returns engine's fuel in Bulgarian</returns>
+        private string FuelENGToBG(string fuel)
+        {
+            if (fuel == "Gasoline")
+            {
+                return "Бензин";
+            }
+            else if (fuel == "Diesel")
+            {
+                return "Дизел";
+            }
+            else if (fuel == "LPG")
+            {
+                return "Газ";
+            }
+            else
+            {
+                return "Електричество";
+            }
+        }
         //Buttons + attached//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid with information about engine
+        /// </summary>
+        /// <param name="cars">A list of engines used to populate the data grid</param>
         private void DataPopulator(List<Engine> engines)
         {
             foreach (var engine in engines)
@@ -373,7 +505,7 @@ namespace Display
                 {
                     engine.Id.ToString(),
                     engine.Name,
-                    engine.FuelType,
+                    FuelENGToBG(engine.FuelType),
                     engine.Power.ToString(),
                     engine.Displacement.ToString(),
                     engine.EconomyPerHundredKm.ToString()
@@ -382,6 +514,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information for a single engine
+        /// </summary>
+        /// <param name="engine">A single engine used to populate the data grid</param>
         private void DataPopulatorSingle(Engine engine)
         {
             EngineBusiness engineBusiness = new EngineBusiness();
@@ -389,7 +525,7 @@ namespace Display
             {
                 engine.Id.ToString(),
                 engine.Name,
-                engine.FuelType,
+                FuelENGToBG(engine.FuelType),
                 engine.Power.ToString(),
                 engine.Displacement.ToString(),
                 engine.EconomyPerHundredKm.ToString()
@@ -399,6 +535,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic//
+
+        /// <summary>
+        /// Setup a data grid for engines
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 6;
@@ -422,17 +562,26 @@ namespace Display
             dataGridView.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
@@ -447,6 +596,9 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Clear the input text boxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtDisplacement.Text = "";

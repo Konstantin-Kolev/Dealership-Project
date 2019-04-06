@@ -32,6 +32,10 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
+        /// <summary>
+        /// Populate the data grid with information about all existing customers in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
@@ -39,7 +43,10 @@ namespace Display
             var customersList = customerBusiness.GetAllCustomers();
             DataPopulator(customersList);
         }
-        
+
+        /// <summary>
+        /// Populate the data grid with information about customer with given customer Id
+        /// </summary>
         private void PopulateDataGridViewGetCustomerById()
         {
             dataGridView.Rows.Clear();
@@ -49,6 +56,9 @@ namespace Display
             DataPopulatorSingle(customer);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about customers with given town Id
+        /// </summary>
         private void PopulateDataGridViewGetCustomerByTownId()
         {
             dataGridView.Rows.Clear();
@@ -58,6 +68,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about customers with given town Id
+        /// </summary>
         private void PopulateDataGridViewGetCustomersByTownName()
         {
             dataGridView.Rows.Clear();
@@ -66,6 +79,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about customers with given first name
+        /// </summary>
         private void PopulateDataGridViewGetCustomersByFirstName()
         {
             dataGridView.Rows.Clear();
@@ -74,6 +90,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about customers with given last name
+        /// </summary>
         private void PopulateDataGridViewGetCustomersByLastName()
         {
             dataGridView.Rows.Clear();
@@ -84,6 +103,10 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' both names in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByBothNamesAscending()
         {
             dataGridView.Rows.Clear();
@@ -92,6 +115,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' both names in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByBothNamesDescending()
         {
             dataGridView.Rows.Clear();
@@ -100,6 +126,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' first name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByFirstNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -108,6 +137,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' first name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByFirstNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -116,6 +148,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' last name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByLastNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -124,6 +159,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' last name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByLastNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -132,6 +170,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' town name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByTownNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -140,6 +181,9 @@ namespace Display
             DataPopulator(customersList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by customers' town name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortCustomerByTownNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -211,6 +255,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected customer
+        /// </summary>
+        /// <param name="Id">The ID of a selected customer</param>
         private void UpdateTextBoxes(int Id)
         {
             CustomerBusiness customerBusiness = new CustomerBusiness();
@@ -232,6 +280,10 @@ namespace Display
             ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a customer
+        /// </summary>
+        /// <returns>Returns a customer with edited information</returns>
         private Customer GetEditedCustomer()
         {
             Customer customer = new Customer();
@@ -272,6 +324,11 @@ namespace Display
         //Buttons + attached logic//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid with information about customers
+        /// </summary>
+        /// <param name="customers">A list of customers used to populate the data grid</param>
         private void DataPopulator(List<Customer> customers)
         {
             foreach (var customer in customers)
@@ -289,6 +346,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information for a single customer
+        /// </summary>
+        /// <param name="customer">A single customer used to populate the data grid</param>
         private void DataPopulatorSingle(Customer customer)
         {
             CustomerBusiness customerBusiness = new CustomerBusiness();
@@ -305,6 +366,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic//
+
+        /// <summary>
+        /// Setup a data grid for customers
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 5;
@@ -329,17 +394,26 @@ namespace Display
             dataGridView.Columns[4].Visible = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
@@ -354,6 +428,9 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Clear the input text boxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtFirstName.Text = "";
