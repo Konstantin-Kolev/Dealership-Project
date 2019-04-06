@@ -60,6 +60,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOpenHelper = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -192,6 +193,8 @@
             // lblManufacturer
             // 
             resources.ApplyResources(this.lblManufacturer, "lblManufacturer");
+            this.lblManufacturer.BackColor = System.Drawing.Color.White;
+            this.lblManufacturer.ForeColor = System.Drawing.Color.Black;
             this.lblManufacturer.Name = "lblManufacturer";
             // 
             // lblEngine
@@ -275,10 +278,21 @@
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.DodgerBlue;
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // CarEditView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOpenHelper);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);
@@ -310,7 +324,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pictureBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarEditView";
             this.Load += new System.EventHandler(this.CarEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -353,5 +367,6 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnOpenHelper;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button btnExit;
     }
 }

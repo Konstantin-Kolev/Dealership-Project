@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarDealershipEditView));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtTown = new System.Windows.Forms.TextBox();
@@ -44,7 +45,10 @@
             this.cbGet = new System.Windows.Forms.ComboBox();
             this.txtGet = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -209,11 +213,36 @@
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(-51, -209);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(1167, 890);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 37;
+            this.pictureBox.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Black;
+            this.btnExit.Font = new System.Drawing.Font("Impact", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExit.Location = new System.Drawing.Point(962, 164);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 38;
+            this.btnExit.Text = "ИЗКЛЮЧИ";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // CarDealershipEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtGet);
             this.Controls.Add(this.cbGet);
             this.Controls.Add(this.lblGet);
@@ -230,11 +259,13 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarDealershipEditView";
             this.Text = "Автокъщи";
             this.Load += new System.EventHandler(this.CarDealershipEditView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +289,7 @@
         private System.Windows.Forms.ComboBox cbGet;
         private System.Windows.Forms.TextBox txtGet;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button btnExit;
     }
 }
