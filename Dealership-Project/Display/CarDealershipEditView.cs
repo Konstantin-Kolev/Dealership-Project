@@ -31,6 +31,10 @@ namespace Display
 
         //Main logic//
         //Get logic//
+
+        /// <summary>
+        /// Populate the data grid with information about all existing car dealerships in the database
+        /// </summary>
         private void PopulateDataGridViewDefault()
         {
             dataGridView.Rows.Clear();
@@ -39,6 +43,9 @@ namespace Display
             DataPopulator(dealershipList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about car dealership with given car dealership Id
+        /// </summary>
         private void PopulateDataGridViewGetCarDealershipById()
         {
             dataGridView.Rows.Clear();
@@ -48,6 +55,9 @@ namespace Display
             DataPopulatorSingle(dealership);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about car dealership with given car dealership name
+        /// </summary>
         private void PopulateDataGridViewGetCarDealershipByName()
         {
             dataGridView.Rows.Clear();
@@ -56,6 +66,9 @@ namespace Display
             DataPopulatorSingle(dealership);
         }
 
+        /// <summary>
+        /// Populate the data grid with information about car dealership with given car dealership's town name
+        /// </summary>
         private void PopulateDataGridViewGetDealershipsByTown()
         {
             dataGridView.Rows.Clear();
@@ -66,6 +79,10 @@ namespace Display
         //Get logic//
 
         //Sort logic//
+
+        /// <summary>
+        /// Populate the data grid with information sorted by car dealerships' name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortDealershipsByNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -74,6 +91,9 @@ namespace Display
             DataPopulator(dealershipList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by car dealerships' town name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortDealershipsByNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -82,6 +102,9 @@ namespace Display
             DataPopulator(dealershipList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by car dealerships' town name in ascending order
+        /// </summary>
         private void PopulateDataGridViewSortDealershipsByTownNameAscending()
         {
             dataGridView.Rows.Clear();
@@ -90,6 +113,9 @@ namespace Display
             DataPopulator(dealershipList);
         }
 
+        /// <summary>
+        /// Populate the data grid with information sorted by car dealerships' town name in descending order
+        /// </summary>
         private void PopulateDataGridViewSortDealershipsByTownNameDescending()
         {
             dataGridView.Rows.Clear();
@@ -154,6 +180,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Update the input text boxes with information for a selected car dealership
+        /// </summary>
+        /// <param name="Id">The ID of a selected car dealership</param>
         private void UpdateTextBoxes(int Id)
         {
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
@@ -173,6 +203,10 @@ namespace Display
             ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Pull edited information from the input text boxes to an instance of a car dealership
+        /// </summary>
+        /// <returns>A car dealership with edited information</returns>
         private CarDealership GetEditedCarDealership()
         {
             CarDealership carDealership = new CarDealership();
@@ -217,6 +251,11 @@ namespace Display
         //Buttons + attached logic//
 
         //Data populators//
+
+        /// <summary>
+        /// Populate the data grid wiht information about car dealerships
+        /// </summary>
+        /// <param name="carDealerships">A list of car dealerships used to populate the data grid</param>
         private void DataPopulator(List<CarDealership> carDealerships)
         {
             foreach (var dealership in carDealerships)
@@ -232,6 +271,10 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Populate the data grid with information for a single car dealership
+        /// </summary>
+        /// <param name="dealership">A single car dealership used to populate the data grid</param>
         private void DataPopulatorSingle(CarDealership dealership)
         {
             CarDealershipBusiness carDealershipBusiness = new CarDealershipBusiness();
@@ -246,6 +289,10 @@ namespace Display
         //Data populators//
 
         //FormatLogic//
+
+        /// <summary>
+        /// Setup a data grid for car dealerships
+        /// </summary>
         private void SetupDataGridView()
         {
             dataGridView.ColumnCount = 3;
@@ -265,17 +312,26 @@ namespace Display
             dataGridView.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Disable the user's ability to interact with the control
+        /// </summary>
         private void DisableSelect()
         {
             dataGridView.Enabled = false;
         }
 
+        /// <summary>
+        /// Enable the user's ability to interact with the control and clear user selection
+        /// </summary>
         private void ResetSelect()
         {
             dataGridView.ClearSelection();
             dataGridView.Enabled = true;
         }
 
+        /// <summary>
+        /// Toggle the visibilty of the 'Update' and 'Save' buttons
+        /// </summary>
         private void ToggleSaveUpdate()
         {
             if (btnUpdate.Visible)
@@ -290,6 +346,9 @@ namespace Display
             }
         }
 
+        /// <summary>
+        /// Clear the input text boxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtName.Text = "";
